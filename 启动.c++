@@ -1,8 +1,6 @@
 #include <iostream>
-#include <regex>
+#include <iostream>
 
 int main(){
-    std::string a;
-    std::cin>>a;
-    std::cout<<a;
+    std::cout<<__cplusplus;
 }
