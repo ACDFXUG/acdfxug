@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "连续字符",
+            "request": "launch",
+            "mainClass": "LeetCode.连续字符",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "删除字符串中的所有相邻重复项II",
             "request": "launch",
             "mainClass": "LeetCode.删除字符串中的所有相邻重复项II",
