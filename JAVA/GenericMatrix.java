@@ -7,9 +7,9 @@ import static java.lang.Math.*;
 public class GenericMatrix<T extends Number> implements Cloneable {
     private int rows,cols;
     private T[][] data;
-    private int negative(int n){
-        return (n&1)==0?1:-1;
-    }
+    // private int negative(int n){
+    //     return (n&1)==0?1:-1;
+    // }
     @SuppressWarnings("unchecked")
     public GenericMatrix(int row,int col){
         this.rows=row;
