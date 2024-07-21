@@ -1,0 +1,37 @@
+.bracket-match {
+  background: linear-gradient(to right, #99ff00,#99FF00);
+  background-size: 100% 1000%;
+  animation: bracket-match-animation 25s linear infinite alternate;
+  border-radius: 4px;
+  filter: blur(6px) brightness(75%);
+  overflow: visible !important;
+  position: relative;
+}
+
+.bracket-mismatch {
+  background: linear-gradient(to right, #ff00ff, #ff80ff, #00ffff);
+  background-size: 100% 1000%;
+  animation: bracket-mismatch-animation 25s linear infinite alternate;
+  border-radius: 4px;
+  filter: blur(4px) brightness(75%);
+  overflow: visible !important;
+  position: relative;
+}
+
+@keyframes bracket-match-animation {
+  0% { background-position: 0 0; }
+  20% { background-position: 0 200%; }
+  40% { background-position: 0 400%; }
+  60% { background-position: 0 600%; }
+  80% { background-position: 0 800%; }
+  100% { background-position: 0 1000%; }
+}
+
+@keyframes bracket-mismatch-animation {
+  0% { background-position: 0 0; }
+  20% { background-position: 0 200%; }
+  40% { background-position: 0 400%; }
+  60% { background-position: 0 600%; }
+  80% { background-position: 0 800%; }
+  100% { background-position: 0 1000%; }
+}

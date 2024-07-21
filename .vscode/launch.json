@@ -1,0 +1,2825 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "删除字符串中的所有相邻重复项II",
+            "request": "launch",
+            "mainClass": "LeetCode.删除字符串中的所有相邻重复项II",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "快照数组",
+            "request": "launch",
+            "mainClass": "LeetCode.快照数组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "单调递增的数字",
+            "request": "launch",
+            "mainClass": "LeetCode.单调递增的数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数据流中的第K大元素",
+            "request": "launch",
+            "mainClass": "LeetCode.数据流中的第K大元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "复数乘法",
+            "request": "launch",
+            "mainClass": "LeetCode.复数乘法",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TinyURL的加密与解密",
+            "request": "launch",
+            "mainClass": "LeetCode.TinyURL的加密与解密",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "N天后的牢房",
+            "request": "launch",
+            "mainClass": "LeetCode.N天后的牢房",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "重新排列日志文件",
+            "request": "launch",
+            "mainClass": "LeetCode.重新排列日志文件",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数组中的第K个最大元素",
+            "request": "launch",
+            "mainClass": "LeetCode.数组中的第K个最大元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "添加与搜索单词",
+            "request": "launch",
+            "mainClass": "LeetCode.添加与搜索单词",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数字范围按位与",
+            "request": "launch",
+            "mainClass": "LeetCode.数字范围按位与",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Excel序号",
+            "request": "launch",
+            "mainClass": "LeetCode.Excel序号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MatrixIDebug",
+            "request": "launch",
+            "mainClass": "JAVA.MatrixIDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "搜索推荐系统",
+            "request": "launch",
+            "mainClass": "LeetCode.搜索推荐系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "负二进制数相加",
+            "request": "launch",
+            "mainClass": "LeetCode.负二进制数相加",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "长按键入",
+            "request": "launch",
+            "mainClass": "LeetCode.长按键入",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "频率跟踪器",
+            "request": "launch",
+            "mainClass": "LeetCode.频率跟踪器",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "出现最频繁的偶数元素",
+            "request": "launch",
+            "mainClass": "LeetCode.出现最频繁的偶数元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "严格回文的数字",
+            "request": "launch",
+            "mainClass": "LeetCode.严格回文的数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二进制字符串重新安排顺序需要的时间",
+            "request": "launch",
+            "mainClass": "LeetCode.二进制字符串重新安排顺序需要的时间",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "相同元素的间隔之和",
+            "request": "launch",
+            "mainClass": "LeetCode.相同元素的间隔之和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "执行所有后缀指令",
+            "request": "launch",
+            "mainClass": "LeetCode.执行所有后缀指令",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "区间内查询数字的频率",
+            "request": "launch",
+            "mainClass": "LeetCode.区间内查询数字的频率",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "座位预约管理系统",
+            "request": "launch",
+            "mainClass": "LeetCode.座位预约管理系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "替换字符串中的括号内容",
+            "request": "launch",
+            "mainClass": "LeetCode.替换字符串中的括号内容",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "保证文件名唯一",
+            "request": "launch",
+            "mainClass": "LeetCode.保证文件名唯一",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "股票价格跨度",
+            "request": "launch",
+            "mainClass": "LeetCode.股票价格跨度",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "设计地铁系统",
+            "request": "launch",
+            "mainClass": "LeetCode.设计地铁系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "按奇偶排序数组",
+            "request": "launch",
+            "mainClass": "LeetCode.按奇偶排序数组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "山羊拉丁文",
+            "request": "launch",
+            "mainClass": "LeetCode.山羊拉丁文",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "随机数索引",
+            "request": "launch",
+            "mainClass": "LeetCode.随机数索引",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "只出现一次的数字III",
+            "request": "launch",
+            "mainClass": "LeetCode.只出现一次的数字III",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "用栈实现队列",
+            "request": "launch",
+            "mainClass": "LeetCode.用栈实现队列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "多数元素II",
+            "request": "launch",
+            "mainClass": "LeetCode.多数元素II",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "合并区间",
+            "request": "launch",
+            "mainClass": "LeetCode.合并区间",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数据流中的连续整数",
+            "request": "launch",
+            "mainClass": "LeetCode.数据流中的连续整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "根据规则将箱子分类",
+            "request": "launch",
+            "mainClass": "LeetCode.根据规则将箱子分类",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MK平均值",
+            "request": "launch",
+            "mainClass": "LeetCode.MK平均值",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "设计一个验证系统",
+            "request": "launch",
+            "mainClass": "LeetCode.设计一个验证系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "解码异或后的排列",
+            "request": "launch",
+            "mainClass": "LeetCode.解码异或后的排列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "将整数按权重排序",
+            "request": "launch",
+            "mainClass": "LeetCode.将整数按权重排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "解码字母到整数映射",
+            "request": "launch",
+            "mainClass": "LeetCode.解码字母到整数映射",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "RLE迭代器",
+            "request": "launch",
+            "mainClass": "LeetCode.RLE迭代器",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "序列顺序查询",
+            "request": "launch",
+            "mainClass": "LeetCode.序列顺序查询",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "比较字符串最小字母出现频次",
+            "request": "launch",
+            "mainClass": "LeetCode.比较字符串最小字母出现频次",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "向字符串添加空格",
+            "request": "launch",
+            "mainClass": "LeetCode.向字符串添加空格",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TupleDebug",
+            "request": "launch",
+            "mainClass": "JAVA.TupleDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "众数",
+            "request": "launch",
+            "mainClass": "LeetCode.众数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "根据数字二进制下1的数目排序",
+            "request": "launch",
+            "mainClass": "LeetCode.根据数字二进制下1的数目排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "根据字符出现频率排序",
+            "request": "launch",
+            "mainClass": "LeetCode.根据字符出现频率排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串解码",
+            "request": "launch",
+            "mainClass": "LeetCode.字符串解码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字典序排数",
+            "request": "launch",
+            "mainClass": "LeetCode.字典序排数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "猜数字大小",
+            "request": "launch",
+            "mainClass": "LeetCode.猜数字大小",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数组可修改",
+            "request": "launch",
+            "mainClass": "LeetCode.数组可修改",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "在排序数组中查找元素的第一个和最后一个位置",
+            "request": "launch",
+            "mainClass": "LeetCode.在排序数组中查找元素的第一个和最后一个位置",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Areverse",
+            "request": "launch",
+            "mainClass": "Luogu.Areverse",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "QQsolver",
+            "request": "launch",
+            "mainClass": "Luogu.QQsolver",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Cipher",
+            "request": "launch",
+            "mainClass": "Luogu.Cipher",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Doukasen",
+            "request": "launch",
+            "mainClass": "JAVA.Doukasen",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "StringShift",
+            "request": "launch",
+            "mainClass": "JAVA.StringShift",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "反转字符串中的单词",
+            "request": "launch",
+            "mainClass": "LeetCode.反转字符串中的单词",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "搜索插入位置",
+            "request": "launch",
+            "mainClass": "LeetCode.搜索插入位置",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "阶乘后的零",
+            "request": "launch",
+            "mainClass": "LeetCode.阶乘后的零",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "比较版本号",
+            "request": "launch",
+            "mainClass": "JAVA.比较版本号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "最长公共前缀",
+            "request": "launch",
+            "mainClass": "LeetCode.最长公共前缀",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "盛最多水的容器",
+            "request": "launch",
+            "mainClass": "LeetCode.盛最多水的容器",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串转换整数",
+            "request": "launch",
+            "mainClass": "LeetCode.字符串转换整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "寻找两个正序数组的中位数",
+            "request": "launch",
+            "mainClass": "LeetCode.寻找两个正序数组的中位数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "装箱问题",
+            "request": "launch",
+            "mainClass": "Luogu.装箱问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "台阶问题",
+            "request": "launch",
+            "mainClass": "Luogu.台阶问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "连续自然数和",
+            "request": "launch",
+            "mainClass": "Luogu.连续自然数和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "可能的栈序列",
+            "request": "launch",
+            "mainClass": "Luogu.可能的栈序列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "幂次方",
+            "request": "launch",
+            "mainClass": "Luogu.幂次方",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DNASorting",
+            "request": "launch",
+            "mainClass": "TJU.DNASorting",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "趣味签到机",
+            "request": "launch",
+            "mainClass": "TJU.趣味签到机",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "投票",
+            "request": "launch",
+            "mainClass": "Luogu.投票",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "卷积",
+            "request": "launch",
+            "mainClass": "LeetCode.卷积",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "反转字符串",
+            "request": "launch",
+            "mainClass": "LeetCode.反转字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "压缩字符串",
+            "request": "launch",
+            "mainClass": "LeetCode.压缩字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "寻找重复数",
+            "request": "launch",
+            "mainClass": "LeetCode.寻找重复数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "四的幂",
+            "request": "launch",
+            "mainClass": "Luogu.四的幂",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "一的个数",
+            "request": "launch",
+            "mainClass": "Luogu.一的个数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "压缩技术改",
+            "request": "launch",
+            "mainClass": "Luogu.压缩技术改",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "约瑟夫",
+            "request": "launch",
+            "mainClass": "Luogu.约瑟夫",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "第K小整数",
+            "request": "launch",
+            "mainClass": "Luogu.第K小整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "质因数分解",
+            "request": "launch",
+            "mainClass": "Luogu.质因数分解",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "格雷码",
+            "request": "launch",
+            "mainClass": "LeetCode.格雷码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "整数转罗马数字",
+            "request": "launch",
+            "mainClass": "LeetCode.整数转罗马数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串相乘",
+            "request": "launch",
+            "mainClass": "LeetCode.字符串相乘",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "全排列",
+            "request": "launch",
+            "mainClass": "LeetCode.全排列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "全排列",
+            "request": "launch",
+            "mainClass": "JAVA.全排列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "统计字符",
+            "request": "launch",
+            "mainClass": "TJU.统计字符",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "animalRecognize",
+            "request": "launch",
+            "mainClass": "AI.animalRecognize",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TJU成绩查询",
+            "request": "launch",
+            "mainClass": "TJU.TJU成绩查询",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "奇数的成绩",
+            "request": "launch",
+            "mainClass": "TJU.奇数的成绩",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MinMaxAndSum",
+            "request": "launch",
+            "mainClass": "TJU.MinMaxAndSum",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "a",
+            "request": "launch",
+            "mainClass": "a",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ComplexDebug",
+            "request": "launch",
+            "mainClass": "JAVA.ComplexDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "LN",
+            "request": "launch",
+            "mainClass": "JAVA.LN",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ForgotEpisode",
+            "request": "launch",
+            "mainClass": "Luogu.ForgotEpisode",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DZYHash",
+            "request": "launch",
+            "mainClass": "Luogu.DZYHash",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AntonLetters",
+            "request": "launch",
+            "mainClass": "Luogu.AntonLetters",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "PointDebug",
+            "request": "launch",
+            "mainClass": "JAVA.PointDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SortPair",
+            "request": "launch",
+            "mainClass": "TJU.SortPair",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "帖子管理",
+            "request": "launch",
+            "mainClass": "TJU.帖子管理",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "成绩排序2",
+            "request": "launch",
+            "mainClass": "TJU.成绩排序2",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "成绩排序",
+            "request": "launch",
+            "mainClass": "TJU.成绩排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AaddB",
+            "request": "launch",
+            "mainClass": "TJU.AaddB",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "电桥",
+            "request": "launch",
+            "mainClass": "电桥",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "查找最大元素",
+            "request": "launch",
+            "mainClass": "TJU.查找最大元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "JAVA.test",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "FractionDebug",
+            "request": "launch",
+            "mainClass": "JAVA.FractionDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "产生式动物识别系统",
+            "request": "launch",
+            "mainClass": "JAVA.产生式动物识别系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "football",
+            "request": "launch",
+            "mainClass": "Luogu.football",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "seq123",
+            "request": "launch",
+            "mainClass": "Luogu.seq123",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Sleuth",
+            "request": "launch",
+            "mainClass": "Luogu.Sleuth",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "digitSums",
+            "request": "launch",
+            "mainClass": "Luogu.digitSums",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "eatingsymbol",
+            "request": "launch",
+            "mainClass": "Luogu.eatingsymbol",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "StoneMonument",
+            "request": "launch",
+            "mainClass": "Luogu.StoneMonument",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MAT",
+            "request": "launch",
+            "mainClass": "JAVA.MAT",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MyStringDebug",
+            "request": "launch",
+            "mainClass": "JAVA.MyStringDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MatrixDebug",
+            "request": "launch",
+            "mainClass": "JAVA.MatrixDebug",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵调试",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵调试",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TomsDiary",
+            "request": "launch",
+            "mainClass": "Luogu.TomsDiary",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UniClass",
+            "request": "launch",
+            "mainClass": "Luogu.UniClass",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TwistCircuit",
+            "request": "launch",
+            "mainClass": "Luogu.TwistCircuit",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "KidsRiddle",
+            "request": "launch",
+            "mainClass": "Luogu.KidsRiddle",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Interview",
+            "request": "launch",
+            "mainClass": "Luogu.Interview",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "BrainsPhoto",
+            "request": "launch",
+            "mainClass": "JAVA.BrainsPhoto",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "BigMatrix",
+            "request": "launch",
+            "mainClass": "JAVA.BigMatrix",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Matrix",
+            "request": "launch",
+            "mainClass": "JAVA.Matrix",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "編集",
+            "request": "launch",
+            "mainClass": "Luogu.編集",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SecondOrder",
+            "request": "launch",
+            "mainClass": "Luogu.SecondOrder",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二阶矩阵n次方",
+            "request": "launch",
+            "mainClass": "JAVA.二阶矩阵n次方",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MooresLaw",
+            "request": "launch",
+            "mainClass": "Luogu.MooresLaw",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "CompareLongInteger",
+            "request": "launch",
+            "mainClass": "JAVA.CompareLongInteger",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "sinx",
+            "request": "launch",
+            "mainClass": "JAVA.sinx",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Sereja",
+            "request": "launch",
+            "mainClass": "Luogu.Sereja",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Mashmokh",
+            "request": "launch",
+            "mainClass": "Luogu.Mashmokh",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "NetworkConfig",
+            "request": "launch",
+            "mainClass": "Luogu.NetworkConfig",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "activate",
+            "request": "launch",
+            "mainClass": "activate",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Bitpp",
+            "request": "launch",
+            "mainClass": "Luogu.Bitpp",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "binomial",
+            "request": "launch",
+            "mainClass": "JAVA.binomial",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "cAPSlOCK",
+            "request": "launch",
+            "mainClass": "Luogu.cAPSlOCK",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Cifera",
+            "request": "launch",
+            "mainClass": "Luogu.Cifera",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Word",
+            "request": "launch",
+            "mainClass": "Luogu.Word",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UltraFastMath",
+            "request": "launch",
+            "mainClass": "Luogu.UltraFastMath",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Irrational",
+            "request": "launch",
+            "mainClass": "Luogu.Irrational",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "YoungPhysicist",
+            "request": "launch",
+            "mainClass": "Luogu.YoungPhysicist",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "reverse",
+            "request": "launch",
+            "mainClass": "JAVA.reverse",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "multThreadTest",
+            "request": "launch",
+            "mainClass": "JAVA.multThreadTest",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Prison",
+            "request": "launch",
+            "mainClass": "Luogu.Prison",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "圧縮",
+            "request": "launch",
+            "mainClass": "Luogu.圧縮",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "CycleHit",
+            "request": "launch",
+            "mainClass": "洛谷.CycleHit",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "BouzuMekuri",
+            "request": "launch",
+            "mainClass": "洛谷.BouzuMekuri",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二进制矩阵中的特殊位置",
+            "request": "launch",
+            "mainClass": "力扣.二进制矩阵中的特殊位置",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "エンドオブビギニング",
+            "request": "launch",
+            "mainClass": "洛谷.エンドオブビギニング",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AtoZString",
+            "request": "launch",
+            "mainClass": "洛谷.AtoZString",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "无用功",
+            "request": "launch",
+            "mainClass": "洛谷.无用功",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ASCII_Art",
+            "request": "launch",
+            "mainClass": "洛谷.ASCII_Art",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Majority",
+            "request": "launch",
+            "mainClass": "洛谷.Majority",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "入浴時間",
+            "request": "launch",
+            "mainClass": "洛谷.入浴時間",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "名前の確認",
+            "request": "launch",
+            "mainClass": "洛谷.名前の確認",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "POW_AtCoder",
+            "request": "launch",
+            "mainClass": "洛谷.POW_AtCoder",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DoubleHelix",
+            "request": "launch",
+            "mainClass": "洛谷.DoubleHelix",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "OddString",
+            "request": "launch",
+            "mainClass": "洛谷.OddString",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "来月は何月",
+            "request": "launch",
+            "mainClass": "洛谷.来月は何月",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "スフィンクスのなぞなぞ",
+            "request": "launch",
+            "mainClass": "洛谷.スフィンクスのなぞなぞ",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "罠",
+            "request": "launch",
+            "mainClass": "洛谷.罠",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "罠",
+            "request": "launch",
+            "mainClass": "力扣.罠",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "好数组",
+            "request": "launch",
+            "mainClass": "力扣.好数组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数组形式加法",
+            "request": "launch",
+            "mainClass": "力扣.数组形式加法",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "比较含退格字符串",
+            "request": "launch",
+            "mainClass": "力扣.比较含退格字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "启动",
+            "request": "launch",
+            "mainClass": "启动",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "高精度进制转换",
+            "request": "launch",
+            "mainClass": "Libre.高精度进制转换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "树状数组",
+            "request": "launch",
+            "mainClass": "Libre.树状数组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "COWLINE",
+            "request": "launch",
+            "mainClass": "洛谷.COWLINE",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "个位数统计",
+            "request": "launch",
+            "mainClass": "PTA.个位数统计",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "换个格式输出整数",
+            "request": "launch",
+            "mainClass": "PTA.换个格式输出整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数列求和",
+            "request": "launch",
+            "mainClass": "PTA.数列求和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "解密",
+            "request": "launch",
+            "mainClass": "PTA.解密",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵乘法",
+            "request": "launch",
+            "mainClass": "洛谷.矩阵乘法",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串中第二大的数字",
+            "request": "launch",
+            "mainClass": "力扣.字符串中第二大的数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "检查二进制字符串字段",
+            "request": "launch",
+            "mainClass": "JAVA.检查二进制字符串字段",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "验证回文串",
+            "request": "launch",
+            "mainClass": "力扣.验证回文串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "回复密码",
+            "request": "launch",
+            "mainClass": "JAVA.回复密码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "java21",
+            "request": "launch",
+            "mainClass": "JAVA.java21",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "dp_ks",
+            "request": "launch",
+            "mainClass": "dp_ks",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "gcd大数",
+            "request": "launch",
+            "mainClass": "JAVA.gcd大数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "GCD函数",
+            "request": "launch",
+            "mainClass": "JAVA.GCD函数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串大数",
+            "request": "launch",
+            "mainClass": "JAVA.字符串大数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MATRIX",
+            "request": "launch",
+            "mainClass": "JAVA.MATRIX",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "斐波那契通项",
+            "request": "launch",
+            "mainClass": "JAVA.斐波那契通项",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵行列式",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵行列式",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "进制转换常数",
+            "request": "launch",
+            "mainClass": "JAVA.进制转换常数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "进制转换大数",
+            "request": "launch",
+            "mainClass": "JAVA.进制转换大数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "进制转换正常",
+            "request": "launch",
+            "mainClass": "JAVA.进制转换正常",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "随机题目",
+            "request": "launch",
+            "mainClass": "JAVA.随机题目",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串匹配",
+            "request": "launch",
+            "mainClass": "JAVA.字符串匹配",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "helloworld",
+            "request": "launch",
+            "mainClass": "JAVA.helloworld",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "扣1复活牢大",
+            "request": "launch",
+            "mainClass": "JAVA.扣1复活牢大",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "手机",
+            "request": "launch",
+            "mainClass": "洛谷.手机",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "禽兽传染病",
+            "request": "launch",
+            "mainClass": "洛谷.禽兽传染病",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "概率统计",
+            "request": "launch",
+            "mainClass": "JAVA.概率统计",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "复活牢大",
+            "request": "launch",
+            "mainClass": "JAVA.复活牢大",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串数字和",
+            "request": "launch",
+            "mainClass": "力扣.字符串数字和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "三除数",
+            "request": "launch",
+            "mainClass": "力扣.三除数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "可被5整除的二进制前缀",
+            "request": "launch",
+            "mainClass": "力扣.可被5整除的二进制前缀",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "有序数组平方",
+            "request": "launch",
+            "mainClass": "力扣.有序数组平方",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "旋转字符串",
+            "request": "launch",
+            "mainClass": "力扣.旋转字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "找到消失数字",
+            "request": "launch",
+            "mainClass": "力扣.找到消失数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "FizzBuzz",
+            "request": "launch",
+            "mainClass": "力扣.FizzBuzz",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "求二进制和",
+            "request": "launch",
+            "mainClass": "力扣.求二进制和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "整数转换",
+            "request": "launch",
+            "mainClass": "力扣.整数转换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "泰伯那契",
+            "request": "launch",
+            "mainClass": "力扣.泰伯那契",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "无符号取反",
+            "request": "launch",
+            "mainClass": "JAVA.无符号取反",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "三元运算输出",
+            "request": "launch",
+            "mainClass": "JAVA.三元运算输出",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "翻转图像",
+            "request": "launch",
+            "mainClass": "力扣.翻转图像",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "幂次函数",
+            "request": "launch",
+            "mainClass": "力扣.幂次函数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二分查找",
+            "request": "launch",
+            "mainClass": "力扣.二分查找",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "交替二进制",
+            "request": "launch",
+            "mainClass": "力扣.交替二进制",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "补数",
+            "request": "launch",
+            "mainClass": "力扣.补数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串相加",
+            "request": "launch",
+            "mainClass": "力扣.字符串相加",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "猜数字",
+            "request": "launch",
+            "mainClass": "力扣.猜数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串第一个唯一字符",
+            "request": "launch",
+            "mainClass": "力扣.字符串第一个唯一字符",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "自然对数逼近",
+            "request": "launch",
+            "mainClass": "JAVA.自然对数逼近",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "完全平方数",
+            "request": "launch",
+            "mainClass": "力扣.完全平方数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "反转字符串",
+            "request": "launch",
+            "mainClass": "力扣.反转字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "比特位计数",
+            "request": "launch",
+            "mainClass": "力扣.比特位计数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "java",
+            "request": "launch",
+            "mainClass": "力扣.java",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数位相加",
+            "request": "launch",
+            "mainClass": "力扣.数位相加",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二的幂次",
+            "request": "launch",
+            "mainClass": "力扣.二的幂次",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "台阶问题",
+            "request": "launch",
+            "mainClass": "力扣.台阶问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "加一",
+            "request": "launch",
+            "mainClass": "力扣.加一",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串转换整数",
+            "request": "launch",
+            "mainClass": "力扣.字符串转换整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "算数平方根",
+            "request": "launch",
+            "mainClass": "力扣.算数平方根",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二进制求和",
+            "request": "launch",
+            "mainClass": "力扣.二进制求和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "你的飞碟在这",
+            "request": "launch",
+            "mainClass": "洛谷.你的飞碟在这",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "台阶问题",
+            "request": "launch",
+            "mainClass": "洛谷.台阶问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "HW",
+            "request": "launch",
+            "mainClass": "JAVA.HW",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串操作",
+            "request": "launch",
+            "mainClass": "JAVA.字符串操作",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "开灯",
+            "request": "launch",
+            "mainClass": "洛谷.开灯",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "麦森数",
+            "request": "launch",
+            "mainClass": "洛谷.麦森数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "康托表",
+            "request": "launch",
+            "mainClass": "洛谷.康托表",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "钉子绕绳",
+            "request": "launch",
+            "mainClass": "洛谷.钉子绕绳",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "欢乐的跳",
+            "request": "launch",
+            "mainClass": "洛谷.欢乐的跳",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "子数整数",
+            "request": "launch",
+            "mainClass": "洛谷.子数整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "不高兴的津津",
+            "request": "launch",
+            "mainClass": "洛谷.不高兴的津津",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数列异或",
+            "request": "launch",
+            "mainClass": "洛谷.数列异或",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "等式判断",
+            "request": "launch",
+            "mainClass": "洛谷.等式判断",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串问题",
+            "request": "launch",
+            "mainClass": "洛谷.字符串问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "binnum",
+            "request": "launch",
+            "mainClass": "洛谷.binnum",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "shlw",
+            "request": "launch",
+            "mainClass": "JAVA.shlw",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "transform",
+            "request": "launch",
+            "mainClass": "JAVA.transform",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "小Z的矩阵",
+            "request": "launch",
+            "mainClass": "洛谷.小Z的矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "密码翻译",
+            "request": "launch",
+            "mainClass": "洛谷.密码翻译",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "奇偶ASCII",
+            "request": "launch",
+            "mainClass": "洛谷.奇偶ASCII",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "火星加法",
+            "request": "launch",
+            "mainClass": "洛谷.火星加法",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "JAVA.Main",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "最近点对",
+            "request": "launch",
+            "mainClass": "洛谷.最近点对",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数楼梯",
+            "request": "launch",
+            "mainClass": "洛谷.数楼梯",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "吸烟问题",
+            "request": "launch",
+            "mainClass": "洛谷.吸烟问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "阶乘问题",
+            "request": "launch",
+            "mainClass": "洛谷.阶乘问题",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "调和级数",
+            "request": "launch",
+            "mainClass": "洛谷.调和级数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "负进制",
+            "request": "launch",
+            "mainClass": "洛谷.负进制",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "远大目标",
+            "request": "launch",
+            "mainClass": "洛谷.远大目标",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "亲朋字符串",
+            "request": "launch",
+            "mainClass": "洛谷.亲朋字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "基因相关性",
+            "request": "launch",
+            "mainClass": "洛谷.基因相关性",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵交换行",
+            "request": "launch",
+            "mainClass": "洛谷.矩阵交换行",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "正方形内",
+            "request": "launch",
+            "mainClass": "洛谷.正方形内",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "翻转最大",
+            "request": "launch",
+            "mainClass": "洛谷.翻转最大",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "查找相似字符串",
+            "request": "launch",
+            "mainClass": "洛谷.查找相似字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "压缩技术续集",
+            "request": "launch",
+            "mainClass": "洛谷.压缩技术续集",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "成绩",
+            "request": "launch",
+            "mainClass": "洛谷.成绩",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "分类平均",
+            "request": "launch",
+            "mainClass": "洛谷.分类平均",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "杨辉三角",
+            "request": "launch",
+            "mainClass": "洛谷.杨辉三角",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "一尺之棰",
+            "request": "launch",
+            "mainClass": "洛谷.一尺之棰",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "判断奇偶",
+            "request": "launch",
+            "mainClass": "洛谷.判断奇偶",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "整数大小比较",
+            "request": "launch",
+            "mainClass": "洛谷.整数大小比较",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "文字处理",
+            "request": "launch",
+            "mainClass": "洛谷.文字处理",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "你不是神",
+            "request": "launch",
+            "mainClass": "洛谷.你不是神",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "麦克风进水",
+            "request": "launch",
+            "mainClass": "洛谷.麦克风进水",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "转8进制",
+            "request": "launch",
+            "mainClass": "洛谷.转8进制",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "学生会",
+            "request": "launch",
+            "mainClass": "洛谷.学生会",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "移动距离",
+            "request": "launch",
+            "mainClass": "洛谷.移动距离",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "奶油蛋糕",
+            "request": "launch",
+            "mainClass": "洛谷.奶油蛋糕",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "蜗牛爬杆",
+            "request": "launch",
+            "mainClass": "洛谷.蜗牛爬杆",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "打分",
+            "request": "launch",
+            "mainClass": "洛谷.打分",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "小Z矩阵",
+            "request": "launch",
+            "mainClass": "洛谷.小Z矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "双阶乘",
+            "request": "launch",
+            "mainClass": "洛谷.双阶乘",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "角谷猜想",
+            "request": "launch",
+            "mainClass": "洛谷.角谷猜想",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "月落乌啼算钱",
+            "request": "launch",
+            "mainClass": "洛谷.月落乌啼算钱",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "画矩形",
+            "request": "launch",
+            "mainClass": "洛谷.画矩形",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "递归阶乘",
+            "request": "launch",
+            "mainClass": "洛谷.递归阶乘",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "简谐合成",
+            "request": "launch",
+            "mainClass": "JAVA.简谐合成",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "随便算算",
+            "request": "launch",
+            "mainClass": "JAVA.随便算算",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "序列",
+            "request": "launch",
+            "mainClass": "洛谷.序列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "确定进制",
+            "request": "launch",
+            "mainClass": "洛谷.确定进制",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "立方根",
+            "request": "launch",
+            "mainClass": "洛谷.立方根",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "找幸运数字",
+            "request": "launch",
+            "mainClass": "洛谷.找幸运数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "寻找翻转字符串",
+            "request": "launch",
+            "mainClass": "洛谷.寻找翻转字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "东风谷早苗",
+            "request": "launch",
+            "mainClass": "洛谷.东风谷早苗",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "自幂数",
+            "request": "launch",
+            "mainClass": "洛谷.自幂数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "整型与布尔型的转换",
+            "request": "launch",
+            "mainClass": "整型与布尔型的转换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "白雪公主",
+            "request": "launch",
+            "mainClass": "洛谷.白雪公主",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "排队",
+            "request": "launch",
+            "mainClass": "洛谷.排队",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "逆序数",
+            "request": "launch",
+            "mainClass": "洛谷.逆序数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "最厉害的学生",
+            "request": "launch",
+            "mainClass": "洛谷.最厉害的学生",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "歌唱比赛",
+            "request": "launch",
+            "mainClass": "洛谷.歌唱比赛",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "维吉尼亚加密",
+            "request": "launch",
+            "mainClass": "洛谷.维吉尼亚加密",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "密码",
+            "request": "launch",
+            "mainClass": "洛谷.密码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "大数相除",
+            "request": "launch",
+            "mainClass": "洛谷.大数相除",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "java主类",
+            "request": "launch",
+            "mainClass": "JAVA.java主类",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "伴随矩阵",
+            "request": "launch",
+            "mainClass": "JAVA.伴随矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "判断对称矩阵",
+            "request": "launch",
+            "mainClass": "JAVA.判断对称矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "变换加密OJ",
+            "request": "launch",
+            "mainClass": "JAVA.变换加密OJ",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "地牢坐标计算",
+            "request": "launch",
+            "mainClass": "JAVA.地牢坐标计算",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "复数相乘",
+            "request": "launch",
+            "mainClass": "JAVA.复数相乘",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "多元方程",
+            "request": "launch",
+            "mainClass": "JAVA.多元方程",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "排列组合",
+            "request": "launch",
+            "mainClass": "JAVA.排列组合",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "斐波那契",
+            "request": "launch",
+            "mainClass": "JAVA.斐波那契",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "根号",
+            "request": "launch",
+            "mainClass": "JAVA.根号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "点到直线距离",
+            "request": "launch",
+            "mainClass": "JAVA.点到直线距离",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "直线回归方程",
+            "request": "launch",
+            "mainClass": "JAVA.直线回归方程",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵幂次",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵幂次",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵相乘",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵相乘",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵相加",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵相加",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "矩阵运算",
+            "request": "launch",
+            "mainClass": "JAVA.矩阵运算",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "离散卷积",
+            "request": "launch",
+            "mainClass": "JAVA.离散卷积",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "离散随机变量",
+            "request": "launch",
+            "mainClass": "JAVA.离散随机变量",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "简单矩阵OJ",
+            "request": "launch",
+            "mainClass": "JAVA.简单矩阵OJ",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "素数",
+            "request": "launch",
+            "mainClass": "JAVA.素数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "素数判定",
+            "request": "launch",
+            "mainClass": "JAVA.素数判定",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "自然指数函数",
+            "request": "launch",
+            "mainClass": "JAVA.自然指数函数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "行列式",
+            "request": "launch",
+            "mainClass": "JAVA.行列式",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "转置矩阵",
+            "request": "launch",
+            "mainClass": "JAVA.转置矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "迹",
+            "request": "launch",
+            "mainClass": "JAVA.迹",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "逆序数",
+            "request": "launch",
+            "mainClass": "JAVA.逆序数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "逆矩阵",
+            "request": "launch",
+            "mainClass": "JAVA.逆矩阵",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AmulB",
+            "request": "launch",
+            "mainClass": "洛谷.AmulB",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AplusB",
+            "request": "launch",
+            "mainClass": "洛谷.AplusB",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "CRAZYFENCE",
+            "request": "launch",
+            "mainClass": "洛谷.CRAZYFENCE",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "GDP计算",
+            "request": "launch",
+            "mainClass": "洛谷.GDP计算",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ISBN编号",
+            "request": "launch",
+            "mainClass": "洛谷.ISBN编号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "digit函数",
+            "request": "launch",
+            "mainClass": "洛谷.digit函数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "java主类(1)",
+            "request": "launch",
+            "mainClass": "洛谷.java主类",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "一次函数",
+            "request": "launch",
+            "mainClass": "洛谷.一次函数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "三连击",
+            "request": "launch",
+            "mainClass": "洛谷.三连击",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "三连击plus",
+            "request": "launch",
+            "mainClass": "洛谷.三连击plus",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "不与最大数相同的数字之和",
+            "request": "launch",
+            "mainClass": "洛谷.不与最大数相同的数字之和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "公约公倍数",
+            "request": "launch",
+            "mainClass": "洛谷.公约公倍数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "压缩技术",
+            "request": "launch",
+            "mainClass": "洛谷.压缩技术",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "去重排序",
+            "request": "launch",
+            "mainClass": "洛谷.去重排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "双重回文数",
+            "request": "launch",
+            "mainClass": "洛谷.双重回文数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "向量内积",
+            "request": "launch",
+            "mainClass": "洛谷.向量内积",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "回文数P1015",
+            "request": "launch",
+            "mainClass": "洛谷.回文数P1015",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "回文素数",
+            "request": "launch",
+            "mainClass": "洛谷.回文素数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "因子",
+            "request": "launch",
+            "mainClass": "洛谷.因子",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "地毯",
+            "request": "launch",
+            "mainClass": "洛谷.地毯",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "垂直柱状图",
+            "request": "launch",
+            "mainClass": "洛谷.垂直柱状图",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "多边形面积",
+            "request": "launch",
+            "mainClass": "洛谷.多边形面积",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "多项式输出",
+            "request": "launch",
+            "mainClass": "洛谷.多项式输出",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "宇宙总统",
+            "request": "launch",
+            "mainClass": "洛谷.宇宙总统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "幸运数",
+            "request": "launch",
+            "mainClass": "洛谷.幸运数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "幸运数LN",
+            "request": "launch",
+            "mainClass": "洛谷.幸运数LN",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "广义斐波那契数列",
+            "request": "launch",
+            "mainClass": "洛谷.广义斐波那契数列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "快速幂",
+            "request": "launch",
+            "mainClass": "洛谷.快速幂",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "扑克牌MAGIJA",
+            "request": "launch",
+            "mainClass": "洛谷.扑克牌MAGIJA",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数字反转",
+            "request": "launch",
+            "mainClass": "洛谷.数字反转",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "整型与布尔型的转换",
+            "request": "launch",
+            "mainClass": "洛谷.整型与布尔型的转换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "方差P1471",
+            "request": "launch",
+            "mainClass": "洛谷.方差P1471",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "晚饭",
+            "request": "launch",
+            "mainClass": "洛谷.晚饭",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "查找P2249",
+            "request": "launch",
+            "mainClass": "洛谷.查找P2249",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "求1到N的和",
+            "request": "launch",
+            "mainClass": "洛谷.求1到N的和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "求和",
+            "request": "launch",
+            "mainClass": "洛谷.求和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "玩扑克",
+            "request": "launch",
+            "mainClass": "洛谷.玩扑克",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "画三角形",
+            "request": "launch",
+            "mainClass": "洛谷.画三角形",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "眼红的MEDUSA",
+            "request": "launch",
+            "mainClass": "洛谷.眼红的MEDUSA",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "科学计数法",
+            "request": "launch",
+            "mainClass": "洛谷.科学计数法",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "粉刷矩形",
+            "request": "launch",
+            "mainClass": "洛谷.粉刷矩形",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "累计相加",
+            "request": "launch",
+            "mainClass": "洛谷.累计相加",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "缘分计算",
+            "request": "launch",
+            "mainClass": "洛谷.缘分计算",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "莲子的软件工程学",
+            "request": "launch",
+            "mainClass": "洛谷.莲子的软件工程学",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "覆盖",
+            "request": "launch",
+            "mainClass": "洛谷.覆盖",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "计算系数",
+            "request": "launch",
+            "mainClass": "洛谷.计算系数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "质数肋骨",
+            "request": "launch",
+            "mainClass": "洛谷.质数肋骨",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "转X进制",
+            "request": "launch",
+            "mainClass": "洛谷.转X进制",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "进制转10进制",
+            "request": "launch",
+            "mainClass": "洛谷.进制转10进制",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "进制转换",
+            "request": "launch",
+            "mainClass": "洛谷.进制转换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "连续自然数和",
+            "request": "launch",
+            "mainClass": "洛谷.连续自然数和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "配对数couplenumber",
+            "request": "launch",
+            "mainClass": "洛谷.配对数couplenumber",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "铺地毯",
+            "request": "launch",
+            "mainClass": "洛谷.铺地毯",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "阶乘之和",
+            "request": "launch",
+            "mainClass": "洛谷.阶乘之和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "阶乘数码",
+            "request": "launch",
+            "mainClass": "洛谷.阶乘数码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "集合运算",
+            "request": "launch",
+            "mainClass": "洛谷.集合运算",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "高低位交换",
+            "request": "launch",
+            "mainClass": "洛谷.高低位交换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "高精度ApB",
+            "request": "launch",
+            "mainClass": "洛谷.高精度ApB",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "黑白图像压缩",
+            "request": "launch",
+            "mainClass": "洛谷.黑白图像压缩",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "name": "g++.exe - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file"
+        }
+    ]
+}
