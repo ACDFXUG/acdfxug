@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "按照频率将数组升序排序",
+            "request": "launch",
+            "mainClass": "LeetCode.按照频率将数组升序排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "设计浏览器历史记录",
             "request": "launch",
             "mainClass": "JAVA.设计浏览器历史记录",
