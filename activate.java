@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 interface helloworld{
     public void println(String s);
 }
@@ -21,7 +19,7 @@ public class activate {
         num[i]=num[j];
         num[j]=temp;
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         System.out.println("你好");
     }
 }
