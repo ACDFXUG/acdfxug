@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "简易银行系统",
+            "request": "launch",
+            "mainClass": "LeetCode.简易银行系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "从双倍数组中还原原数组",
+            "request": "launch",
+            "mainClass": "LeetCode.从双倍数组中还原原数组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "找出数组中的第K大整数",
+            "request": "launch",
+            "mainClass": "LeetCode.找出数组中的第K大整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "隐藏个人信息",
             "request": "launch",
             "mainClass": "LeetCode.隐藏个人信息",
