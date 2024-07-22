@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "隐藏个人信息",
+            "request": "launch",
+            "mainClass": "LeetCode.隐藏个人信息",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "自定义字符串排序",
+            "request": "launch",
+            "mainClass": "LeetCode.自定义字符串排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "分数加减运算",
             "request": "launch",
             "mainClass": "LeetCode.分数加减运算",
