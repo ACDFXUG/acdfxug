@@ -1,7 +1,5 @@
 package LeetCode;
 
-import java.util.*;
-
 public class 简易银行系统 {
     private static class Bank{
         // Map<Integer,Long> bank;
