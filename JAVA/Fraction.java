@@ -347,7 +347,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         Matcher mat1 = Pattern.compile(reg1).matcher(ratio);
         Matcher mat2 = Pattern.compile(reg2).matcher(ratio);
         Matcher mat3 = Pattern.compile(reg3).matcher(ratio);
-
+        long signum=ratio.startsWith("-")?-1:1;
         if(mat1.matches()){
             // 匹配到了"整数.小数(循环)"格式的浮点数
             // 解析整数部分、小数部分和循环小数部分，并计算其分数表示
@@ -377,7 +377,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             BigInteger gcd=UP.gcd(LOW);
             UP=UP.divide(gcd);
             LOW=LOW.divide(gcd);
-            return new Fraction(UP.longValue(),LOW.longValue());
+            return new Fraction(UP.longValue()*signum,LOW.longValue());
         } else if(mat2.matches()){
             // 匹配到了"整数.(循环)"格式的浮点数
             // 解析整数部分和循环小数部分，并计算其分数表示
@@ -400,7 +400,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             BigInteger gcd=UP.gcd(LOW);
             UP=UP.divide(gcd);
             LOW=LOW.divide(gcd);
-            return new Fraction(UP.longValue(),LOW.longValue());
+            return new Fraction(UP.longValue()*signum,LOW.longValue());
         } else if(mat3.matches()){
             // 匹配到了常规的浮点数格式
             // 解析整数部分和小数部分，并计算其分数表示
@@ -422,7 +422,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             BigInteger gcd=UP.gcd(LOW);
             UP=UP.divide(gcd);
             LOW=LOW.divide(gcd);
-            return new Fraction(UP.longValue(),LOW.longValue());
+            return new Fraction(UP.longValue()*signum,LOW.longValue());
         } else {
             // 对于不符合特殊格式的字符串，尝试直接解析为浮点数并转换为分数形式(即整数)
             return parseFraction(Double.toString(Double.parseDouble(ratio)));
