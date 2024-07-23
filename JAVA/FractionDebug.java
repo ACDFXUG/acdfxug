@@ -2,7 +2,7 @@ package JAVA;
 
 public class FractionDebug {
     public static void main(String[] args) {
-        Fraction a=new Fraction(-1,3);
-        System.out.print(a.toLowest().equals(a));
+        String f="0.(0434782608695652173913)";
+        System.out.println(Fraction.parseFraction(f));
     }
 }

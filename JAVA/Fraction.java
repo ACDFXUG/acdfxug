@@ -340,9 +340,9 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      * @return 转换后的分数对象。返回一个Fraction对象，代表原本的浮点数转换后的分数形式。
      */
     public static Fraction parseFraction(String ratio) throws NumberFormatException{
-        String reg1="(\\d+)\\.(\\d+)\\((\\d+)\\)";
-        String reg2="(\\d+)\\.\\((\\d+)\\)";
-        String reg3="(\\d+)\\.(\\d+)";
+        String reg1="([+-]?\\d+)\\.(\\d+)\\((\\d+)\\)";
+        String reg2="([+-]?\\d+)\\.\\((\\d+)\\)";
+        String reg3="([+-]?\\d+)\\.(\\d+)";
         // 使用正则表达式匹配输入字符串，以确定其格式
         Matcher mat1 = Pattern.compile(reg1).matcher(ratio);
         Matcher mat2 = Pattern.compile(reg2).matcher(ratio);
@@ -351,39 +351,78 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         if(mat1.matches()){
             // 匹配到了"整数.小数(循环)"格式的浮点数
             // 解析整数部分、小数部分和循环小数部分，并计算其分数表示
-            long a=Long.parseLong(mat1.group(1));
-            long b=Long.parseLong(mat1.group(2));
-            long c=Long.parseLong(mat1.group(3));
+            // long a=Long.parseLong(mat1.group(1));
+            // long b=Long.parseLong(mat1.group(2));
+            // long c=Long.parseLong(mat1.group(3));
+            // int m=mat1.group(2).length();
+            // int n=mat1.group(3).length();
+            
+            // Fraction integer=new Fraction(a);
+            // Fraction dec1=new Fraction(b,power(10,m));
+            // Fraction dec2=new Fraction(c,power(10,m+n)-power(10,m));
+            
+            // return integer.add(dec1).add(dec2);
+            BigInteger a=new BigInteger(mat1.group(1));
+            BigInteger b=new BigInteger(mat1.group(2));
+            BigInteger c=new BigInteger(mat1.group(3));
             int m=mat1.group(2).length();
             int n=mat1.group(3).length();
-            
-            Fraction integer=new Fraction(a);
-            Fraction dec1=new Fraction(b,power(10,m));
-            Fraction dec2=new Fraction(c,power(10,m+n)-power(10,m));
-            
-            return integer.add(dec1).add(dec2);
+            BigInteger UP=BigInteger.ZERO,LOW=BigInteger.ONE;
+            UP=UP.add(a);
+            UP=UP.multiply(BigInteger.TEN.pow(m)).add(b);
+            LOW=BigInteger.TEN.pow(m);
+            UP=UP.multiply(BigInteger.TEN.pow(m+n).subtract(BigInteger.TEN.pow(m)))
+            .add(c.multiply(LOW));
+            LOW=LOW.multiply(BigInteger.TEN.pow(m+n).subtract(BigInteger.TEN.pow(m)));
+            BigInteger gcd=UP.gcd(LOW);
+            UP=UP.divide(gcd);
+            LOW=LOW.divide(gcd);
+            return new Fraction(UP.longValue(),LOW.longValue());
         } else if(mat2.matches()){
             // 匹配到了"整数.(循环)"格式的浮点数
             // 解析整数部分和循环小数部分，并计算其分数表示
-            long a=Long.parseLong(mat2.group(1));
-            long b=Long.parseLong(mat2.group(2));
-            int m=mat2.group(2).length();
+            // long a=Long.parseLong(mat2.group(1));
+            // long b=Long.parseLong(mat2.group(2));
+            // int m=mat2.group(2).length();
 
-            Fraction integer=new Fraction(a);
-            Fraction dec1=new Fraction(b,power(10,m)-1);
+            // Fraction integer=new Fraction(a);
+            // Fraction dec1=new Fraction(b,power(10,m)-1);
             
-            return integer.add(dec1);
+            // return integer.add(dec1);
+            BigInteger a=new BigInteger(mat2.group(1));
+            BigInteger b=new BigInteger(mat2.group(2));
+            int m=mat2.group(2).length();
+            BigInteger UP=BigInteger.ZERO,LOW=BigInteger.ONE;
+            UP=UP.add(a);
+            UP=UP.multiply(BigInteger.TEN.pow(m).subtract(BigInteger.ONE))
+            .add(b);
+            LOW=BigInteger.TEN.pow(m).subtract(BigInteger.ONE);
+            BigInteger gcd=UP.gcd(LOW);
+            UP=UP.divide(gcd);
+            LOW=LOW.divide(gcd);
+            return new Fraction(UP.longValue(),LOW.longValue());
         } else if(mat3.matches()){
             // 匹配到了常规的浮点数格式
             // 解析整数部分和小数部分，并计算其分数表示
-            long a=Long.parseLong(mat3.group(1));
-            long b=Long.parseLong(mat3.group(2));
-            int m=mat3.group(2).length();
+            // long a=Long.parseLong(mat3.group(1));
+            // long b=Long.parseLong(mat3.group(2));
+            // int m=mat3.group(2).length();
 
-            Fraction integer=new Fraction(a);
-            Fraction dec1=new Fraction(b,power(10,m));
+            // Fraction integer=new Fraction(a);
+            // Fraction dec1=new Fraction(b,power(10,m));
             
-            return integer.add(dec1);
+            // return integer.add(dec1);
+            BigInteger a=new BigInteger(mat3.group(1));
+            BigInteger b=new BigInteger(mat3.group(2));
+            int m=mat3.group(2).length();
+            BigInteger UP=BigInteger.ZERO,LOW=BigInteger.ONE;
+            UP=UP.add(a);
+            UP=UP.multiply(BigInteger.TEN.pow(m)).add(b);
+            LOW=BigInteger.TEN.pow(m);
+            BigInteger gcd=UP.gcd(LOW);
+            UP=UP.divide(gcd);
+            LOW=LOW.divide(gcd);
+            return new Fraction(UP.longValue(),LOW.longValue());
         } else {
             // 对于不符合特殊格式的字符串，尝试直接解析为浮点数并转换为分数形式(即整数)
             return parseFraction(Double.toString(Double.parseDouble(ratio)));
@@ -418,7 +457,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
                 throw new NumberFormatException("Invalid rational number format");
             }
         }else if(fraction.contains(" ")){
-            String[] parts=fraction.split(" +");
+            String[] parts=fraction.split("\\s+");
             long _up=Long.parseLong(parts[0]);
             long _low=Long.parseLong(parts[1]);
             return new Fraction(_up,_low);
@@ -585,5 +624,22 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     public int signum(){
         return up*low>0?1:up*low<0?-1:0;
     }
-    
+    public boolean isPositiveInfinity(){
+        return up==1&&low==0;
+    }
+    public static boolean isPositiveInfinity(Fraction f){
+        return f.isPositiveInfinity();
+    }
+    public boolean isNegativeInfinity(){
+        return up==-1&&low==0;
+    }
+    public static boolean isNegativeInfinity(Fraction f){
+        return f.isNegativeInfinity();
+    }
+    public boolean isNaN(){
+        return up==0&&low==0;
+    }
+    public static boolean isNaN(Fraction f){
+        return f.isNaN();
+    }
 }
