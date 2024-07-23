@@ -22,18 +22,19 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      */
     private long up,low;
     
-    public static final Fraction ONE=new Fraction(1);
-    public static final Fraction ZERO=new Fraction(0);
-    public static final Fraction HALF=new Fraction(1,2);
-    public static final Fraction THIRD=new Fraction(1,3);
-    public static final Fraction FOURTH=new Fraction(1,4);
-    public static final Fraction TEN=new Fraction(10);
-    public static final Fraction TWO=new Fraction(2);
-    public static final Fraction THREE=new Fraction(3);
-    public static final Fraction FIVE=new Fraction(5);
-    public static final Fraction POSITIVE_INFINITY=new Fraction(1, 0);
-    public static final Fraction NEGATIVE_INFINITY=new Fraction(-1, 0);
-    public static final Fraction NAN=new Fraction(0,0);
+    public static final Fraction ONE                =new Fraction(1);
+    public static final Fraction NEGATIVE_ONE       =new Fraction(-1);
+    public static final Fraction ZERO               =new Fraction(0);
+    public static final Fraction HALF               =new Fraction(1,2);
+    public static final Fraction THIRD              =new Fraction(1,3);
+    public static final Fraction FOURTH             =new Fraction(1,4);
+    public static final Fraction TEN                =new Fraction(10);
+    public static final Fraction TWO                =new Fraction(2);
+    public static final Fraction THREE              =new Fraction(3);
+    public static final Fraction FIVE               =new Fraction(5);
+    public static final Fraction POSITIVE_INFINITY  =new Fraction(1,0);
+    public static final Fraction NEGATIVE_INFINITY  =new Fraction(-1,0);
+    public static final Fraction NAN                =new Fraction(0,0);
 
 
     /**
@@ -133,6 +134,9 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     }
     public Fraction(String _f){
         this(valueOf(_f).up,valueOf(_f).low);
+    }
+    public Fraction(Fraction f){
+        this(f.up,f.low);
     }
     public long getUp(){
         return up;
@@ -608,5 +612,18 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     }
     public static boolean isNaN(Fraction f){
         return f.isNaN();
+    }
+    public String toMixedFraction(){
+        if(isGreater(ONE)){
+            long a=up/low;
+            Fraction remain=subtract(ONE);
+            return a+"("+remain.toString()+")";
+        }else if(isLess(NEGATIVE_ONE)){
+            long a=up/low;
+            Fraction remain=abs(add(ONE));
+            return a+"("+remain.toString()+")";
+        }else{
+            return toString();
+        }
     }
 }
