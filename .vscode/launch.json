@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fraction",
+            "request": "launch",
+            "mainClass": "JAVA.Fraction",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "简易银行系统",
             "request": "launch",
             "mainClass": "LeetCode.简易银行系统",

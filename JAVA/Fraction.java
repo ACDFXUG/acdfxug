@@ -458,7 +458,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         // 创建一个新的Fraction实例，分子和分母互换位置，即为当前分数的倒数
         return new Fraction(low,up);
     }
-    private List<Long> primeFactors(long n) {
+    private static List<Long> primeFactors(long n) {
         // 输入验证
         if (n <= 0) {
             throw new IllegalArgumentException("Input must be positive Integer");
@@ -479,7 +479,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         }
         return factors;
     }
-    private boolean containsNotOnly2And5(List<Long> x){
+    private static boolean containsNotOnly2And5(List<Long> x){
         for(long i:x){
             if(i!=2&&i!=5){
                 return true;
@@ -490,7 +490,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     /**
      * 高精度得到循环部分的长度
      */
-    private int loopLength(long r){
+    private static int loopLength(long r){
         BigInteger a=BigInteger.TEN;
         for(int i=1;;i++){
             if(a.pow(i).mod(BigInteger.valueOf(r))
