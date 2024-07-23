@@ -26,13 +26,14 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     public static final Fraction ZERO=new Fraction(0);
     public static final Fraction HALF=new Fraction(1,2);
     public static final Fraction THIRD=new Fraction(1,3);
+    public static final Fraction FOURTH=new Fraction(1,4);
     public static final Fraction TEN=new Fraction(10);
     public static final Fraction TWO=new Fraction(2);
     public static final Fraction THREE=new Fraction(3);
     public static final Fraction FIVE=new Fraction(5);
     public static final Fraction POSITIVE_INFINITY=new Fraction(1, 0);
     public static final Fraction NEGATIVE_INFINITY=new Fraction(-1, 0);
-    public static final Fraction NaN=new Fraction(0,0);
+    public static final Fraction NAN=new Fraction(0,0);
 
 
     /**
@@ -595,7 +596,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         return new Fraction(Math.abs(up),Math.abs(low));
     }
     public static Fraction abs(Fraction x){
-        return new Fraction(Math.abs(x.up),Math.abs(x.low));
+        return x.abs();
     }
     /**
      * 取负操作。
