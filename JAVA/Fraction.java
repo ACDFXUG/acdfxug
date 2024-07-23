@@ -328,9 +328,6 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         else
         return Long.toString(up/low); // 以整数形式返回
     }
-    public static String toString(Fraction x){
-        return x.toString();
-    }
     /**
      * 将字符串表示的浮点数转换为分数形式。
      * 此方法支持两种类型的字符串输入：常规浮点数和特殊格式的浮点数。
@@ -352,22 +349,12 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         if(mat1.matches()){
             // 匹配到了"整数.小数(循环)"格式的浮点数
             // 解析整数部分、小数部分和循环小数部分，并计算其分数表示
-            // long a=Long.parseLong(mat1.group(1));
-            // long b=Long.parseLong(mat1.group(2));
-            // long c=Long.parseLong(mat1.group(3));
-            // int m=mat1.group(2).length();
-            // int n=mat1.group(3).length();
-            
-            // Fraction integer=new Fraction(a);
-            // Fraction dec1=new Fraction(b,power(10,m));
-            // Fraction dec2=new Fraction(c,power(10,m+n)-power(10,m));
-            
-            // return integer.add(dec1).add(dec2);
             BigInteger a=new BigInteger(mat1.group(1));
             BigInteger b=new BigInteger(mat1.group(2));
             BigInteger c=new BigInteger(mat1.group(3));
             int m=mat1.group(2).length();
             int n=mat1.group(3).length();
+
             BigInteger UP=BigInteger.ZERO,LOW=BigInteger.ONE;
             UP=UP.add(a);
             UP=UP.multiply(BigInteger.TEN.pow(m)).add(b);
@@ -378,21 +365,15 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             BigInteger gcd=UP.gcd(LOW);
             UP=UP.divide(gcd);
             LOW=LOW.divide(gcd);
+
             return new Fraction(UP.longValue()*signum,LOW.longValue());
         } else if(mat2.matches()){
             // 匹配到了"整数.(循环)"格式的浮点数
             // 解析整数部分和循环小数部分，并计算其分数表示
-            // long a=Long.parseLong(mat2.group(1));
-            // long b=Long.parseLong(mat2.group(2));
-            // int m=mat2.group(2).length();
-
-            // Fraction integer=new Fraction(a);
-            // Fraction dec1=new Fraction(b,power(10,m)-1);
-            
-            // return integer.add(dec1);
             BigInteger a=new BigInteger(mat2.group(1));
             BigInteger b=new BigInteger(mat2.group(2));
             int m=mat2.group(2).length();
+
             BigInteger UP=BigInteger.ZERO,LOW=BigInteger.ONE;
             UP=UP.add(a);
             UP=UP.multiply(BigInteger.TEN.pow(m).subtract(BigInteger.ONE))
@@ -401,21 +382,15 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             BigInteger gcd=UP.gcd(LOW);
             UP=UP.divide(gcd);
             LOW=LOW.divide(gcd);
+            
             return new Fraction(UP.longValue()*signum,LOW.longValue());
         } else if(mat3.matches()){
             // 匹配到了常规的浮点数格式
             // 解析整数部分和小数部分，并计算其分数表示
-            // long a=Long.parseLong(mat3.group(1));
-            // long b=Long.parseLong(mat3.group(2));
-            // int m=mat3.group(2).length();
-
-            // Fraction integer=new Fraction(a);
-            // Fraction dec1=new Fraction(b,power(10,m));
-            
-            // return integer.add(dec1);
             BigInteger a=new BigInteger(mat3.group(1));
             BigInteger b=new BigInteger(mat3.group(2));
             int m=mat3.group(2).length();
+
             BigInteger UP=BigInteger.ZERO,LOW=BigInteger.ONE;
             UP=UP.add(a);
             UP=UP.multiply(BigInteger.TEN.pow(m)).add(b);
@@ -423,6 +398,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             BigInteger gcd=UP.gcd(LOW);
             UP=UP.divide(gcd);
             LOW=LOW.divide(gcd);
+
             return new Fraction(UP.longValue()*signum,LOW.longValue());
         } else {
             // 对于不符合特殊格式的字符串，尝试直接解析为浮点数并转换为分数形式(即整数)
@@ -444,14 +420,14 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      * @return 返回一个对应的Fraction实例。
      * @throws NumberFormatException 如果字符串是分数形式但格式不正确（如包含多个"/"），则抛出此异常。
      */
-    public static Fraction valueOf(String fraction){
+    public static Fraction valueOf(String fraction) throws NumberFormatException{
         if(fraction.contains("/")){
             // 分割字符串为分子和分母
             String[] parts=fraction.split("/");
             if(parts.length==2){
                 // 将字符串转换为长整型并创建Fraction实例
                 long _up=Long.parseLong(parts[0]),
-                _low=Long.parseLong(parts[1]);
+                    _low=Long.parseLong(parts[1]);
                 return new Fraction(_up,_low);
             }else{
                 // 如果字符串分割后不是两个部分，则格式不正确
@@ -459,8 +435,8 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             }
         }else if(fraction.contains(" ")){
             String[] parts=fraction.split("\\s+");
-            long _up=Long.parseLong(parts[0]);
-            long _low=Long.parseLong(parts[1]);
+            long _up=Long.parseLong(parts[0]),
+                _low=Long.parseLong(parts[1]);
             return new Fraction(_up,_low);
         }else{
             return parseFraction(fraction);
@@ -481,14 +457,14 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     private List<Long> primeFactors(long n) {
         // 输入验证
         if (n <= 0) {
-            throw new IllegalArgumentException("输入必须是正整数");
+            throw new IllegalArgumentException("Input must be positive Integer");
         }
-        List<Long> factors=new ArrayList<Long>();
+        List<Long> factors=new ArrayList<>();
         // 对于大数，优化质因数检测过程
         for(;(n&1)==0;n>>=1){
             factors.add(2L);
         }
-        for(long i=3;i*i<=n;i+=2){ // 仅检查奇数作为因数，同时上限优化为sqrt(n)
+        for(long i=3;i*i<=n;i+=2L){ // 仅检查奇数作为因数，同时上限优化为sqrt(n)
             for(;n%i==0;n/=i){
                 factors.add(i);
             }
@@ -539,25 +515,15 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         }
         // 如果分母的质因数中只包含2和5，可以以简单分数形式表示
         if(!containsNotOnly2And5(factors)){
-            return Double.toString(_up_*1.0/_low_).replaceAll("0+$",""); // 以小数形式返回，移除末尾的零
+            return Double.toString(_up_*1.0/_low_)
+            .replaceAll("0+$",""); // 以小数形式返回，移除末尾的零
         }else{
-            /*
-            int[] twofive=new int[2];
-            factors.forEach(i->{
-                if(i==2){
-                    twofive[0]++;
-                }else if(i==5){
-                    twofive[1]++;
-                }
-            });
-            int two=twofive[0],five=twofive[1];
-            */
             // 统计质因数中2和5的个数
             int two=0,five=0;
             for(long i:factors){
-                if(i==2){
+                if(i==2L){
                     two++;
-                }else if(i==5){
+                }else if(i==5L){
                     five++;
                 }
             }
