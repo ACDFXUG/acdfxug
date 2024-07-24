@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "最流行的视频创作者",
+            "request": "launch",
+            "mainClass": "LeetCode.最流行的视频创作者",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "删除字符使频率相同",
+            "request": "launch",
+            "mainClass": "LeetCode.删除字符使频率相同",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "按身高排序",
+            "request": "launch",
+            "mainClass": "LeetCode.按身高排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Fraction",
             "request": "launch",
             "mainClass": "JAVA.Fraction",
