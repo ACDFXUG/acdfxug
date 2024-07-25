@@ -19,11 +19,12 @@ public class 设计一个验证系统 {
             }
         }
         int countUnexpiredTokens(int currentTime) {
-            return (int)token
+            return token
             .values()
             .parallelStream()
             .filter(i->i>currentTime)
-            .count();
+            .mapToInt(i->1)
+            .sum();
         }
     }
     public static void main(String[] args) {
