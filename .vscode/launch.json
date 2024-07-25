@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "通配符匹配",
+            "request": "launch",
+            "mainClass": "LeetCode.通配符匹配",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "最流行的视频创作者",
             "request": "launch",
             "mainClass": "LeetCode.最流行的视频创作者",
