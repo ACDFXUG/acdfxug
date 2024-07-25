@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "统计特殊字母的数量II",
+            "request": "launch",
+            "mainClass": "LeetCode.统计特殊字母的数量II",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "将字符串中的元音字母排序",
+            "request": "launch",
+            "mainClass": "LeetCode.将字符串中的元音字母排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "通配符匹配",
             "request": "launch",
             "mainClass": "LeetCode.通配符匹配",

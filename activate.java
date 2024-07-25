@@ -20,6 +20,7 @@ public class activate {
         num[j]=temp;
     }
     public static void main(String[] args){
-        System.out.println("你好");
+        Integer a=1,b=0;
+        System.out.println(a==b);
     }
 }
