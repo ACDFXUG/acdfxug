@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "黑白图像压缩",
             "request": "launch",
             "mainClass": "Luogu.黑白图像压缩",
