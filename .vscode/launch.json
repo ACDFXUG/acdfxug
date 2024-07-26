@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "找出加密后的字符串",
+            "request": "launch",
+            "mainClass": "LeetCode.找出加密后的字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "统计特殊字母的数量II",
             "request": "launch",
             "mainClass": "LeetCode.统计特殊字母的数量II",
