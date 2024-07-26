@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "黑白图像压缩",
+            "request": "launch",
+            "mainClass": "Luogu.黑白图像压缩",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "求一次函数解析式",
+            "request": "launch",
+            "mainClass": "Luogu.求一次函数解析式",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "找出加密后的字符串",
             "request": "launch",
             "mainClass": "LeetCode.找出加密后的字符串",
