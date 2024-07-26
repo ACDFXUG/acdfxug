@@ -1,67 +1,64 @@
 package Luogu;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.regex.*;
 
 public class 黑白图像压缩 {
-    static int POWER(int a, int x){
-        int pow=1;
-        for(int i=1;i<=x;i++){
-            pow*=a;
-        }
-        return pow;
+    static final Pattern ONE=Pattern.compile("1+");
+    static final Pattern ZERO=Pattern.compile("0+");
+    static String binFormat(int k,int a){
+        String bin=Integer.toBinaryString(a);
+        while(bin.length()<k) bin="0"+bin;
+        return bin;
     }
-    static String eight_bit(int n){
-        String bit=Integer.toString(n, 2);
-        for(int i=0;i<8-Integer.toString(n, 2).length();i++){
-            bit="0"+bit;
-        }
-        return bit;
-    }
-    static String eight_bit_pixel(String s){
-        int n=s.length();
-        String BIN=Integer.toString(n, 2);
-        for(int i=1;i<8-Integer.toString(n,2).length();i++){
-            BIN="0"+BIN;
-        }
-        return s.contains("0")?"0"+BIN:"1"+BIN;
-    }
-    static String toDECSTR(String bin){
-        int dec=0;
-        char[] p=bin.toCharArray();
-        for(int i=bin.length()-1;i>=0;i--){
-            if(p[i]=='1'){
-                dec+=POWER(2,bin.length()-1-i);
-            }
-        }
-        return Integer.toString(dec);
-    }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+        StringBuilder pixel=new StringBuilder();
         int n=sc.nextInt();
-        String pixel="";
-        for(int v=0;v<n/8;v++){
-            pixel+=eight_bit(sc.nextInt());
+        for(int i=1;i<=n/8;i++){
+            String bin=binFormat(8,Integer.parseInt(sc.next()));
+            pixel.append(bin);
         }
-        int L=pixel.length(),t=0;
-        pixel+="#";
-        char[] p=pixel.toCharArray();
-        String[] PIXEL=new String[L];
-        for(int i=0;i<p.length;i++){
-            if(p[i]!=p[0]){
-                char[] q=new char[i],P=new char[p.length-i];
-                for(int j=0;j<i;j++){
-                    q[j]=p[j];
+        List<Integer> zip=new ArrayList<>();
+        List<Integer> ones=new ArrayList<>();
+        List<Integer> zeros=new ArrayList<>();
+        for(Matcher one=ONE.matcher(pixel);one.find();){
+            String t="1"+binFormat(7,one.group().length());
+            ones.add(Integer.parseInt(t,2));
+        }
+        for(Matcher zero=ZERO.matcher(pixel);zero.find();){
+            String t="0"+binFormat(7,zero.group().length());
+            zeros.add(Integer.parseInt(t,2));
+        }
+        if(pixel.charAt(0)=='1'){
+            for(int x=0,y=0,lx=ones.size(),ly=zeros.size();
+            ;){
+                if(x<lx){
+                    zip.add(ones.get(x++));
                 }
-                for(int j=0;j<p.length-i;j++){
-                    P[j]=p[j+i];
+                if(y<ly){
+                    zip.add(zeros.get(y++));
                 }
-                PIXEL[t++]=new String(q);
-                p=P.clone();
-                i=0;
+                if(x==lx&&y==ly){
+                    break;
+                }
+            }
+        }else{
+            for(int x=0,y=0,lx=ones.size(),ly=zeros.size();
+            ;){
+                if(y<ly){
+                    zip.add(zeros.get(y++)); 
+                }
+                if(x<lx){
+                    zip.add(ones.get(x++));
+                }
+                if(x==lx&&y==ly){
+                    break;
+                }
             }
         }
-        for(int i=0;i<t;i++){
-            System.out.printf("%s ",toDECSTR(eight_bit_pixel(PIXEL[i])));
+        for(int i=0,l=zip.size();i<l;i++){
+            System.out.print(i==l-1?zip.get(i):zip.get(i)+" ");
         }
         sc.close();
     }
