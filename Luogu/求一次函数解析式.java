@@ -79,5 +79,6 @@ public class 求一次函数解析式 {
                 System.out.println("y="+A+"x+"+B);
             }
         }
+        sc.close();
     }
 }
