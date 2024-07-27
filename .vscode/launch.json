@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "不重复数字",
+            "request": "launch",
+            "mainClass": "Luogu.不重复数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数列离散化",
+            "request": "launch",
+            "mainClass": "Luogu.数列离散化",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "东风谷早苗",
             "request": "launch",
             "mainClass": "Luogu.东风谷早苗",
