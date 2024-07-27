@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "文件读取",
+            "request": "launch",
+            "mainClass": "JAVA.文件读取",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "不重复数字",
             "request": "launch",
             "mainClass": "Luogu.不重复数字",
