@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "东风谷早苗",
+            "request": "launch",
+            "mainClass": "Luogu.东风谷早苗",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "全排列问题",
             "request": "launch",
             "mainClass": "Luogu.全排列问题",
