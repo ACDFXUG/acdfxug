@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "航班预订统计",
+            "request": "launch",
+            "mainClass": "LeetCode.航班预订统计",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "键值映射",
+            "request": "launch",
+            "mainClass": "LeetCode.键值映射",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "找到K个最接近的元素",
             "request": "launch",
             "mainClass": "LeetCode.找到K个最接近的元素",
