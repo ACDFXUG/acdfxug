@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "通过投票对团队排名",
+            "request": "launch",
+            "mainClass": "LeetCode.通过投票对团队排名",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "前K个高频元素",
+            "request": "launch",
+            "mainClass": "LeetCode.前K个高频元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数组中重复的数据",
+            "request": "launch",
+            "mainClass": "LeetCode.数组中重复的数据",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "航班预订统计",
             "request": "launch",
             "mainClass": "LeetCode.航班预订统计",
