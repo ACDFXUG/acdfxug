@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "查询带键的排列",
+            "request": "launch",
+            "mainClass": "LeetCode.查询带键的排列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "设计一个支持增量操作的栈",
+            "request": "launch",
+            "mainClass": "LeetCode.设计一个支持增量操作的栈",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "竖直打印单词",
+            "request": "launch",
+            "mainClass": "LeetCode.竖直打印单词",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "通过投票对团队排名",
             "request": "launch",
             "mainClass": "LeetCode.通过投票对团队排名",
