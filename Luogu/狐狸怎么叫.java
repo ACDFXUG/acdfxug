@@ -9,6 +9,7 @@ public class 狐狸怎么叫 {
         while(T-->0){
             Map<String,String> animal=new HashMap<>();
             String t=sc.nextLine();
+            System.out.println(t);
             String[] shout=sc.nextLine().split(" ");
             while(true){
                 String s=sc.nextLine();
