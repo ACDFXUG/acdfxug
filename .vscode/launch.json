@@ -3,6 +3,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "狐狸怎么叫",
+            "request": "launch",
+            "mainClass": "Luogu.狐狸怎么叫",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "VJEKO",
+            "request": "launch",
+            "mainClass": "Luogu.VJEKO",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UTRKA",
+            "request": "launch",
+            "mainClass": "Luogu.UTRKA",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "密码合规",
+            "request": "launch",
+            "mainClass": "Luogu.密码合规",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "生日",
+            "request": "launch",
+            "mainClass": "Luogu.生日",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "奖学金",
+            "request": "launch",
+            "mainClass": "Luogu.奖学金",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "查询带键的排列",
             "request": "launch",
             "mainClass": "LeetCode.查询带键的排列",
