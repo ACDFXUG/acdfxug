@@ -40,7 +40,7 @@ public class 成绩排序 {
         List<Integer> rankIndex=new ArrayList<>();
         for(int i=0;i<rank.size();i++){
             if(i==0||rank.get(i).compareTo(rank.get(i-1))!=0){
-                r=i+1;
+                r=i+1;  //important!
             }
             rankIndex.add(r);
         }
