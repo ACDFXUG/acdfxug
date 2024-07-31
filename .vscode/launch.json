@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Barrel",
+            "request": "launch",
+            "mainClass": "Luogu.Barrel",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "旗鼓相当的对手",
+            "request": "launch",
+            "mainClass": "Luogu.旗鼓相当的对手",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "评等级",
+            "request": "launch",
+            "mainClass": "Luogu.评等级",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "排队",
+            "request": "launch",
+            "mainClass": "Luogu.排队",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "头像上传",
+            "request": "launch",
+            "mainClass": "Luogu.头像上传",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "成绩排序",
             "request": "launch",
             "mainClass": "Luogu.成绩排序",

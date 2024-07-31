@@ -1,39 +1,56 @@
 package Luogu;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class 排队 {
      public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int T=sc.nextInt();
-        for(int s=1;s<=T;s++){
-            int n=sc.nextInt(),b=0,g=0;
-            int[] GENDER=new int[n];
-            double[] HEIGHT=new double[n],B_H=new double[n],G_H=new double[n];
+        while(T-->0){
+            int n=sc.nextInt();
+            byte[] gender=new byte[n];
             for(int i=0;i<n;i++){
-                GENDER[i]=sc.nextInt();
+                gender[i]=sc.nextByte();
             }
+            String[] height=new String[n];
             for(int i=0;i<n;i++){
-                HEIGHT[i]=sc.nextDouble();
+                height[i]=sc.next();
             }
+            List<String> boy=new ArrayList<>();
+            List<String> girl=new ArrayList<>();
             for(int i=0;i<n;i++){
-                if(GENDER[i]==0){
-                    G_H[g]=HEIGHT[i];
-                    g++;
+                if(gender[i]==1){
+                    boy.add(height[i]);
                 }else{
-                    B_H[b]=HEIGHT[i];
-                    b++;
+                    girl.add(height[i]);
                 }
             }
-            Arrays.sort(G_H,0,g);
-            Arrays.sort(B_H,0,b);
-            for(int i=0;i<g;i++){
-                System.out.printf(i==g-1?"%s\n":"%s ",G_H[i]);
-            }
-            for(int i=0;i<b;i++){
-                System.out.printf(i==b-1?"%s\n":"%s ",B_H[i]);
-            }
+            boy.sort((strH1,strH2)->{
+                double h1=Double.parseDouble(strH1);
+                double h2=Double.parseDouble(strH2);
+                if(h1>h2){
+                    return 1;
+                }else if(h1<h2){
+                    return-1;
+                }else{
+                    return 0;
+                }
+            });
+            girl.sort((strH1,strH2)->{
+                double h1=Double.parseDouble(strH1);
+                double h2=Double.parseDouble(strH2);
+                if(h1>h2){
+                    return 1;
+                }else if(h1<h2){
+                    return-1;
+                }else{
+                    return 0;
+                }
+            });
+            girl.forEach(H->System.out.print(H+" "));
+            System.out.println();
+            boy.forEach(H->System.out.print(H+" "));
+            System.out.println();
         }
         sc.close();
     }
