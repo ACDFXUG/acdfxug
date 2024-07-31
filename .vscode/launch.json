@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "成绩排序",
+            "request": "launch",
+            "mainClass": "Luogu.成绩排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "狐狸怎么叫",
             "request": "launch",
             "mainClass": "Luogu.狐狸怎么叫",
