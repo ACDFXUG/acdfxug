@@ -180,7 +180,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         return x.getInt();
     }
     public String getFloat(){
-        return subtract(new Fraction(up/low)).toRational();
+        return subtract(new Fraction(up/low)).toDecimal();
     }
     public static String getFloat(Fraction x){
         return x.getFloat();
@@ -522,7 +522,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      *         如果可以表示为带小数的形式，则返回带小数的形式，且移除小数末尾的零；
      *         如果无法表示为简单的整数比或带小数的形式，则返回其小数形式的字符串。
      */
-    public String toRational(){
+    public String toDecimal(){
         // 将当前数值转换为最简形式的分子和分母
         long _up_=toLowest().up,_low_=toLowest().low;
         // 获取分母的质因数分解
@@ -563,8 +563,8 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      * @param rational 一个Fraction对象，代表待转换的有理数。
      * @return 返回表示该有理数的字符串形式。
      */
-    public static String toRational(Fraction rational){
-        return rational.toRational();
+    public static String toDecimal(Fraction rational){
+        return rational.toDecimal();
     }
     public Fraction max(Fraction y){
         return isGreater(y)?this:y;
