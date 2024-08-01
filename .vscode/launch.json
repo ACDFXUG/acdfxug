@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "仅含1的子串数",
+            "request": "launch",
+            "mainClass": "LeetCode.仅含1的子串数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "电话号码",
             "request": "launch",
             "mainClass": "Luogu.电话号码",
