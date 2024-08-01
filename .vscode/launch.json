@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "电话号码",
+            "request": "launch",
+            "mainClass": "Luogu.电话号码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Barrel",
             "request": "launch",
             "mainClass": "Luogu.Barrel",
