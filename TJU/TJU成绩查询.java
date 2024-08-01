@@ -3,7 +3,9 @@ package TJU;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class GradeTJU{
+
+public class TJU成绩查询 {
+    private static class GradeTJU{
     String name;
     double score1,
         score2,
@@ -46,7 +48,6 @@ class GradeTJU{
     }
 }
 
-public class TJU成绩查询 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         double[] point=new double[5];

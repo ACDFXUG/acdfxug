@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 
 public class 成绩排序2 {
-    static class StudentGrades implements Comparable<StudentGrades>{
+    private static class StudentGrades implements Comparable<StudentGrades>{
         final String name;
         final int age,score;
         public StudentGrades(String name,int age,int score){

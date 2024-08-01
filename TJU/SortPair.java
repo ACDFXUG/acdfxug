@@ -3,7 +3,10 @@ package TJU;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Pair implements Comparable<Pair> {
+
+
+public class SortPair {
+    private static class Pair implements Comparable<Pair> {
     final int first, second;
     Pair(int first, int second){
         this.first = first;
@@ -28,8 +31,6 @@ class Pair implements Comparable<Pair> {
         }
     }
 }
-
-public class SortPair {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N=sc.nextInt();
