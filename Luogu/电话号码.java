@@ -42,5 +42,6 @@ public class 电话号码 {
                 System.out.println(E.getKey()+" "+E.getValue());
             }
         }
+        sc.close();
     }
 }
