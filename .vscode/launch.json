@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "medusa眼红",
+            "request": "launch",
+            "mainClass": "Luogu.medusa眼红",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "机器翻译",
+            "request": "launch",
+            "mainClass": "Luogu.机器翻译",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "NumberBaseConversion",
             "request": "launch",
             "mainClass": "Luogu.NumberBaseConversion",
