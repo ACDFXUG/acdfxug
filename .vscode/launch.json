@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "相对名次",
+            "request": "launch",
+            "mainClass": "LeetCode.相对名次",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "medusa眼红",
             "request": "launch",
             "mainClass": "Luogu.medusa眼红",
