@@ -26,7 +26,7 @@ public class 进制转换大数 {
         return ans;
     }
     static String toString(BigInteger str,int _val){
-        /*
+        
         if(_val<2||_val==10||_val>36){
             return str.toString();
         }
@@ -34,18 +34,19 @@ public class 进制转换大数 {
         BigInteger Radix=BigInteger.valueOf(_val);
         for(BigInteger m=str,zero=BigInteger.ZERO;
         m.compareTo(zero)==1;m=m.divide(Radix)){
-            ans=Radix_Char.charAt(m.mod(Radix).intValue())+ans;
+            ans=RADIX.charAt(m.mod(Radix).intValue())+ans;
         }
         return ans.isEmpty()?"0":ans;
-        */
-        return str.toString(_val);
+        
+        // return str.toString(_val);
     }
     static String rToR(String str,int r,int R){  //r进制转R进制
         return toString(parseBigInteger(str, r), R);
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        
+        String s=sc.next();
+        System.out.println(rToR(s,10,16));
         sc.close();
     }
 }

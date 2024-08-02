@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NumberBaseConversion",
+            "request": "launch",
+            "mainClass": "Luogu.NumberBaseConversion",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "仅含1的子串数",
             "request": "launch",
             "mainClass": "LeetCode.仅含1的子串数",
