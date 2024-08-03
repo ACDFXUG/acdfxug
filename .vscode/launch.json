@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "谁拿了最多奖学金",
+            "request": "launch",
+            "mainClass": "Luogu.谁拿了最多奖学金",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "相对名次",
             "request": "launch",
             "mainClass": "LeetCode.相对名次",
