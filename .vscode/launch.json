@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "统计单词数",
+            "request": "launch",
+            "mainClass": "Luogu.统计单词数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "iCowB",
+            "request": "launch",
+            "mainClass": "JAVA.iCowB",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "单词分类",
             "request": "launch",
             "mainClass": "Luogu.单词分类",
