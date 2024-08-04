@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "单词分类",
+            "request": "launch",
+            "mainClass": "Luogu.单词分类",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "谁拿了最多奖学金",
             "request": "launch",
             "mainClass": "Luogu.谁拿了最多奖学金",
@@ -3175,7 +3182,7 @@
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

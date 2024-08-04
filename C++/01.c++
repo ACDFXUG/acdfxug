@@ -1,5 +1,6 @@
 #include <iostream>
 
 int main(){
-    unsigned long long a='t0';
+    unsigned long long a='t';
+    std::cout << a;
 }
