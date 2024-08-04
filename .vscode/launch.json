@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "重新排列句子中的单词",
+            "request": "launch",
+            "mainClass": "LeetCode.重新排列句子中的单词",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "HTML实体解析器",
+            "request": "launch",
+            "mainClass": "LeetCode.HTML实体解析器",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "统计单词数",
             "request": "launch",
             "mainClass": "Luogu.统计单词数",
