@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Spreadsheets",
+            "request": "launch",
+            "mainClass": "Luogu.Spreadsheets",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "RegistrationSystem",
+            "request": "launch",
+            "mainClass": "Luogu.RegistrationSystem",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "排队顺序",
             "request": "launch",
             "mainClass": "Luogu.排队顺序",
