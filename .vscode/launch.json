@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "排队顺序",
+            "request": "launch",
+            "mainClass": "Luogu.排队顺序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "机器猫斗恶龙",
+            "request": "launch",
+            "mainClass": "Luogu.机器猫斗恶龙",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "古籍翻译",
+            "request": "launch",
+            "mainClass": "Luogu.古籍翻译",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "重新排列句子中的单词",
             "request": "launch",
             "mainClass": "LeetCode.重新排列句子中的单词",
