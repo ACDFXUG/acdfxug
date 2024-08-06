@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PerformanceTest",
+            "request": "launch",
+            "mainClass": "Luogu.PerformanceTest",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "AdjacentSwaps",
             "request": "launch",
             "mainClass": "Luogu.AdjacentSwaps",
