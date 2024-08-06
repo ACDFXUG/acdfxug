@@ -74,7 +74,7 @@ public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
             }
         }
         for(int i=0;i<length;i++){
-            Class<?> clazz=tuple.get(i).getClass();
+            Class<?> clazz=getClassOf(i);
             if(!Comparable.class.isAssignableFrom(clazz)){
                 throw new Error("ClassNotComparableException");
             }else{
