@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AdjacentSwaps",
+            "request": "launch",
+            "mainClass": "Luogu.AdjacentSwaps",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "编码",
+            "request": "launch",
+            "mainClass": "Luogu.编码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Spreadsheets",
             "request": "launch",
             "mainClass": "Luogu.Spreadsheets",

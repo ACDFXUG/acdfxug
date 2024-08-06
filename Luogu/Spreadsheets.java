@@ -20,7 +20,10 @@ public class Spreadsheets {
         StringBuilder sb=new StringBuilder();
         while(col>0){
             int scalar=col%26;
-            if(scalar==0)scalar=26;
+            if(scalar==0){
+                scalar=26;
+                col-=26;
+            }
             sb.append((char)('A'+scalar-1));
             col/=26;
         }
@@ -46,6 +49,7 @@ public class Spreadsheets {
                 }
             }
         }
+        // System.out.println(intToExcel(N));
         sc.close();
     }
 }
