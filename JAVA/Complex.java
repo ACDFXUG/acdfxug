@@ -149,11 +149,11 @@ public class Complex{
      */
     public static Complex valueOf(String z){
         /* 正则表达式匹配实数形式的字符串 */
-        String onlyReal="[-+]?[0-9]*\\.?[0-9]+";
+        String onlyReal="[-+]?\\d*\\.?\\d+";
         /* 正则表达式匹配虚数形式的字符串 */
-        String onlyImaginary="[-+]?[0-9]*\\.?[0-9]+i";
+        String onlyImaginary="[-+]?\\d*\\.?\\d+i";
         /* 正则表达式匹配复数形式的字符串 */
-        String realAndImaginary="([-+]?[0-9]*\\.?[0-9]+)?([+-][0-9]*\\.?[0-9]+i)";
+        String realAndImaginary="([-+]?\\d*\\.?\\d+)?([-+]\\d*\\.?\\d+i)";
         
         /* 根据字符串的匹配模式返回相应的复数实例 */
         if(Pattern.matches(onlyReal,z)){
