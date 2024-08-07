@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "共通要素",
+            "request": "launch",
+            "mainClass": "Luogu.共通要素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ManyReplacement",
+            "request": "launch",
+            "mainClass": "Luogu.ManyReplacement",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AbbreviateFox",
+            "request": "launch",
+            "mainClass": "Luogu.AbbreviateFox",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "くつがくっつく",
+            "request": "launch",
+            "mainClass": "Luogu.くつがくっつく",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "RestoringPassword",
+            "request": "launch",
+            "mainClass": "Luogu.RestoringPassword",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "PerformanceTest",
             "request": "launch",
             "mainClass": "Luogu.PerformanceTest",
