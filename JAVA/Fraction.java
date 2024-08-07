@@ -234,46 +234,124 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     public Fraction clone(){
         return new Fraction(up,low);
     }
+    /**
+     * 将另一个Fraction对象与当前Fraction对象相加。
+     * 
+     * @param y 要相加的Fraction对象。
+     * @return 返回一个新的Fraction对象表示相加的结果。
+     */
     public Fraction add(Fraction y){
+        // 创建一个新的Fraction对象来存储结果，避免中间计算。
         return toLowest(new Fraction(up*y.low+y.up*low,low*y.low));
     }
+    /**
+     * 将当前分数与另一个分数相加，并将结果赋值给当前分数
+     * 
+     * @param y 另一个要相加的分数
+     * @return 返回相加后的当前分数对象
+     */
     public Fraction addEqual(Fraction y){
+        // 调用add方法计算当前分数与另一个分数的和
         Fraction add=add(y);
+        // 将计算结果的分子赋值给当前分数的分子
         up=add.up;
+        // 将计算结果的分母赋值给当前分数的分母
         low=add.low;
+        // 返回当前分数对象
         return this;
     }
+    /**
+     * 计算两个分数的差。
+     * 
+     * @param y 被减去的分数。
+     * @return 返回一个新的 Fraction 对象表示两个分数相减的结果。
+     */
     public Fraction subtract(Fraction y){
+        // 创建一个新的 Fraction 对象来存储结果，避免修改原分数的值。
+        // up*y.low-y.up*low 计算结果的分子，low*y.low 计算共同的分母。
         return toLowest(new Fraction(up*y.low-y.up*low,low*y.low));
     }
+    /**
+     * 从当前分数减去另一个分数，并返回当前对象
+     * 该方法首先计算两个分数的差，然后将当前对象的分子和分母更新为计算结果
+     * 
+     * @param y 要减去的分数对象
+     * @return 返回修改后的当前分数对象
+     */
     public Fraction subtractEqual(Fraction y){
+        // 计算两个分数的差
         Fraction subtract=subtract(y);
+        // 更新当前分数的分子和分母
         up=subtract.up;
         low=subtract.low;
+        // 返回修改后的当前分数对象
         return this;
     }
+    /**
+     * 实现两个分数的乘法。
+     * 
+     * 此方法接收另一个Fraction对象作为参数，并返回一个新的Fraction对象表示两者的乘积。
+     * 结果会被简化到最简形式。
+     * 
+     * @param y 要与当前分数相乘的Fraction对象。
+     * @return 返回一个新的Fraction对象表示两个分数相乘的结果，并且结果是最简形式。
+     */
     public Fraction multiply(Fraction y){
+        // 创建一个新的Fraction对象来存储两个分数分子与分母相乘的结果
         return toLowest(new Fraction(up*y.up,low*y.low));
     }
+    /**
+     * 将当前分数对象与另一个分数对象相乘，并更新当前对象的值。
+     * 
+     * @param y 要与之相乘的分数对象。
+     * @return 返回更新后的当前分数对象。
+     * 
+     * 此方法将当前分数与另一个分数相乘，有效地更新了当前分数的分子和分母。
+     * 它避免创建新的分数对象，而是直接更新当前对象，并返回它。
+     */
     public Fraction multiplyEqual(Fraction y){
+        // 首先，将两个分数相乘并将结果存储在一个新的分数对象中
         Fraction multiply=multiply(y);
+        // 更新当前分数的分子和分母为新分数对象的值
         up=multiply.up;
         low=multiply.low;
+        // 返回更新后的当前分数对象
         return this;
     }
+    /**
+     * 该方法实现当前分数除以另一个分数的操作。
+     * 通过将被除数分数倒置并相乘来实现分数之间的除法运算。
+     * 
+     * @param y 作为除数的Fraction对象。
+     * @return 返回一个新的Fraction对象，表示除法的结果。
+     */
     public Fraction divide(Fraction y){
+        // 创建一个新的Fraction对象，通过对被除数进行倒置相乘，然后简化到最简形式并返回
         return toLowest(new Fraction(up*y.low,low*y.up));
     }
+    /**
+     * 将当前分数除以另一个分数，并将结果赋值给当前分数
+     * 
+     * @param y 另一个分数
+     * @return 返回修改后的当前分数对象
+     */
     public Fraction divideEqual(Fraction y){
+        // 先计算除法的结果
         Fraction divide=divide(y);
+        // 将计算结果的分子赋值给当前分数的分子
         up=divide.up;
+        // 将计算结果的分母赋值给当前分数的分母
         low=divide.low;
+        // 返回修改后的当前分数对象
         return this;
     }
     public Fraction power(int n){
-        Fraction ans=ONE;
-        for(int i=1;i<=n;i++){
-            ans=ans.multiply(this);
+        Fraction ans=ONE,THIS=clone();
+        for(;n>0;n>>=1){
+            if((n&1)==1){
+                ans.multiplyEqual(THIS);
+            }
+            THIS.multiplyEqual(THIS);
         }
         return ans;
     }
@@ -287,7 +365,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         return x.power(n);
     }
     private boolean isGreaterThanZero(){
-        return up*low>0;
+        return up>0&&low>0;
     }
     /**
      * 比较当前分数对象与另一个分数对象的大小。
@@ -339,7 +417,8 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      * 如果高（up）除以低（low）的结果不是整数，则以分数形式返回，如"3/2"。
      * 如果结果是整数，则以该整数的字符串形式返回，如"5"。
      * 
-     * @return 表示当前对象数值的字符串。如果结果为分数，则形式为"up/low"；如果结果为整数，则为整数的字符串形式。
+     * @return 表示当前对象数值的字符串。如果结果为分数，则形式为"up/low"；
+     * <p>如果结果为整数，则为整数的字符串形式。
      */
     public String toString(){
         // 判断高和低数值相除是否为整数
@@ -612,13 +691,13 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         return up*low>0?1:up*low<0?-1:0;
     }
     public boolean isPositiveInfinity(){
-        return up==1&&low==0;
+        return up>0&&low==0;
     }
     public static boolean isPositiveInfinity(Fraction f){
         return f.isPositiveInfinity();
     }
     public boolean isNegativeInfinity(){
-        return up==-1&&low==0;
+        return up<0&&low==0;
     }
     public static boolean isNegativeInfinity(Fraction f){
         return f.isNegativeInfinity();
