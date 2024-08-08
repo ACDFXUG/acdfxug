@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "全排列II",
+            "request": "launch",
+            "mainClass": "LeetCode.全排列II",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "CaesarCipher",
+            "request": "launch",
+            "mainClass": "Luogu.CaesarCipher",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AverageNumbers",
+            "request": "launch",
+            "mainClass": "Luogu.AverageNumbers",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "共通要素",
             "request": "launch",
             "mainClass": "Luogu.共通要素",
