@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DigitProduct",
+            "request": "launch",
+            "mainClass": "Luogu.DigitProduct",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串p型编码",
+            "request": "launch",
+            "mainClass": "Luogu.字符串p型编码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "期末考试成绩",
+            "request": "launch",
+            "mainClass": "Luogu.期末考试成绩",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "全排列II",
             "request": "launch",
             "mainClass": "LeetCode.全排列II",
