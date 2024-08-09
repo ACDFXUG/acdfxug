@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Kitty猫基因编码",
+            "request": "launch",
+            "mainClass": "Luogu.Kitty猫基因编码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "DigitProduct",
             "request": "launch",
             "mainClass": "Luogu.DigitProduct",
