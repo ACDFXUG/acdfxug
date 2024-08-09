@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Tree",
+            "request": "launch",
+            "mainClass": "JAVA.Tree",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "将数字变成0的操作次数",
+            "request": "launch",
+            "mainClass": "LeetCode.将数字变成0的操作次数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Kitty猫基因编码",
             "request": "launch",
             "mainClass": "Luogu.Kitty猫基因编码",
