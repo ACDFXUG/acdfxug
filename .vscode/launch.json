@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "求解方程",
+            "request": "launch",
+            "mainClass": "LeetCode.求解方程",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "两个列表的最小索引总和",
+            "request": "launch",
+            "mainClass": "LeetCode.两个列表的最小索引总和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "有序数组中的单一元素",
+            "request": "launch",
+            "mainClass": "LeetCode.有序数组中的单一元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Tree",
             "request": "launch",
             "mainClass": "JAVA.Tree",
