@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EvenOddIncrements",
+            "request": "launch",
+            "mainClass": "Luogu.EvenOddIncrements",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "求解方程",
             "request": "launch",
             "mainClass": "LeetCode.求解方程",
