@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "おとぎの国の高橋君",
+            "request": "launch",
+            "mainClass": "Luogu.おとぎの国の高橋君",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "天下一序数",
             "request": "launch",
             "mainClass": "Luogu.天下一序数",
