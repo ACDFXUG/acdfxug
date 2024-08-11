@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "天下一序数",
+            "request": "launch",
+            "mainClass": "Luogu.天下一序数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "試験",
+            "request": "launch",
+            "mainClass": "Luogu.試験",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "入力チェック",
+            "request": "launch",
+            "mainClass": "Luogu.入力チェック",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "電卓",
+            "request": "launch",
+            "mainClass": "Luogu.電卓",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "EvenOddIncrements",
             "request": "launch",
             "mainClass": "Luogu.EvenOddIncrements",
