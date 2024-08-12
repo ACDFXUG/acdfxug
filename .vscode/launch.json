@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SortingQueries",
+            "request": "launch",
+            "mainClass": "Luogu.SortingQueries",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "StringFormation",
+            "request": "launch",
+            "mainClass": "Luogu.StringFormation",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "おとぎの国の高橋君",
             "request": "launch",
             "mainClass": "Luogu.おとぎの国の高橋君",
