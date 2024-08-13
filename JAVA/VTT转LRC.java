@@ -39,10 +39,10 @@ public class VTT转LRC {
                 FileWriter lrcWriter=new FileWriter(LRC);
                 while(sc.hasNextLine()){
                     String line=sc.nextLine();
-                    if(!line.equals("WEBVTT")&&!isNumber(line)){
+                    if(!line.startsWith("WEBVTT")&&!isNumber(line)){
                         if(line.isEmpty()){
                             lrcWriter.write(System.lineSeparator());
-                        }else if(line.startsWith("00:")){
+                        }else if(line.contains("-->")){
                             lrcWriter.write("["+line.substring(3,11)+"]");
                         }else{
                             lrcWriter.write(line);
