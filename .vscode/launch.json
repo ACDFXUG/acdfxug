@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "VTT转LRC",
+            "request": "launch",
+            "mainClass": "JAVA.VTT转LRC",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "SortingQueries",
             "request": "launch",
             "mainClass": "Luogu.SortingQueries",
