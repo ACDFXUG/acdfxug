@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "神秘排列",
+            "request": "launch",
+            "mainClass": "Luogu.神秘排列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "GPSTextEntry",
+            "request": "launch",
+            "mainClass": "Luogu.GPSTextEntry",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "VTT转LRC",
             "request": "launch",
             "mainClass": "JAVA.VTT转LRC",
