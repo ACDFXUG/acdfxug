@@ -8,7 +8,7 @@ unsigned int POWER(unsigned int a,unsigned int x){
     }
     return pow;
 }
-string EXCAHNGE(string num){
+string EXCHANGE(string num){
     string ex="";
     for(int i=0;i<32;i++){
         ex+=(i<16)?num[i+16]:num[i-16];
@@ -43,7 +43,7 @@ int main(){
     for(int i=0;i<32-L;i++){
         bin="0"+bin;
     }
-    string BIN=EXCAHNGE(bin);
+    string BIN=EXCHANGE(bin);
     printf("%s",toDECSTR(BIN).c_str());
     return 0;
 }
