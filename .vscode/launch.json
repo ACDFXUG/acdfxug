@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SORT",
+            "request": "launch",
+            "mainClass": "Luogu.SORT",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "神秘排列",
             "request": "launch",
             "mainClass": "Luogu.神秘排列",
