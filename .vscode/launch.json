@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Hillwer编码",
+            "request": "launch",
+            "mainClass": "Luogu.Hillwer编码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "图像压缩",
             "request": "launch",
             "mainClass": "Luogu.图像压缩",
