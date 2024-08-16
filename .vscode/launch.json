@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "图像压缩",
+            "request": "launch",
+            "mainClass": "Luogu.图像压缩",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "R格式",
+            "request": "launch",
+            "mainClass": "Luogu.R格式",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "SORT",
             "request": "launch",
             "mainClass": "Luogu.SORT",
