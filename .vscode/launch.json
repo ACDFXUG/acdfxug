@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "数据排序",
+            "request": "launch",
+            "mainClass": "Luogu.数据排序",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Hillwer编码",
             "request": "launch",
             "mainClass": "Luogu.Hillwer编码",
