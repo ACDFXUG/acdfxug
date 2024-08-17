@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "求和II",
+            "request": "launch",
+            "mainClass": "Luogu.求和II",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "数据排序",
             "request": "launch",
             "mainClass": "Luogu.数据排序",
