@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Jokewithpermutation",
+            "request": "launch",
+            "mainClass": "Luogu.Jokewithpermutation",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "求和II",
             "request": "launch",
             "mainClass": "Luogu.求和II",
