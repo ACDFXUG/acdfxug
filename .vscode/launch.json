@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ABC113C_ID",
+            "request": "launch",
+            "mainClass": "Luogu.ABC113C_ID",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Jokewithpermutation",
             "request": "launch",
             "mainClass": "Luogu.Jokewithpermutation",
