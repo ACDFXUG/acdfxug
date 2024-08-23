@@ -32,6 +32,15 @@ public class Tree {
             RIGHT=new TreeNode<T>(right);
             return this;
         }
+        TreeNode<T> getLeft(){
+            return LEFT;
+        }
+        TreeNode<T> getRight(){
+            return RIGHT;
+        }
+        T getData(){
+            return data;
+        }
         static<T> List<T> preOrdered(TreeNode<T> root){
             final List<T> preOrder=new ArrayList<>();
             if(root==null) return preOrder;
@@ -41,6 +50,9 @@ public class Tree {
                 preOrder.addAll(preOrdered(root.RIGHT));
             }
             return preOrder;
+        }
+        List<T> preOrdered(){
+            return preOrdered(this);
         }
         static<T> List<T> inOrdered(TreeNode<T> root){
             final List<T> inOrder=new ArrayList<>();
@@ -52,6 +64,9 @@ public class Tree {
             }
             return inOrder;
         }
+        List<T> inOrdered(){
+            return inOrdered(this);
+        }
         static<T> List<T> postOrdered(TreeNode<T> root){
             final List<T> postOrder=new ArrayList<>();
             if(root==null) return postOrder;
@@ -61,6 +76,9 @@ public class Tree {
                 postOrder.add(root.data);
             }
             return postOrder;
+        }
+        List<T> postOrdered(){
+            return postOrdered(this);
         }
         @SuppressWarnings("unchecked")
         public boolean equals(Object tree){
@@ -96,8 +114,20 @@ public class Tree {
                 }
             }
         }
+        public int hashCode(){
+            List<T> pre=preOrdered();
+            List<T> in=inOrdered();
+            int hash=17;
+            for(T ele:pre){
+                hash=31*hash+ele.hashCode();
+            }
+            for(T ele:in){
+                hash=31*hash+ele.hashCode();
+            }
+            return hash;
+        }
         public String toString(){
-            return preOrdered(this).toString();
+            return preOrdered().toString();
         }
     }
     public static void main(String[] args) {
@@ -107,8 +137,10 @@ public class Tree {
         root1.LEFT.addLeft(4).addRight(5);
         root2.addLeft(root1);
         root2.addRight(root1);
+        System.out.println(root1.getLeft());
+        System.out.println(root2.getRight().getData());
         System.out.println(TreeNode.preOrdered(root1));
         System.out.println(TreeNode.inOrdered(root1));
-        System.out.println(TreeNode.postOrdered(root1));
+        System.out.println(root1.postOrdered());
     }
 }
