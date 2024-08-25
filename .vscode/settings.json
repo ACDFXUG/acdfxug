@@ -97,7 +97,8 @@
         "ios": "cpp",
         "queue": "cpp",
         "version": "cpp",
-        "stdio_s.h": "c"
+        "stdio_s.h": "c",
+        "text_encoding": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,
