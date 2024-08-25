@@ -98,7 +98,8 @@
         "queue": "cpp",
         "version": "cpp",
         "stdio_s.h": "c",
-        "text_encoding": "cpp"
+        "text_encoding": "cpp",
+        "winsock.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,
