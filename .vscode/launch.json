@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "方程求解",
+            "request": "launch",
+            "mainClass": "Luogu.方程求解",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "LifeWithoutZeros",
+            "request": "launch",
+            "mainClass": "Luogu.LifeWithoutZeros",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "NeolexicographicOrder",
             "request": "launch",
             "mainClass": "Luogu.NeolexicographicOrder",

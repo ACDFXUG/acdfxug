@@ -96,7 +96,8 @@
         "stdlib.h": "c",
         "ios": "cpp",
         "queue": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "stdio_s.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,
