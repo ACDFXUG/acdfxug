@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NeolexicographicOrder",
+            "request": "launch",
+            "mainClass": "Luogu.NeolexicographicOrder",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "PostalCode",
+            "request": "launch",
+            "mainClass": "Luogu.PostalCode",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "ABC113C_ID",
             "request": "launch",
             "mainClass": "Luogu.ABC113C_ID",
