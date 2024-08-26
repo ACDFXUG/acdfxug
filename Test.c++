@@ -8,7 +8,7 @@ class Test{
 };
 
 int main(){
-    Test test(1,2,3);
+    Test test={1,2,3};
     printf("%d %d %d\n",test.a,test.b,test.c);
     // std::cout<<__cplusplus<<std::endl;
 }
