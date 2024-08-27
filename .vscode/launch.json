@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "宇宙人からのメッセージ",
+            "request": "launch",
+            "mainClass": "Luogu.宇宙人からのメッセージ",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "分類たん",
             "request": "launch",
             "mainClass": "Luogu.分類たん",
