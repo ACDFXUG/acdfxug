@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "分類たん",
+            "request": "launch",
+            "mainClass": "Luogu.分類たん",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DoubleCamelCase",
+            "request": "launch",
+            "mainClass": "Luogu.DoubleCamelCase",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "OptimalRecomm",
+            "request": "launch",
+            "mainClass": "Luogu.OptimalRecomm",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "スペース高橋君",
+            "request": "launch",
+            "mainClass": "Luogu.スペース高橋君",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "方程求解",
             "request": "launch",
             "mainClass": "Luogu.方程求解",
