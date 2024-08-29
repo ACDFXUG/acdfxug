@@ -99,7 +99,9 @@
         "version": "cpp",
         "stdio_s.h": "c",
         "text_encoding": "cpp",
-        "winsock.h": "c"
+        "winsock.h": "c",
+        "generator": "cpp",
+        "print": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,

@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "设计食物评分系统",
+            "request": "launch",
+            "mainClass": "LeetCode.设计食物评分系统",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "外星密码",
+            "request": "launch",
+            "mainClass": "Luogu.外星密码",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Reverse$Rotate",
+            "request": "launch",
+            "mainClass": "Luogu.Reverse$Rotate",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "宇宙人からのメッセージ",
             "request": "launch",
             "mainClass": "Luogu.宇宙人からのメッセージ",
@@ -3582,7 +3603,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
-            "args": [],
+            "args": [
+                "-std=c++26"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
