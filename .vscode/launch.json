@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "最多单词数的发件人",
+            "request": "launch",
+            "mainClass": "LeetCode.最多单词数的发件人",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "设计食物评分系统",
             "request": "launch",
             "mainClass": "LeetCode.设计食物评分系统",
