@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "外观数列",
+            "request": "launch",
+            "mainClass": "LeetCode.外观数列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "两数相加_链表",
+            "request": "launch",
+            "mainClass": "LeetCode.两数相加_链表",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "最多单词数的发件人",
             "request": "launch",
             "mainClass": "LeetCode.最多单词数的发件人",
