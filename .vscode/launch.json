@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "独特的电子邮件地址",
+            "request": "launch",
+            "mainClass": "LeetCode.独特的电子邮件地址",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "子域名访问计数",
+            "request": "launch",
+            "mainClass": "LeetCode.子域名访问计数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "外观数列",
             "request": "launch",
             "mainClass": "LeetCode.外观数列",
