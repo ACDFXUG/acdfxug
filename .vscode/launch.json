@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "价格减免",
+            "request": "launch",
+            "mainClass": "LeetCode.价格减免",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "独特的电子邮件地址",
             "request": "launch",
             "mainClass": "LeetCode.独特的电子邮件地址",
