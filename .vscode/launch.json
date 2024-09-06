@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "翻倍以链表形式表示的数字",
+            "request": "launch",
+            "mainClass": "LeetCode.翻倍以链表形式表示的数字",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "价格减免",
             "request": "launch",
             "mainClass": "LeetCode.价格减免",
@@ -3646,7 +3653,7 @@
             "request": "launch",
             "program": "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
             "args": [
-                "-std=c++26"
+                "-std=c++23"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

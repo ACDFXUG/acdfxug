@@ -26,7 +26,7 @@ public class VTT转LRC {
                 }
             }
         }else{
-            throw new NullPointerException("the directory is empty!");
+            throw new NullPointerException("the directory has no .vtt file!!!");
         }
         return vtt;
     }
