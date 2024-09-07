@@ -226,7 +226,14 @@ class Complex{
     Complex operator ^=(const long double &a){
         return *this=Complex(cos(a*arg()),sin(a*arg()))*pow(magnitude(),a);
     }
-    double operator [](const int &i) const{
+    long double operator [](const int &i) const{
+        switch(i){
+            case 0:return _real;
+            case 1:return _imag;
+            default:throw "Index out of range";
+        }
+    }
+    long double &operator [](const int &i){
         switch(i){
             case 0:return _real;
             case 1:return _imag;

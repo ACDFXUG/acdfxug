@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "魔法照片",
+            "request": "launch",
+            "mainClass": "Luogu.魔法照片",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "翻倍以链表形式表示的数字",
             "request": "launch",
             "mainClass": "LeetCode.翻倍以链表形式表示的数字",
