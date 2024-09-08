@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "铅球杯",
+            "request": "launch",
+            "mainClass": "Luogu.铅球杯",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "阅读理解",
+            "request": "launch",
+            "mainClass": "Luogu.阅读理解",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "梦熊培养计划",
+            "request": "launch",
+            "mainClass": "Luogu.梦熊培养计划",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "多数元素",
+            "request": "launch",
+            "mainClass": "LeetCode.多数元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "魔法照片",
             "request": "launch",
             "mainClass": "Luogu.魔法照片",
