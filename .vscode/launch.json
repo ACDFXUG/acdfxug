@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "木材仓库",
+            "request": "launch",
+            "mainClass": "Luogu.木材仓库",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "整数校验器",
+            "request": "launch",
+            "mainClass": "Luogu.整数校验器",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "铅球杯",
             "request": "launch",
             "mainClass": "Luogu.铅球杯",
