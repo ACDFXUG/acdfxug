@@ -2,7 +2,7 @@ package JAVA;
 
 import java.io.*;
 import java.util.*;
-import java.awt.Desktop;
+// import java.awt.Desktop;
 
 /**
  * 将60分钟内的vtt文件转换为lrc文件
@@ -16,16 +16,18 @@ public class VTT转LRC {
             return false;
         }
     }
-    static List<File> getVTTFiles(File directory){  //dir/*.vtt
+    static List<File> getVTTFiles(File directory)
+    throws NullPointerException{  //dir/*.vtt
         List<File> vtt=new ArrayList<>();
         File[] vtts=directory.listFiles();
-        if(vtts!=null){
+        if(vtts!=null&&vtts.length!=0){
             for(File VTT:vtts){
                 if(VTT.isFile()&&VTT.getName().endsWith(".vtt")){
                     vtt.add(VTT);
                 }
             }
-        }else{
+        }
+        if(vtt.isEmpty()){
             throw new NullPointerException("the directory has no .vtt file!!!");
         }
         return vtt;
@@ -60,16 +62,15 @@ public class VTT转LRC {
         String vttPath="C:/Users/yaoyu/Desktop/VTTS";
         File VTTS=new File(vttPath);
         if(VTTS.isDirectory()){
-            List<File> vtts=getVTTFiles(VTTS);
             try{
+                List<File> vtts=getVTTFiles(VTTS);
                 List<File> lrcs=vttToLrc(vtts);
-                System.out.println("转换成功！");
-                System.out.println("转换后的文件为：");
+                System.out.println("转换成功!\n转换后的文件为:");
                 lrcs.forEach(F->System.out.println(F.getName()));
                 vtts.forEach(File::delete);
                 // Desktop.getDesktop().open(VTTS);
-            }catch(IOException ioe){
-                System.out.println("转换失败！");
+            }catch(NullPointerException | IOException __e){
+                System.out.println("转换失败");
             }
         }
     }
