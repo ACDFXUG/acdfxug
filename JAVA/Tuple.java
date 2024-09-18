@@ -7,6 +7,14 @@ import java.lang.reflect.*;
 public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
     private int length;
     private List<Object> tuple;
+    public Tuple(){
+        this.length=0;
+        this.tuple=new ArrayList<>();
+    }
+    public Tuple(int capacity){
+        this.length=0;
+        this.tuple=new ArrayList<>(capacity);
+    }
     public Tuple(Object... args){
         this.length=args.length;
         this.tuple=new ArrayList<>();
@@ -41,7 +49,12 @@ public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
         return tuple.toArray();
     }
     public String toString(){
-        return Arrays.toString(toArray());
+        StringJoiner str=new StringJoiner(", ","[","]");
+        for(Object obj:this){
+            String className=obj.getClass().getSimpleName();
+            str.add(className+":"+obj.toString());
+        }
+        return str.toString();
     }
     public void clear(){
         length=0;
@@ -51,10 +64,10 @@ public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
         if(this==tp){
             return true;
         }
-        if(tp==null||this==null||!(tp instanceof Tuple)){
+        if(tp==null||!(tp instanceof Tuple)){
             return false;
         }
-        if(length!=((Tuple)tp).size()){
+        if(length!=((Tuple)tp).length){
             return false;
         }
         return tuple.equals(((Tuple)tp).tuple);

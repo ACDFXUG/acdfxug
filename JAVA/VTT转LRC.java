@@ -66,7 +66,7 @@ public class VTT转LRC {
                 List<File> vtts=getVTTFiles(VTTS);
                 List<File> lrcs=vttToLrc(vtts);
                 System.out.println("转换成功!\n转换后的文件为:");
-                lrcs.forEach(F->System.out.println(F.getName()));
+                lrcs.forEach(LRC->System.out.println(LRC.getName()));
                 vtts.forEach(File::delete);
                 // Desktop.getDesktop().open(VTTS);
             }catch(NullPointerException | IOException __e){

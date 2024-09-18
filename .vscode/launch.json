@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "探索未知",
+            "request": "launch",
+            "mainClass": "Luogu.探索未知",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "HarpTuning",
+            "request": "launch",
+            "mainClass": "Luogu.HarpTuning",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "RadixTable",
+            "request": "launch",
+            "mainClass": "Luogu.RadixTable",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "NAPOR",
             "request": "launch",
             "mainClass": "Luogu.NAPOR",
