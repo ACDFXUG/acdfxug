@@ -3,7 +3,7 @@ package Luogu;
 import java.util.Scanner;
 
 public class 探索未知 {
-    static final class Fraction
+    static private final class Fraction
     implements Comparable<Fraction>{
         int up,low;
         Fraction(){

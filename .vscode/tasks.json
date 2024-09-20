@@ -29,7 +29,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "-std=c++26",
+                "-std=c++23",
                 "-o",
                 "${fileDirname}\\EXE\\$CPPDEBUG$.exe"
             ],

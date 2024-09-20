@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "计算分数",
+            "request": "launch",
+            "mainClass": "Luogu.计算分数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "数字反转升级",
+            "request": "launch",
+            "mainClass": "Luogu.数字反转升级",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "顺序的分数",
+            "request": "launch",
+            "mainClass": "Luogu.顺序的分数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "回文平方数",
+            "request": "launch",
+            "mainClass": "Luogu.回文平方数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "探索未知",
             "request": "launch",
             "mainClass": "Luogu.探索未知",
