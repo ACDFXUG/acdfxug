@@ -1,7 +1,6 @@
 package Luogu;
 
 import java.util.*;
-import java.math.*;
 
 public class 回文平方数 {
     static boolean isPalindrome(String B){
