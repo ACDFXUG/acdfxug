@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "方程求解P1689",
+            "request": "launch",
+            "mainClass": "Luogu.方程求解P1689",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "计算分数",
             "request": "launch",
             "mainClass": "Luogu.计算分数",
