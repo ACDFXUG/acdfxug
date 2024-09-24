@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "夏幻的考试",
+            "request": "launch",
+            "mainClass": "Luogu.夏幻的考试",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "图书新编",
+            "request": "launch",
+            "mainClass": "Luogu.图书新编",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "影子字符串",
+            "request": "launch",
+            "mainClass": "Luogu.影子字符串",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "方程求解P1689",
             "request": "launch",
             "mainClass": "Luogu.方程求解P1689",
