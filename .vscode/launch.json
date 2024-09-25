@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LLQQ",
+            "request": "launch",
+            "mainClass": "JAVA.LLQQ",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ZIGZAG",
+            "request": "launch",
+            "mainClass": "Luogu.ZIGZAG",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "夏幻的考试",
             "request": "launch",
             "mainClass": "Luogu.夏幻的考试",

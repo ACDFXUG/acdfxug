@@ -8,6 +8,11 @@ import java.util.*;
  * 将60分钟内的vtt文件转换为lrc文件
  */
 public class VTT转LRC {
+    /**
+     * 判断字符串是否为数字
+     * @param s 要判断的字符串
+     * @return 字符串是数字返回true，否则返回false
+     */
     static boolean isNumber(String s){
         try{
             Integer.parseInt(s);
@@ -16,6 +21,12 @@ public class VTT转LRC {
             return false;
         }
     }
+    /**
+     * 获取目录下所有vtt文件
+     * @param directory 要获取的文件夹
+     * @return 所有vtt文件的List
+     * @throws NullPointerException 找不到vtt文件
+     */
     static List<File> getVTTFiles(File directory)
     throws NullPointerException{  //dir/*.vtt
         List<File> vtt=new ArrayList<>();
@@ -32,6 +43,12 @@ public class VTT转LRC {
         }
         return vtt;
     }
+    /**
+     * 批量将vtt文件转换为lrc文件
+     * @param vtt vtt文件的List
+     * @return lrc文件的List
+     * @throws IOException
+     */
     static List<File> vttToLrc(List<File> vtt) throws IOException{ //60分钟内的lrc
         List<File> lrc=new ArrayList<>();
         for(File vtts:vtt){
