@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BallotAnalyzingDevice",
+            "request": "launch",
+            "mainClass": "Luogu.BallotAnalyzingDevice",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "BUKA",
+            "request": "launch",
+            "mainClass": "Luogu.BUKA",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SRETAN",
+            "request": "launch",
+            "mainClass": "Luogu.SRETAN",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "化简单词",
+            "request": "launch",
+            "mainClass": "Luogu.化简单词",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "LLQQ",
             "request": "launch",
             "mainClass": "JAVA.LLQQ",
