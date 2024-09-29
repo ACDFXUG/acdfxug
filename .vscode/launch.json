@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "昕昕的不等式组",
+            "request": "launch",
+            "mainClass": "Luogu.昕昕的不等式组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "BallotAnalyzingDevice",
             "request": "launch",
             "mainClass": "Luogu.BallotAnalyzingDevice",
