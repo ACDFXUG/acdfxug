@@ -8,6 +8,7 @@ import java.util.*;
  * 将60分钟内的vtt文件转换为lrc文件
  */
 public class VTT转LRC {
+    static final String vttPath="C:/Users/yaoyu/Desktop/VTTS";
     /**
      * 判断字符串是否为数字
      * @param s 要判断的字符串
@@ -29,36 +30,32 @@ public class VTT转LRC {
      */
     static List<File> getVTTFiles(File directory)
     throws NullPointerException{  //dir/*.vtt
-        List<File> vtt=new ArrayList<>();
-        File[] vtts=directory.listFiles();
-        if(vtts!=null&&vtts.length!=0){
-            for(File VTT:vtts){
-                if(VTT.isFile()&&VTT.getName().endsWith(".vtt")){
-                    vtt.add(VTT);
-                }
-            }
-        }
-        if(vtt.isEmpty()){
-            throw new NullPointerException("the directory has no .vtt file!!!");
-        }
-        return vtt;
+        File[] vtts=directory.listFiles(
+            vtt->vtt.getName().endsWith(".vtt")
+        );
+        return switch(vtts.length){
+            case 0->throw new NullPointerException(
+                "the directory has no .vtt file!!!"
+            );
+            default->List.of(vtts); 
+        };
     }
     /**
      * 批量将vtt文件转换为lrc文件
-     * @param vtt vtt文件的List
+     * @param vtts vtt文件的List
      * @return lrc文件的List
      * @throws IOException
      */
-    static List<File> vttToLrc(List<File> vtt) throws IOException{ //60分钟内的lrc
-        List<File> lrc=new ArrayList<>();
-        for(File vtts:vtt){
-            Scanner sc=new Scanner(vtts);
-            File LRC=new File(vtts.getAbsolutePath().replace(".vtt",".lrc"));
-            if(!LRC.exists()&&LRC.createNewFile()){
-                FileWriter lrcWriter=new FileWriter(LRC);
+    static List<File> vttToLrc(List<File> vtts) throws IOException{ //60分钟内的lrc
+        List<File> lrcs=new ArrayList<>();
+        for(File vtt:vtts){
+            Scanner sc=new Scanner(vtt);
+            File lrc=new File(vtt.getAbsolutePath().replace(".vtt",".lrc"));
+            if(!lrc.exists()&&lrc.createNewFile()){
+                FileWriter lrcWriter=new FileWriter(lrc);
                 while(sc.hasNextLine()){
                     String line=sc.nextLine();
-                    if(!line.startsWith("WEBVTT")&&!isNumber(line)){
+                    if(!(line.startsWith("WEBVTT")||isNumber(line))){
                         if(line.isEmpty()){
                             lrcWriter.write(System.lineSeparator());
                         }else if(line.contains("-->")){
@@ -69,26 +66,22 @@ public class VTT转LRC {
                     }
                 }
                 lrcWriter.close();
-                lrc.add(LRC);
+                lrcs.add(lrc);
             }
             sc.close();
         }
-        return lrc;
+        return lrcs;
     }
     public static void main(String[] args) {
-        String vttPath="C:/Users/yaoyu/Desktop/VTTS";
-        File VTTS=new File(vttPath);
-        if(VTTS.isDirectory()){
-            try{
-                List<File> vtts=getVTTFiles(VTTS);
-                List<File> lrcs=vttToLrc(vtts);
-                System.out.println("转换成功!\n转换后的文件为:");
-                lrcs.forEach(LRC->System.out.println(LRC.getName()));
-                vtts.forEach(File::delete);
-                // Desktop.getDesktop().open(VTTS);
-            }catch(NullPointerException | IOException __e){
-                System.out.println("转换失败");
-            }
+        File vttDir=new File(vttPath);
+        try{
+            List<File> vtts=getVTTFiles(vttDir);  //获取所有vtt文件
+            List<File> lrcs=vttToLrc(vtts);  //转换为lrc文件
+            System.out.println("转换成功!\n转换后的文件为:");
+            vtts.forEach(File::delete);  //删除vtt文件
+            lrcs.forEach(LRC->System.out.println(LRC.getName()));  //输出文件名
+        }catch(NullPointerException | IOException __e){
+            System.out.println("转换失败");
         }
     }
 }
