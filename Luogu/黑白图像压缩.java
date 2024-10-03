@@ -31,8 +31,7 @@ public class 黑白图像压缩 {
             zeros.add(Integer.parseInt(t,2));
         }
         if(pixel.charAt(0)=='1'){
-            for(int x=0,y=0,lx=ones.size(),ly=zeros.size();
-            ;){
+            for(int x=0,y=0,lx=ones.size(),ly=zeros.size();;){
                 if(x<lx){
                     zip.add(ones.get(x++));
                 }
@@ -44,8 +43,7 @@ public class 黑白图像压缩 {
                 }
             }
         }else{
-            for(int x=0,y=0,lx=ones.size(),ly=zeros.size();
-            ;){
+            for(int x=0,y=0,lx=ones.size(),ly=zeros.size();;){
                 if(y<ly){
                     zip.add(zeros.get(y++)); 
                 }

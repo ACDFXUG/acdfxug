@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "存在重复元素II",
+            "request": "launch",
+            "mainClass": "LeetCode.存在重复元素II",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "存在重复元素",
+            "request": "launch",
+            "mainClass": "LeetCode.存在重复元素",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "昕昕的不等式组",
             "request": "launch",
             "mainClass": "Luogu.昕昕的不等式组",
