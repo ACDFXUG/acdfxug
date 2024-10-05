@@ -19,7 +19,7 @@ public class 相对名次 {
                 case 0->"Gold Medal";
                 case 1->"Silver Medal";
                 case 2->"Bronze Medal";
-                default ->String.valueOf(i+1);
+                default->String.valueOf(i+1);
             };
         }
         return ans;

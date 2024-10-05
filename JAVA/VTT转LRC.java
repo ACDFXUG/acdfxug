@@ -47,7 +47,7 @@ public class VTT转LRC {
      * @throws IOException
      */
     static List<File> vttToLrc(List<File> vtts) throws IOException{ //60分钟内的lrc
-        List<File> lrcs=new ArrayList<>();
+        List<File> lrcs=new ArrayList<>(vtts.size());
         for(File vtt:vtts){
             Scanner sc=new Scanner(vtt);
             File lrc=new File(vtt.getAbsolutePath().replace(".vtt",".lrc"));

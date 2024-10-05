@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "数组大小减半",
+            "request": "launch",
+            "mainClass": "LeetCode.数组大小减半",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "IP地址无效化",
+            "request": "launch",
+            "mainClass": "LeetCode.IP地址无效化",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "查询后的偶数和",
+            "request": "launch",
+            "mainClass": "LeetCode.查询后的偶数和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "存在重复元素II",
             "request": "launch",
             "mainClass": "LeetCode.存在重复元素II",
