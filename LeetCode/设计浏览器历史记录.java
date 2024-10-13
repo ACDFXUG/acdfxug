@@ -4,40 +4,32 @@ import java.util.*;
 
 public class 设计浏览器历史记录 {
     private static class BrowserHistory{
-        List<String> history;
-        int index;
-        BrowserHistory(String homepage) {
-            this.history=new ArrayList<String>(){{
+        ArrayList<String> back$current,forward;
+        BrowserHistory(String homepage){
+            this.back$current=new ArrayList<String>(){{
                 add(homepage);
             }};
-            this.index=0;
+            this.forward=new ArrayList<String>();
         }
         void visit(String url){
-            if(index<history.size()-1){
-                history=history.subList(0,index+1);
-            }
-            history.add(url);
-            index=history.size()-1;
+            back$current.add(url);
+            forward.clear();
         }
         String back(int steps){
-            if(index-steps<0){
-                index=0;
-                return history.get(0);
+            while(steps-->0&&back$current.size()>1){
+                forward.add(back$current.removeLast());
             }
-            index-=steps;
-            return history.get(index);
+            return back$current.getLast();
         }
-        String forward(int steps){
-            if(index+steps>=history.size()-1){
-                index=history.size()-1;
-                return history.get(history.size()-1);
+        String forward(int steps) {
+            while(steps-->0&&forward.size()>0){
+                back$current.add(forward.removeLast());
             }
-            index+=steps;
-            return history.get(index);
+            return back$current.getLast();
         }
     }
     public static void main(String[] args) {
-        BrowserHistory bh=new BrowserHistory("leetcode.com");
+        var bh=new BrowserHistory("leetcode.com");
         bh.visit("google.com");
         bh.visit("facebook.com");
         bh.visit("youtube.com");

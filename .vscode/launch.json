@@ -3,6 +3,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Bresenham直线生成",
+            "request": "launch",
+            "mainClass": "ComputerVision.Bresenham直线生成",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DDA直线生成",
+            "request": "launch",
+            "mainClass": "ComputerVision.DDA直线生成",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "NLN直线裁剪",
+            "request": "launch",
+            "mainClass": "JAVA.NLN直线裁剪",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "判断一个数字是否可以表示成三的幂的和",
+            "request": "launch",
+            "mainClass": "LeetCode.判断一个数字是否可以表示成三的幂的和",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Bresenham直线生成",
+            "request": "launch",
+            "mainClass": "JAVA.Bresenham直线生成",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DDA直线生成",
+            "request": "launch",
+            "mainClass": "JAVA.DDA直线生成",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "不同整数的最少数目",
+            "request": "launch",
+            "mainClass": "LeetCode.不同整数的最少数目",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "设计浏览器历史记录",
+            "request": "launch",
+            "mainClass": "LeetCode.设计浏览器历史记录",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "最简分数",
+            "request": "launch",
+            "mainClass": "LeetCode.最简分数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "数组大小减半",
             "request": "launch",
             "mainClass": "LeetCode.数组大小减半",

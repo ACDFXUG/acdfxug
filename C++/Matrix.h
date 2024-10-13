@@ -266,19 +266,46 @@ class Matrix{
         return c;
     }
     private:
-    double deter(matrix a){
-        int n=a.size();
-        if(n==1)return a[0][0];
+    double deter(matrix mat){
+        // int p=mat.size();
+        // if(p==1){
+        //     return mat[0][0];
+        // }
+        // ld det=.0l;
+        // if(p==2) {
+        //     return mat[0][0]*mat[1][1]-mat[0][1]*mat[1][0];
+        // }
+        // // 使用迭代方法
+        // std::vector<int> perm(p);
+        // for(int i=0;i<p;i++){
+        //     perm[i]=i;
+        // }
+        // do{
+        //     ld sign=1,prod=1;
+        //     for(int i=1;i<p;i++) {
+        //         for(int j=0;j<i;j++) {
+        //             if (perm[j]>perm[i]) {
+        //                 sign*=-1;
+        //             }
+        //         }
+        //     }
+        //     for(int i=0;i<p;i++) {
+        //         prod*=mat[i][perm[i]];
+        //     }
+        //     det+=sign*prod;
+        // }while(std::next_permutation(perm.begin(),perm.end()));
+        int n=mat.size();
+        if(n==1)return mat[0][0];
         double det=0;
         matrix minor(n-1,array(n-1,0));
         for (int j=0;j<n;j++){
             for (int i = 1; i < n; i++) {
                 int col=0;
                 for(int k = 0; k < n; k++) {
-                    if(k!=j){minor[i-1][col++]=a[i][k];}
+                    if(k!=j){minor[i-1][col++]=mat[i][k];}
                 }
             }
-            det+=negative(j)*a[0][j]*deter(minor);
+            det+=negative(j)*mat[0][j]*deter(minor);
         }
         return det;
     }
