@@ -36,7 +36,7 @@ public class DDA直线生成 {
             // 遍历每个步骤，绘制直线上的每个像素点
             for(int i=0;i<=steps;i++){
                 // 绘制当前像素点
-                int x=(int)x0,y=(int)y0;
+                int x=(int)(x0+0.5),y=(int)(y0+0.5);
                 g.drawLine(x,y,x,y);
                 // 更新下一个像素点的位置
                 x0+=xIcr;

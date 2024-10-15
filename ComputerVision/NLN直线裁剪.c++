@@ -10,7 +10,7 @@ const int cohen_sutherland[]{
 };
 
 struct Point{
-    const double x,y;
+    double x,y;
     Point(const double &x,const double &y):x(x),y(y){}
     
     bool operator ==(const Point &p) const{
@@ -29,15 +29,25 @@ struct Rectangle{
         return (p.x>=left_bottom.x&&p.x<=right_top.x)
             &&(p.y>=left_bottom.y&&p.y<=right_top.y);
     }
+    int get_position(const Point &p) const{
+        double x_min=left_bottom.x,x_max=right_top.x,
+            y_min=left_bottom.y,y_max=right_top.y;
+        double x=p.x,y=p.y;
+        if(x<x_min&&y>y_max) return 0;
+        else if(x>x_min&&x<x_max&&y>y_max) return 1;
+        else if(x>x_max&&y>y_max) return 2;
+        else if(x<x_min&&y>y_min&&y<y_max) return 3;
+        else if(x>x_min&&x<x_max&&y>y_min&&y<y_max) return 4;
+        else if(x>x_max&&y>y_min&&y<y_max) return 5;
+        else if(x<x_min&&y<y_min) return 6;
+        else if(x>x_min&&x<x_max&&y<y_min) return 7;
+        else if(x>x_max&&y<y_min) return 8;
+        else return 4;
+    }
     int get_cohen_sutherland_code(const Point &p) const{
         double x_min=left_bottom.x,x_max=right_top.x,
             y_min=left_bottom.y,y_max=right_top.y;
-        return (
-            (p.x<x_min?1:0)|
-            (p.x>x_max?2:0)|
-            (p.y<y_min?4:0)|
-            (p.y>y_max?8:0)
-        );  
+        return cohen_sutherland[get_position(p)];
     }
 };
 
@@ -143,6 +153,9 @@ int main(){
     int code1=rec.get_cohen_sutherland_code(start),
         code2=rec.get_cohen_sutherland_code(end);
     auto inter=line.get_intersection(rec);
+    std::sort(inter.begin(),inter.end(),[](auto &a,auto &b){
+        return a.x<=b.x;
+    });
     if(code1==0b0000){
         auto p=inter[0];
         std::cout<<"裁剪后直线段的起点为: ("<<start.x<<", "<<start.y<<"),";
@@ -156,10 +169,8 @@ int main(){
             printf("简弃\n");
             return 0;
         }else{
-            auto p1=inter[0].x<=inter[1].x?inter[0]:inter[1];
-            auto p2=inter[0].x<=inter[1].x?inter[1]:inter[0];
-            std::cout<<"裁剪后直线段的起点为: ("<<p1.x<<", "<<p1.y<<"),";
-            std::cout<<"终点为: ("<<p2.x<<", "<<p2.y<<")\n";
+            std::cout<<"裁剪后直线段的起点为: ("<<inter[0].x<<", "<<inter[0].y<<"),";
+            std::cout<<"终点为: ("<<inter[1].x<<", "<<inter[1].y<<")\n";
         }
     }
 }
