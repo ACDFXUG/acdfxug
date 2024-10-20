@@ -4,7 +4,7 @@ import java.util.*;
 
 public class 自定义字符串排序 {
     static String customSortString(String order, String s) {
-        List<Character> charArray=new ArrayList<>(){{
+        List<Character> charArray=new ArrayList<>(s.length()){{
             for(char c:s.toCharArray()){
                 add(c);
             }

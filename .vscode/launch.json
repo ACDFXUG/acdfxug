@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Linked",
+            "request": "launch",
+            "mainClass": "JAVA.Linked",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "javaVer",
+            "request": "launch",
+            "mainClass": "javaVer",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字母异位词分组",
+            "request": "launch",
+            "mainClass": "LeetCode.字母异位词分组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Bresenham直线生成",
             "request": "launch",
             "mainClass": "ComputerVision.Bresenham直线生成",
