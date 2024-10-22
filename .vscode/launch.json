@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "image",
+            "request": "launch",
+            "mainClass": "ComputerVision.image",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SutherHodg多边形裁剪",
+            "request": "launch",
+            "mainClass": "ComputerVision.SutherHodg多边形裁剪",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "链表随机节点",
+            "request": "launch",
+            "mainClass": "LeetCode.链表随机节点",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Linked",
             "request": "launch",
             "mainClass": "JAVA.Linked",

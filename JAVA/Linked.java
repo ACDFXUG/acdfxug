@@ -19,7 +19,7 @@ public class Linked {
             this.data=data[0];
             var p=this;
             for(int i=1;i<len;i++){
-                p=p.next=new Node<T>(data[i]);
+                p=p.next=new Node<>(data[i]);
             }
         }
         Node(T data,Node<T> next){
@@ -52,8 +52,8 @@ public class Linked {
             return p.data;
         }
         List<T> toList(){
-            List<T> ans=new ArrayList<T>(len);
-            for(Node<T> p=this;p!=null;p=p.next){
+            List<T> ans=new ArrayList<>(len);
+            for(var p=this;p!=null;p=p.next){
                 ans.add(p.data);
             }
             return ans;
@@ -68,6 +68,9 @@ public class Linked {
             if(len!=((Node<T>)node).len){
                 return false;
             }
+            if(this.data.getClass()!=((Node<T>)node).data.getClass()){
+                return false;
+            }
             for(Node<T> p=this,q=(Node<T>)node;p!=null;p=p.next,q=q.next){
                 if(!p.data.equals(q.data)){
                     return false;
@@ -76,7 +79,12 @@ public class Linked {
             return true;
         }
         public int hashCode(){
-            return toList().hashCode();
+            int hash=1;
+            for(var p=this;p!=null;p=p.next){
+                T ele=p.data;
+                hash=31*hash+(ele==null?0:ele.hashCode());
+            }
+            return hash;
         }
         public String toString(){
             var sj=new StringJoiner(", ","[","]");

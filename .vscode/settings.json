@@ -107,5 +107,8 @@
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic",
     "java.jdt.ls.vmargs": "-Dfile.encoding=UTF-8",
-    "modelbox.modelboxPath": "C:\\Users\\yaoyu\\.modelbox",
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [],
 }

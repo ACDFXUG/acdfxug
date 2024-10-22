@@ -1,4 +1,4 @@
-package ComputerVision;
+package ComputerGraphics;
 
 import javax.swing.*;
 import java.awt.*;

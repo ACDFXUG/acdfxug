@@ -16,11 +16,11 @@ public class VTT转LRC {
      */
     static boolean isNumber(String s){
         try{
-            Integer.parseInt(s);
-            return true;
+            Integer.valueOf(s);
         }catch(NumberFormatException nfe){
             return false;
         }
+        return true;
     }
     /**
      * 获取目录下所有vtt文件
