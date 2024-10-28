@@ -1,28 +1,30 @@
 #include <iostream>
-int GROUND[5000][5000]={0};
+#include <unordered_set>
+template<typename T>
+using HashSet=std::unordered_set<T>;
 int main(){
-    int N,M,B,G,t=0;
+    int N,M,B,G;
     scanf("%d%d%d%d",&N,&M,&B,&G);
-    for(int s=1;s<=B;s++){
-        int x,y;scanf("%d%d",&x,&y);
-        for(int i=x-1;i<y;i++){
-            for(int j=0;j<M;j++){
-                GROUND[i][j]=1;
+    int lattice=0;
+    HashSet<int> not_swept,swept_col;
+    for(int i=1;i<=N;i++){
+        not_swept.insert(i);
+    }
+    for(int i=1,x,y;i<=B;i++){
+        scanf("%d%d",&x,&y);
+        for(int j=x;j<=y;j++){
+            if(not_swept.contains(j)){
+                lattice+=M;
+                not_swept.erase(j);
             }
         }
     }
-    for(int s=1;s<=G;s++){
-        int x,y;scanf("%d%d",&x,&y);
-        for(int j=x-1;j<y;j++){
-            for (int i = 0; i < N; i++){
-                GROUND[i][j]=1;
-            }
+    for(int i=1,x,y;i<=G;i++){
+        scanf("%d%d",&x,&y);
+        for(int j=x;j<=y;j++){
+            swept_col.insert(j);
         }
     }
-    for(int i=0;i<N;i++){
-        for(int j=0;j<M;j++){
-            t+=GROUND[i][j];
-        }
-    }
-    printf("%d\n",t);
+    lattice+=not_swept.size()*swept_col.size();
+    printf("%d\n",lattice);
 }

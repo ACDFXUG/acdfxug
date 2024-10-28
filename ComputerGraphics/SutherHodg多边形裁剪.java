@@ -118,9 +118,7 @@ public class SutherHodg多边形裁剪 {
         //int n=sc.nextInt();
         
         double[][] polygonPoints={  // 裁剪多边形顶点
-            {0,10},{20,30},
-            {40,10},{40,40},
-            {0,40}
+            {10,10},{30,10},{30,30},{10,30}
         };
         System.out.println("裁剪多边形的顶点数为"+polygonPoints.length);
         List<Point> polygon=new ArrayList<>(polygonPoints.length);
@@ -138,8 +136,7 @@ public class SutherHodg多边形裁剪 {
         //int m=sc.nextInt();
 
         double[][] clipWndPoints={  // 裁剪窗口顶点
-            {0,0},{40,0},
-            {40,20},{0,20}
+            {0,0},{40,0},{40,20},{0,20}
         };
         System.out.println("\n裁剪窗口顶点数为"+clipWndPoints.length);
         List<Point> clipWnd=new ArrayList<>(clipWndPoints.length);

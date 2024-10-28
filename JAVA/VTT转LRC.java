@@ -51,7 +51,7 @@ public class VTT转LRC {
         for(File vtt:vtts){
             Scanner sc=new Scanner(vtt);
             File lrc=new File(vtt.getAbsolutePath().replace(".vtt",".lrc"));
-            if(!lrc.exists()&&lrc.createNewFile()){
+            if(!lrc.exists()){
                 FileWriter lrcWriter=new FileWriter(lrc);
                 while(sc.hasNextLine()){
                     String line=sc.nextLine();

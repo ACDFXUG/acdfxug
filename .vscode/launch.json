@@ -3,6 +3,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NLN直线裁剪",
+            "request": "launch",
+            "mainClass": "ComputerGraphics.NLN直线裁剪",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SutherHodg改",
+            "request": "launch",
+            "mainClass": "ComputerGraphics.sutherhodg.SutherHodg改",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "输出多项式",
+            "request": "launch",
+            "mainClass": "Luogu.输出多项式",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SutherHodg改",
+            "request": "launch",
+            "mainClass": "ComputerGraphics.src.SutherHodg改",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "覆盖",
+            "request": "launch",
+            "mainClass": "Luogu.覆盖",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Z字形变换",
+            "request": "launch",
+            "mainClass": "LeetCode.Z字形变换",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DDA直线生成",
+            "request": "launch",
+            "mainClass": "ComputerGraphics.DDA直线生成",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SutherHodg多边形裁剪",
+            "request": "launch",
+            "mainClass": "ComputerGraphics.SutherHodg多边形裁剪",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "ComputerGraphics.src.Main",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "image",
             "request": "launch",
             "mainClass": "ComputerVision.image",
