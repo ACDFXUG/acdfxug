@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fairness",
+            "request": "launch",
+            "mainClass": "LeetCode.Fairness",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "DefaultPrice",
+            "request": "launch",
+            "mainClass": "LeetCode.DefaultPrice",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ディスカバリーチ",
+            "request": "launch",
+            "mainClass": "LeetCode.ディスカバリーチ",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "NLN直线裁剪",
             "request": "launch",
             "mainClass": "ComputerGraphics.NLN直线裁剪",

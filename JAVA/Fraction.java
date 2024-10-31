@@ -1,18 +1,11 @@
 package JAVA;
 
-// import java.math.BigDecimal;
-// import java.math.BigInteger;
-// import java.math.RoundingMode;
-// import java.util.regex.Matcher;
-// import java.util.regex.Pattern;
-// import java.util.List;
-// import java.util.ArrayList;
-// import java.util.Comparator;
 import java.util.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
+public class Fraction extends Number 
+implements Comparable<Fraction>,Cloneable{
     /**
      * 声明了两个长整型的变量，分别用来存储分子和分母。其中up是分子，low是分母，且分母不为0
      * <p>
@@ -36,26 +29,6 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     public static final Fraction NEGATIVE_INFINITY  =new Fraction(-1,0);
     public static final Fraction NAN                =new Fraction(0,0);
 
-
-    /**
-     * 定义一个比较器，用于比较两个分数对象的大小。
-     * 这个比较器遵循小于（less）的逻辑，即返回第一个分数小于第二个分数时的负整数，
-     * 当两个分数相等时返回0，当第一个分数大于第二个分数时返回正整数。
-     * 从小到大排序
-     * @param f1 第一个Fraction对象，作为比较的基准。
-     * @param f2 第二个Fraction对象，与第一个对象进行比较。
-     * @return 返回比较结果，当f1小于f2时返回负数，相等时返回0，大于时返回正数。
-     */
-    public static final Comparator<Fraction> LESS=(f1,f2)->compare(f1,f2);
-    /**
-     * 定义一个比较器，用于以相反的顺序比较两个分数对象。
-     * 这个比较器使得第一个传入的分数对象被认为是“较小的”。
-     * 从大到小排序
-     * @param f1 第一个分数对象，作为比较的基准。
-     * @param f2 第二个分数对象，与f1进行比较。
-     * @return 返回比较结果，如果f2大于f1，则返回正数；如果f2小于f1，则返回负数；如果两者相等，则返回0。
-     */
-    public static final Comparator<Fraction> GREATER=(f1,f2)->compare(f2,f1);
     /**
      * 计算两个长整型数的最大公约数（GCD）。
      * 使用欧几里得算法的优化版本，通过不断位移和减法来减少计算量。
@@ -201,7 +174,7 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         return up/low;
     }
     public float floatValue(){
-        return up*1.0F/low;
+        return up*1.f/low;
     }
     public double doubleValue(){
         return up*1.0/low;
@@ -386,15 +359,16 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
     public static int compare(Fraction x,Fraction y){
         return x.compareTo(y);
     }
-    public boolean equals(Object y){
-        if(this==y){
+    public boolean equals(Object frac){
+        if(this==frac){
             return true;
         }
-        if(y==null||this==null){
+        if(frac==null){
             return false;
         }
-        return y instanceof Fraction&&
-        up*((Fraction)y).low==low*((Fraction)y).up;
+        return frac instanceof Fraction f
+            &&f.up==up&&f.low==low;
+        
     }
     public static boolean equals(Fraction x,Fraction y){
         return x.equals(y);
@@ -551,34 +525,42 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         // 创建一个新的Fraction实例，分子和分母互换位置，即为当前分数的倒数
         return new Fraction(low,up);
     }
-    private static List<Long> primeFactors(long n) {
-        // 输入验证
-        if (n <= 0) {
-            throw new IllegalArgumentException("Input must be positive Integers");
+    /**
+     * 获取一个数的素因子分解
+     * 该方法用于将给定的正整数N分解成其素因子的乘积，并返回一个映射，
+     * 其中键是素因子，值是该素因子在分解中的次数
+     * 
+     * @param N 要进行素因子分解的数，必须大于1
+     * @return 返回一个Map，键为素因子，值为该素因子的次数
+     * @throws IllegalArgumentException 如果输入的数N小于等于1，则抛出此异常
+     */
+    private static Map<Long,Integer> getPrimeFactors(long N){
+        // 检查输入数是否大于1，因为素因子分解需要输入数大于1
+        if(N<=1){
+            throw new IllegalArgumentException("Input must be greater than 1");
         }
-        List<Long> primeFractor=new ArrayList<>();
-        // 对于大数，优化质因数检测过程
-        for(;(n&1)==0;n>>=1){
-            primeFractor.add(2L);
+        // 初始化一个HashMap来存储素因子及其次数
+        Map<Long,Integer> primes=new HashMap<>();
+        
+        // 移除所有的因子2，直到N变为奇数
+        for(;(N&1)==0;N>>=1){
+            primes.merge(2L,1,(I,J)->I+J);
         }
-        for(long i=3;i*i<=n;i+=2L){ // 仅检查奇数作为因数，同时上限优化为sqrt(n)
-            for(;n%i==0;n/=i){
-                primeFractor.add(i);
+        // 尝试移除所有的奇数因子，从3开始，直到N的平方根
+        for(long i=3;i*i<=N;i+=2L){
+            for(;N%i==0;N/=i){
+                primes.merge(i,1,(I,J)->I+J);
             }
         }
-        // 如果n大于2，那么它本身就是一个质数
-        if(n>2) {
-            primeFractor.add(n);
+        // 如果N仍然是一个大于2的数，则N本身是一个素因子
+        if(N>2){
+            primes.merge(N,1,(I,J)->I+J);
         }
-        return primeFractor;
+        // 返回素因子及其对应的次数
+        return primes;
     }
-    private static boolean containsNotOnly2And5(List<Long> x){
-        for(long i:x){
-            if(i!=2&&i!=5){
-                return true;
-            }
-        }
-        return false;
+    private static boolean containsNotOnly2And5(Map<Long,Integer> x){
+        return x.keySet().stream().anyMatch(i->i!=2&&i!=5);
     }
     /**
      * 高精度得到循环部分的长度
@@ -603,35 +585,29 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
      */
     public String toDecimal(){
         // 将当前数值转换为最简形式的分子和分母
-        long _up_=toLowest().up,_low_=toLowest().low;
+        long U=toLowest().up,L=toLowest().low;
         // 获取分母的质因数分解
-        List<Long> primeFactors=primeFactors(_low_);
+        var primeFactors=getPrimeFactors(L);
         // 如果分子整除分母，直接返回整数比的字符串形式
-        if(_up_%_low_==0){
-            return Long.toString(_up_/_low_);
+        if(U%L==0){
+            return Long.toString(U/L);
         }
         // 如果分母的质因数中只包含2和5，可以以简单分数形式表示
         if(!containsNotOnly2And5(primeFactors)){
-            return Double.toString(_up_*1.0/_low_)
+            return Double.toString(U*1.0/L)
             .replaceAll("0+$",""); // 以小数形式返回，移除末尾的零
         }else{
             // 统计质因数中2和5的个数
-            int two=0,five=0;
-            for(long i:primeFactors){
-                if(i==2L){
-                    two++;
-                }else if(i==5L){
-                    five++;
-                }
-            }
+            int two=primeFactors.getOrDefault(2L,0),
+                five=primeFactors.getOrDefault(5L,0);
             // 计算最小需要的位数
             int notLoopLength=two>five?two:five;
-            long remain=_low_/(power(2,two)*power(5,five));
+            long remain=L/(power(2,two)*power(5,five));
             int loopLength=loopLength(remain),
-                integerLength=Long.toString(_up_/_low_).length();
+                integerLength=Long.toString(U/L).length();
             // 计算并格式化最终结果
-            String ans=new BigDecimal(_up_)
-            .divide(new BigDecimal(_low_),loopLength+notLoopLength+integerLength,RoundingMode.HALF_UP)
+            String ans=new BigDecimal(U)
+            .divide(new BigDecimal(L),loopLength+notLoopLength+integerLength,RoundingMode.HALF_UP)
             .toString().substring(0,integerLength+loopLength+notLoopLength+1);// 1 是小数点的长度
             return new StringBuilder(ans).insert(integerLength+1+notLoopLength,"(").append(")").toString();
         }
@@ -677,8 +653,8 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
             // 如果符号相同，直接改变分子的符号
             return new Fraction(-up,low);
         }else if(up==0){
-            // 如果分子为0，返回0的副本（避免修改原对象）
-            return ZERO.clone();
+            // 如果分子为0，返回0
+            return new Fraction(0);
         }else{
             // 如果符号不同，返回分数的绝对值
             return abs();
@@ -712,11 +688,11 @@ public class Fraction extends Number implements Comparable<Fraction>,Cloneable{
         if(isGreater(ONE)){
             long a=up/low;
             Fraction remain=subtract(ONE);
-            return a+"("+remain.toString()+")";
+            return a+"("+remain+")";
         }else if(isLess(NEGATIVE_ONE)){
             long a=up/low;
             Fraction remain=abs(add(ONE));
-            return a+"("+remain.toString()+")";
+            return a+"("+remain+")";
         }else{
             return toString();
         }

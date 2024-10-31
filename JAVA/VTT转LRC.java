@@ -2,7 +2,7 @@ package JAVA;
 
 import java.io.*;
 import java.util.*;
-// import java.awt.Desktop;
+import java.util.concurrent.*;
 
 /**
  * 将60分钟内的vtt文件转换为lrc文件
@@ -48,28 +48,40 @@ public class VTT转LRC {
      */
     static List<File> vttToLrc(List<File> vtts) throws IOException{ //60分钟内的lrc
         List<File> lrcs=new ArrayList<>(vtts.size());
+        ExecutorService es=Executors.newFixedThreadPool(8);
+        List<Future<File>> lrcFutures=new ArrayList<>();
         for(File vtt:vtts){
-            Scanner sc=new Scanner(vtt);
-            File lrc=new File(vtt.getAbsolutePath().replace(".vtt",".lrc"));
-            if(!lrc.exists()){
-                FileWriter lrcWriter=new FileWriter(lrc);
-                while(sc.hasNextLine()){
-                    String line=sc.nextLine();
-                    if(!(line.startsWith("WEBVTT")||isNumber(line))){
-                        if(line.isEmpty()){
-                            lrcWriter.write(System.lineSeparator());
-                        }else if(line.contains("-->")){
-                            lrcWriter.write("["+line.substring(3,11)+"]");
-                        }else{
-                            lrcWriter.write(line);
+            lrcFutures.add(es.submit(()->{
+                Scanner sc=new Scanner(vtt);
+                File lrc=new File(vtt.getAbsolutePath().replace(".vtt",".lrc"));
+                if(!lrc.exists()){
+                    FileWriter lrcWriter=new FileWriter(lrc);
+                    while(sc.hasNextLine()){
+                        String line=sc.nextLine();
+                        if(!(line.startsWith("WEBVTT")||isNumber(line))){
+                            if(line.isEmpty()){
+                                lrcWriter.write(System.lineSeparator());
+                            }else if(line.contains("-->")){
+                                lrcWriter.write("["+line.substring(3,11)+"]");
+                            }else{
+                                lrcWriter.write(line);
+                            }
                         }
                     }
+                    lrcWriter.close();
                 }
-                lrcWriter.close();
-                lrcs.add(lrc);
-            }
-            sc.close();
+                sc.close();
+                return lrc;
+            }));
         }
+        try{
+            for(var lrcFuture:lrcFutures){
+                lrcs.add(lrcFuture.get());
+            }
+        }catch(InterruptedException | ExecutionException _e){
+            System.out.println("线程转换出错");
+        }
+        es.shutdown();
         return lrcs;
     }
     public static void main(String[] args) {

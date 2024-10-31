@@ -29,11 +29,6 @@ public class 全排列 {
         return res;
     }
     public static void main(String[] args) {
-        permute(new int[]{1,2,3}).forEach(i->{
-            for(int x:i){
-                System.out.print(x+" ");
-            }
-            System.out.println();
-        });
+        permute(new int[]{1,2,3}).forEach(System.out::println);
     }
 }
