@@ -1,6 +1,52 @@
 {
     "version": "0.2.0",
     "configurations": [
+    {
+        "name": ".NET Core Launch (console)",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": false,
+        "console": "internalConsole"
+    },
+        {
+            "type": "java",
+            "name": "TernaryDecomposition",
+            "request": "launch",
+            "mainClass": "Luogu.TernaryDecomposition",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Standings",
+            "request": "launch",
+            "mainClass": "Luogu.Standings",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "選択問題の正答",
+            "request": "launch",
+            "mainClass": "Luogu.選択問題の正答",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Guidebook",
+            "request": "launch",
+            "mainClass": "Luogu.Guidebook",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "RoundRobin",
+            "request": "launch",
+            "mainClass": "LeetCode.RoundRobin",
+            "projectName": "VSCode_f8960e08"
+        },
         {
             "type": "java",
             "name": "Fairness",
