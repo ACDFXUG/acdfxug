@@ -1,17 +1,45 @@
 {
     "version": "0.2.0",
     "configurations": [
-    {
-        "name": ".NET Core Launch (console)",
-        "type": "coreclr",
-        "request": "launch",
-        "preLaunchTask": "build",
-        "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
-        "args": [],
-        "cwd": "${workspaceFolder}",
-        "stopAtEntry": false,
-        "console": "internalConsole"
-    },
+        {
+            "type": "java",
+            "name": "FactorsFactorial",
+            "request": "launch",
+            "mainClass": "Luogu.FactorsFactorial",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Dash",
+            "request": "launch",
+            "mainClass": "Luogu.Dash",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "Bank",
+            "request": "launch",
+            "mainClass": "Luogu.Bank",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "AtColor",
+            "request": "launch",
+            "mainClass": "Luogu.AtColor",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
         {
             "type": "java",
             "name": "TernaryDecomposition",

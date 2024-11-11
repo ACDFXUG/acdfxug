@@ -1,36 +1,36 @@
+/* 括号的样式 */
 div.bracket {
-    display: inline-block;
-    padding: 10px;
-    font-size: 24px;
-    color: white;
-    animation: 25s linear infinite alternate bracket-animation;
-    background: linear-gradient(90deg, rgb(226, 84, 84), yellow, lime, cyan, rgb(182, 110, 255));
-    background-size: 100% 1000%;
-    border-radius: 2px;
-    overflow: visible !important;
-  }
-  
-  div.bracket::after {
-    content: "(";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    background-size: 100% 1000%;
-    border-radius: 3px;
-    transform: scale(140%, 120%);
-    filter: blur(4px) brightness(200%);
-    z-index: -1;
-  }
-  
-  /* 动画定义 */
-  @keyframes bracket-animation {
-    0% {background-position: 0 0;}
-    20% {background-position: 0 200%;}
-    40% {background-position: 0 400%;}
-    60% {background-position: 0 600%;}
-    80% {background-position: 0 800%;}
-    100% {background-position: 0 1000%;}
-  }
+  animation: 25s linear infinite alternate bp-animation;
+  background: linear-gradient(rgb(226, 84, 84), yellow, lime, cyan, rgb(182, 110, 255));
+  background-size: 100% 1000%;
+  border-radius: 2px;
+  overflow: visible !important;
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+}
+
+div.bracket::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-size: 100% 1000%;
+  border-radius: 3px;
+  transform: scale(140%, 120%);
+  filter: blur(4px) brightness(200%);
+  z-index: -1;
+}
+
+/* 动画关键帧 */
+@keyframes bp-animation {
+  0% { background-position: 0 0; }
+  20% { background-position: 0 200%; }
+  40% { background-position: 0 400%; }
+  60% { background-position: 0 600%; }
+  80% { background-position: 0 800%; }
+  100% { background-position: 0 1000%; }
+}

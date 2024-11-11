@@ -3,13 +3,7 @@ package Luogu;
 import java.util.*;
 
 public class ABC113C_ID {
-    private static class Country{
-        final int Pi,Yi;
-        Country(int Pi,int Yi){
-            this.Pi=Pi;
-            this.Yi=Yi;
-        }
-    }
+    private static record Country(int Pi,int Yi){}
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int M=sc.nextInt(),N=sc.nextInt();
