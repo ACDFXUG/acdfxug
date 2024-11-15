@@ -35,7 +35,7 @@ public class VTT转LRC {
         );
         return switch(vtts.length){
             case 0->throw new NullPointerException(
-                "the directory has no .vtt file!!!"
+                "文件夹里没有.vtt文件"
             );
             default->List.of(vtts); 
         };

@@ -1,5 +1,5 @@
-#include <iostream>
+#include <print>
 
 int main(){
-    std::cout<<__cplusplus<<std::endl;
+    std::println("{}",__cplusplus);
 }

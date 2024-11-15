@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Delimiter",
+            "request": "launch",
+            "mainClass": "Luogu.Delimiter",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "比较版本号",
+            "request": "launch",
+            "mainClass": "LeetCode.比较版本号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "基于时间的键值存储",
+            "request": "launch",
+            "mainClass": "LeetCode.基于时间的键值存储",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "FactorsFactorial",
             "request": "launch",
             "mainClass": "Luogu.FactorsFactorial",
@@ -4128,13 +4149,11 @@
             "projectName": "VSCode_f8960e08"
         },
         {
-            "name": "g++.exe - Build and debug active file",
+            "name": "C++",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
-            "args": [
-                "-std=c++23"
-            ],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -4148,7 +4167,33 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe build active file"
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+        },
+        {
+            "name": "C",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\EXE\\$CDEBUG$.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc.exe 生成活动文件"
         }
     ]
 }

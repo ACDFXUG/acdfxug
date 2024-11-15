@@ -52,7 +52,7 @@ public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
         StringJoiner str=new StringJoiner(", ","[","]");
         for(Object obj:this){
             String className=obj.getClass().getSimpleName();
-            str.add(className+":"+obj.toString());
+            str.add(className+":"+obj);
         }
         return str.toString();
     }
