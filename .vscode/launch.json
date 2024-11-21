@@ -3,6 +3,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "找到需要补充粉笔的学生编号",
+            "request": "launch",
+            "mainClass": "LeetCode.找到需要补充粉笔的学生编号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "增长的内存泄露",
+            "request": "launch",
+            "mainClass": "LeetCode.增长的内存泄露",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "字符串中不同整数的数目",
+            "request": "launch",
+            "mainClass": "LeetCode.字符串中不同整数的数目",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "顺次数",
+            "request": "launch",
+            "mainClass": "LeetCode.顺次数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "循环码排列",
+            "request": "launch",
+            "mainClass": "LeetCode.循环码排列",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "点菜展示表",
+            "request": "launch",
+            "mainClass": "LeetCode.点菜展示表",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二进制链表转整数",
+            "request": "launch",
+            "mainClass": "LeetCode.二进制链表转整数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "最长数对链",
+            "request": "launch",
+            "mainClass": "LeetCode.最长数对链",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Delimiter",
             "request": "launch",
             "mainClass": "Luogu.Delimiter",

@@ -103,7 +103,8 @@
         "generator": "cpp",
         "print": "cpp",
         "adogpool_backcompat.h": "c",
-        "corecrt_stdio_config.h": "c"
+        "corecrt_stdio_config.h": "c",
+        "filesystem": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,
