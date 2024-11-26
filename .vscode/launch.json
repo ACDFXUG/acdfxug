@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "统计星号",
+            "request": "launch",
+            "mainClass": "LeetCode.统计星号",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "设计一个文本编辑器",
+            "request": "launch",
+            "mainClass": "LeetCode.设计一个文本编辑器",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "按符号重排数组",
+            "request": "launch",
+            "mainClass": "LeetCode.按符号重排数组",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "设计位集",
+            "request": "launch",
+            "mainClass": "LeetCode.设计位集",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "银行中的激光束数量",
+            "request": "launch",
+            "mainClass": "LeetCode.银行中的激光束数量",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "找到需要补充粉笔的学生编号",
             "request": "launch",
             "mainClass": "LeetCode.找到需要补充粉笔的学生编号",

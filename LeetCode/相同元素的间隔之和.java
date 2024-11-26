@@ -1,27 +1,26 @@
 package LeetCode;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class 相同元素的间隔之和 {
     static long[] getDistances(int[] arr) {
-        Map<Integer,Integer> distance=new HashMap<>();
+        var location=new HashMap<Integer,List<Integer>>();
         for(int i=0;i<arr.length;i++){
-            distance.put(i,arr[i]);
+            location.computeIfAbsent(arr[i],$->new ArrayList<>()).add(i);
         }
-        Set<Entry<Integer,Integer>> dis=distance.entrySet();
         long[] ans=new long[arr.length];
         for(int i=0;i<arr.length;i++){
-            for(Entry<Integer,Integer> e:dis){
-                if(e.getValue()==arr[i]){
-                    ans[i]+=Math.abs(e.getKey()-i);
-                }
+            for(int j:location.get(arr[i])){
+                ans[i]+=Math.abs(j-i);
             }
         }
         return ans;
     }
     public static void main(String[] args) {
-        int[] arr={2,1,3,1,2,3,3};
+        int[] arr=new int[100000];
+        for(int i=0;i<arr.length;i++){
+            arr[i]=(int)(Math.random()*10);
+        }
         System.out.println(Arrays.toString(getDistances(arr)));
     }
 }

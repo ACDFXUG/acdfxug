@@ -2,7 +2,7 @@ package JAVA;
 
 import java.util.*;
 
-public class bybus {
+public class Bybus {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("...");
