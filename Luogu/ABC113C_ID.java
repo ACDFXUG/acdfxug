@@ -7,28 +7,23 @@ public class ABC113C_ID {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int M=sc.nextInt(),N=sc.nextInt();
-        List<Country> ctry=new LinkedList<>();
-        Map<Integer,List<Integer>> sorted=new HashMap<>();
-        while(N-->0){
+        List<Country> cntry=new ArrayList<>(N);
+        Map<Integer,TreeMap<Integer,Integer>> cntryMap=new HashMap<>(N);
+        for(int i=0;i<N;i++){
             int Pi=sc.nextInt(),Yi=sc.nextInt();
-            ctry.add(new Country(Pi,Yi));
-            if(sorted.containsKey(Pi)){
-                sorted.get(Pi).add(Yi);
-            }else{
-                List<Integer> tmp=new ArrayList<>();
-                tmp.add(Yi);
-                sorted.put(Pi,tmp);
+            cntry.add(new Country(Pi,Yi));
+            cntryMap.computeIfAbsent(Pi,$->new TreeMap<>()).put(Yi,0);
+        }
+        cntryMap.forEach((I,TREE)->{
+            int i=1;
+            for(var en:TREE.entrySet()){
+                en.setValue(i++);
             }
-        }
-        sorted.forEach((I,L)->{
-            L.sort(null);
         });
-        for(Country ct:ctry){
-            int pi=ct.Pi,yi=ct.Yi;
-            int index=sorted.get(pi).indexOf(yi);
-            System.out.println(String.format("%06d%06d",pi,index+1));
-        }
+        cntry.forEach(cnt->{
+            int pi=cnt.Pi,yi=cnt.Yi,index=cntryMap.get(pi).get(yi);
+            System.out.printf("%06d%06d\n",pi,index);
+        });
         sc.close();
-        System.out.println(M);
     }
 }

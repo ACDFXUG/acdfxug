@@ -1,40 +1,38 @@
 #include <iostream>
+#include <map>
 #include <unordered_map>
-#include <list>
-#include <algorithm>
-#include <queue>
-
+#include <print>
 
 struct Country{
     int Pi,Yi;
-    Country(int Pi,int Yi):Pi(Pi),Yi(Yi){}
-};
-
-int indexOf(std::priority_queue<int> pq,int &x){
-    while(!pq.empty()){
-        if(pq.top()==x){
-            return pq.size()-1;
-        }
-        pq.pop();
+    Country(int pi=0,int yi=0):
+    Pi(pi),Yi(yi){}
+    Country &operator =(const Country &cnt){
+        Pi=cnt.Pi;
+        Yi=cnt.Yi;
+        return *this;
     }
-    return -1;
-}
+};
 
 int main(){
     int M,N;
-    std::cin>>M>>N;
-    std::list<Country> ctry;
-    std::unordered_map<int,std::priority_queue<int>> sorted;
-    while(N-->0){
-        int Pi,Yi;
+    scanf("%d%d",&M,&N);
+    Country *cntry=new Country[N];
+    std::unordered_map<int,std::map<int,int>> cntry_map;
+    for(int i=0,Pi,Yi;i<N;i++){
         scanf("%d%d",&Pi,&Yi);
-        ctry.push_back(Country(Pi,Yi));
-        sorted[Pi].push(Yi);
+        cntry[i]={Pi,Yi};
+        cntry_map[Pi][Yi]=0;
     }
-    for(Country &st:ctry){
-        int pi=st.Pi,yi=st.Yi;
-        std::priority_queue<int> pq(sorted[pi]);
-        int index=indexOf(pq,yi);
-        printf("%06d%06d\n",pi,index+1);
+    for(auto &[I,MAP]:cntry_map){
+        for(int i=1;auto &[Yi,IDX]:MAP){
+            IDX=i++;
+        }
     }
+    for(int i=0;i<N;i++){
+        auto &cnt=cntry[i];
+        int &pi=cnt.Pi,&yi=cnt.Yi,&idx=cntry_map[pi][yi];
+        std::println("{0:06d}{1:06d}",pi,idx);
+    }
+    delete[] cntry;
 }

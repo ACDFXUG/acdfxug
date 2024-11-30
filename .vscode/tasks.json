@@ -11,7 +11,7 @@
                 "-std=c++26",
                 "-o",
                 "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
-                "-L'C:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0'",
+                "-L'./runnable'",
                 "-lstdc++exp"
             ],
             "options": {

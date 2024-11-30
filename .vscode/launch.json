@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "压缩字符串III",
+            "request": "launch",
+            "mainClass": "LeetCode.压缩字符串III",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "统计星号",
             "request": "launch",
             "mainClass": "LeetCode.统计星号",

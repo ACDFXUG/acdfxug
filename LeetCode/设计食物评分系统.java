@@ -14,35 +14,53 @@ public class 设计食物评分系统 {
         }
         public int compareTo(Food food){
             return rating==food.rating?
-            name.compareTo(food.name):food.rating-rating;
+                    name.compareTo(food.name)
+                    :food.rating-rating;
+        }
+        public int hashCode(){
+            return Objects.hash(name,cuisine,rating);
+        }
+        public boolean equals(Object f){
+            if(f==this){
+                return true;
+            }
+            if(f==null){
+                return false;
+            }
+            return f instanceof Food food
+                &&food.name.equals(name)
+                &&food.cuisine.equals(cuisine)
+                &&food.rating==rating;
         }
         void setRating(int rating){
             this.rating=rating;
         }
     }
     private static class FoodRatings{
-        Map<String,Food> FOOD;
+        HashMap<String,Food> Foods;
+        TreeSet<Food> foodName;
         FoodRatings(String[] foods,String[] cuisines,int[] ratings) {
-            int n=foods.length;
-            this.FOOD=new HashMap<String,Food>(){{
-                for(int i=0;i<n;i++){
-                    Food temp=new Food(
-                        foods[i],
-                        cuisines[i],
-                        ratings[i]
-                    );
-                    put(foods[i],temp);
-                }
-            }};
+            this.Foods=new HashMap<String,Food>();
+            this.foodName=new TreeSet<Food>();
+            for(int i=0;i<foods.length;i++){
+                var tmp=new Food(foods[i],cuisines[i],ratings[i]);
+                Foods.put(foods[i],tmp);
+                foodName.add(tmp);
+            }
         }
         void changeRating(String food,int newRating) {
-            FOOD.get(food).setRating(newRating);
+            var old=Foods.get(food);
+            foodName.remove(old);
+            old.setRating(newRating);
+            foodName.add(old);
         }
         String highestRated(String cuisine) {
-            return FOOD.values().stream()
-            .filter(F->F.cuisine.equals(cuisine))
-            .min(Food::compareTo)
-            .get().name;
+            for(var food:foodName){
+                if(food.cuisine.equals(cuisine)){
+                    return food.name;
+                }
+            }
+            return null;
         }
     }
     public static void main(String[] args) {
