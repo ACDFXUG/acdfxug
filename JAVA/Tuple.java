@@ -171,7 +171,7 @@ public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
     public Object get(int index){
         return tuple.get(index);
     }
-    public Tuple add(Object arg){
+    public<T> Tuple add(T arg){
         tuple.add(arg);
         ++length;
         return this;
@@ -183,7 +183,7 @@ public class Tuple implements Iterable<Object>,Cloneable,Comparable<Tuple> {
     //     return this;
     // }
     
-    public Tuple add(int index,Object arg){
+    public<T> Tuple add(int index,T arg){
         if(index<0||index>length){
             throw new IndexOutOfBoundsException();
         }

@@ -16,23 +16,29 @@ public class LLQQ {
     /**
      * 得到QQNT的版本数字文件夹
      * @return QQNT的版本数字文件夹File对象
-     * @throws NullPointerException 找不到版本文件夹
+     * @throws FileNotFoundException 找不到版本文件夹
      */
     static File versionDir()
-    throws NullPointerException{
+    throws FileNotFoundException{
         File versions=new File(QQNT_HOME+"/versions");
         File[] vers=versions.listFiles(File::isDirectory);
         return switch(vers.length){
-            case 0->throw new NullPointerException(
+            case 0->throw new FileNotFoundException(
                 "QQNT下没有版本文件夹"
             );
             default->vers[0]; 
         };
     }
     public static void main(String[] args) {
-        File versionDir=versionDir();
-        String verPath=versionDir.getAbsolutePath();
-        System.out.println("QQNT版本: "+versionDir.getName());
+        File verDir;
+        try{
+            verDir=versionDir();
+        }catch(FileNotFoundException fnfe){
+            System.out.println(fnfe.getMessage());
+            return;
+        }
+        String verPath=verDir.getAbsolutePath();
+        System.out.println("QQNT版本: "+verDir.getName());
         File pkg=new File(verPath+"/resources/app/package.json");
         try(Scanner pkgsc=new Scanner(pkg)){
             List<String> lines=new ArrayList<>(25);//存储文件行

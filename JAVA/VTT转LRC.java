@@ -51,7 +51,8 @@ public class VTT转LRC {
      * 批量将vtt文件转换为lrc文件
      * @param vtts vtt文件的List
      * @return lrc文件的List
-     * @throws IOException
+     * @throws InterruptedException 线程池异常
+     * @throws ExecutionException 线程池异常
      */
     static List<File> vttToLrc(List<File> vtts)
     throws InterruptedException,ExecutionException{ //60分钟内的lrc

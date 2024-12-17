@@ -8,10 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "-std=c++26",
+                "-std=gnu++26",
                 "-o",
                 "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
-                "-L'./runnable'",
                 "-lstdc++exp"
             ],
             "options": {
@@ -33,7 +32,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "-std=c23",
+                "-std=gnu23",
                 "-o",
                 "${fileDirname}\\EXE\\$CDEBUG$.exe",
             ],

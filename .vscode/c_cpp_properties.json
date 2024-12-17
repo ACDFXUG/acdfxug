@@ -12,8 +12,8 @@
                 "_UNICODE"
             ],
             "compilerPath": "C:/Program Files/mingw64/bin/g++.exe",
-            "cStandard": "c23",
-            "cppStandard": "c++23",
+            "cStandard": "gnu23",
+            "cppStandard": "gnu++23",
             "intelliSenseMode": "windows-gcc-x64"
         }
     ],

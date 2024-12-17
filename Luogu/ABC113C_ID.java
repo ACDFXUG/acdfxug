@@ -2,6 +2,7 @@ package Luogu;
 
 import java.util.*;
 
+@SuppressWarnings("unused")
 public class ABC113C_ID {
     private static record Country(int Pi,int Yi){}
     public static void main(String[] args) {

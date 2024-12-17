@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Roulette",
+            "request": "launch",
+            "mainClass": "Luogu.Roulette",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "IPFL",
+            "request": "launch",
+            "mainClass": "Luogu.IPFL",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "压缩字符串III",
             "request": "launch",
             "mainClass": "LeetCode.压缩字符串III",

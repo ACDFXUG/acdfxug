@@ -13,16 +13,18 @@ const std::unordered_map<char,Location> std_lct={
 };
 
 int main(){
-    char board[4][4];
+    std::string board[4];
     int manhatonn=0;
     for(int i=0;i<4;i++){
-        scanf("%s",board[i]);
+        std::cin>>board[i];
     }
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
             char c=board[i][j];
-            Location lct=std_lct.at(c);
-            manhatonn+=abs(i-lct.x)+abs(j-lct.y);
+            if(c!='.'){
+                Location lct=std_lct.at(c);
+                manhatonn+=abs(i-lct.x)+abs(j-lct.y);
+            }
         }
     }
     printf("%d\n",manhatonn);
