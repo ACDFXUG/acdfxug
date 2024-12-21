@@ -94,9 +94,13 @@ public class VTT转LRC {
             System.out.println("转换成功!\n转换后的文件为:");
             vtts.forEach(File::delete);  //删除vtt文件
             lrcs.forEach(LRC->System.out.println(LRC.getName()));  //输出文件名
-        }catch(FileNotFoundException|ExecutionException
-                                    |InterruptedException fnfeEeIe){
-            System.out.println("转换失败");
+        }catch(FileNotFoundException|ExecutionException|InterruptedException e){
+            System.out.println(switch(e){
+                case FileNotFoundException fnfe->"找不到文件";
+                case InterruptedException ie->"线程中断"; 
+                case ExecutionException ee->"线程执行失败";
+                default->"未知错误";
+            });
         }
     }
 }
