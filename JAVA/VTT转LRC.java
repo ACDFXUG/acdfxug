@@ -15,7 +15,7 @@ public class VTT转LRC {
     /**
      * VTT文件夹对应的File对象
      */
-    static final File vttDir=new File(VTTS);
+    static final File VTT_DIR=new File(VTTS);
     /**
      * 判断字符串是否为数字
      * @param s 要判断的字符串
@@ -89,7 +89,7 @@ public class VTT转LRC {
     }
     public static void main(String[] args) {
         try{
-            List<File> vtts=getVTTFiles(vttDir);  //获取所有vtt文件
+            List<File> vtts=getVTTFiles(VTT_DIR);  //获取所有vtt文件
             List<File> lrcs=vttToLrc(vtts);  //转换为lrc文件
             System.out.println("转换成功!\n转换后的文件为:");
             vtts.forEach(File::delete);  //删除vtt文件
