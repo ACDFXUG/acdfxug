@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "单词规律",
+            "request": "launch",
+            "mainClass": "LeetCode.单词规律",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "MARKO",
+            "request": "launch",
+            "mainClass": "Luogu.MARKO",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "LRC文件修正",
             "request": "launch",
             "mainClass": "JAVA.LRC文件修正",

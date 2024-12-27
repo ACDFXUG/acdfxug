@@ -1,8 +1,10 @@
 package JAVA;
 
 import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.*;
+import static java.nio.file.StandardOpenOption.*;
 
 /**
  * 将60分钟内的vtt文件转换为lrc文件
@@ -13,9 +15,9 @@ public class VTT转LRC {
      */
     static final String VTTS="C:/Users/yaoyu/Desktop/VTTS";
     /**
-     * VTT文件夹对应的File对象
+     * VTT文件夹对应的Path对象
      */
-    static final File VTT_DIR=new File(VTTS);
+    static final Path VTT_DIR=Path.of(VTTS);
     /**
      * 判断字符串是否为数字
      * @param s 要判断的字符串
@@ -33,19 +35,13 @@ public class VTT转LRC {
      * 获取目录下所有vtt文件
      * @param vttDir 要获取的文件夹
      * @return 所有vtt文件的List
-     * @throws FileNotFoundException 找不到vtt文件
+     * @throws IOException 找不到vtt文件
      */
-    static List<File> getVTTFiles(File vttDir)
-    throws FileNotFoundException{  //dir/*.vtt
-        File[] vtts=vttDir.listFiles(
-            vtt->vtt.getName().endsWith(".vtt")
-        );
-        return switch(vtts.length){
-            case 0->throw new FileNotFoundException(
-                "文件夹里没有.vtt文件"
-            );
-            default->List.of(vtts); 
-        };
+    static List<Path> getVTTFiles(Path vttDir)
+    throws IOException{  // dir/*.vtt
+        return Files.list(vttDir).filter(
+            vtt->vtt.toString().endsWith(".vtt")
+        ).toList();
     }
     /**
      * 批量将vtt文件转换为lrc文件
@@ -54,31 +50,34 @@ public class VTT转LRC {
      * @throws InterruptedException 线程池异常
      * @throws ExecutionException 线程池异常
      */
-    static List<File> vttToLrc(List<File> vtts)
-    throws InterruptedException,ExecutionException{ //60分钟内的lrc
+    static List<File> vttToLrc(List<Path> vtts)
+    throws InterruptedException,ExecutionException{
         List<File> lrcs=new ArrayList<>(vtts.size());
-        ExecutorService es=Executors.newFixedThreadPool(vtts.size());
+        var es=Executors.newFixedThreadPool(vtts.size());
         var lrcFutures=new ArrayList<Future<File>>(vtts.size());
-        for(File vtt:vtts){
+        for(var vtt:vtts){
             lrcFutures.add(es.submit(()->{
-                Scanner sc=new Scanner(vtt);
-                File lrc=new File(vtt.getAbsolutePath().replace(".vtt",".lrc"));
-                FileWriter lrcWriter=new FileWriter(lrc);
-                while(sc.hasNextLine()){
-                    String line=sc.nextLine();
+                Path lrc=Path.of(vtt.toString().replace(".vtt",".lrc"));
+                BufferedWriter lrcWriter=Files.newBufferedWriter(lrc,CREATE,TRUNCATE_EXISTING);
+                for(var line:Files.readAllLines(vtt)){
                     if(!(line.startsWith("WEBVTT")||isNumber(line))){
                         if(line.isEmpty()){
                             lrcWriter.write(System.lineSeparator());
                         }else if(line.contains("-->")){
-                            lrcWriter.write("["+line.substring(3,11)+"]");
+                            if(line.charAt(1)!='0'){
+                                lrcWriter.write("["+line.substring(3,11)+"]");
+                            }else{
+                                int hour=Integer.valueOf(line.substring(0,2));
+                                int min=Integer.valueOf(line.substring(3,5));
+                                lrcWriter.write("["+(hour*60+min)+":"+line.substring(6,11)+"]");
+                            }
                         }else{
                             lrcWriter.write(line);
                         }
                     }
                 }
                 lrcWriter.close();
-                sc.close();
-                return lrc;
+                return lrc.toFile();
             }));
         }
         for(var lrcFuture:lrcFutures){
@@ -89,14 +88,16 @@ public class VTT转LRC {
     }
     public static void main(String[] args) {
         try{
-            List<File> vtts=getVTTFiles(VTT_DIR);  //获取所有vtt文件
-            List<File> lrcs=vttToLrc(vtts);  //转换为lrc文件
+            var vtts=getVTTFiles(VTT_DIR);  //获取所有vtt文件
+            var lrcs=vttToLrc(vtts);  //转换为lrc文件
             System.out.println("转换成功!\n转换后的文件为:");
-            vtts.forEach(File::delete);  //删除vtt文件
+            for(var vtt:vtts){
+                Files.delete(vtt); //删除vtt文件
+            }
             lrcs.forEach(LRC->System.out.println(LRC.getName()));  //输出文件名
-        }catch(FileNotFoundException|ExecutionException|InterruptedException e){
+        }catch(IOException|ExecutionException|InterruptedException e){
             System.out.println(switch(e){
-                case FileNotFoundException fnfe->"找不到文件";
+                case IOException fnfe->"文件IO错误";
                 case InterruptedException ie->"线程中断"; 
                 case ExecutionException ee->"线程执行失败";
                 default->"未知错误";
