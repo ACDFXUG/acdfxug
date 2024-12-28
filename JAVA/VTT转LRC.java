@@ -64,7 +64,7 @@ public class VTT转LRC {
                         if(line.isEmpty()){
                             lrcWriter.write(System.lineSeparator());
                         }else if(line.contains("-->")){
-                            if(line.charAt(1)!='0'){
+                            if(line.charAt(1)=='0'){
                                 lrcWriter.write("["+line.substring(3,11)+"]");
                             }else{
                                 int hour=Integer.valueOf(line.substring(0,2));
