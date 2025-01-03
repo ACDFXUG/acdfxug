@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "感雨時刻の整理",
+            "request": "launch",
+            "mainClass": "Luogu.感雨時刻の整理",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "单词规律",
             "request": "launch",
             "mainClass": "LeetCode.单词规律",
@@ -4292,7 +4299,7 @@
             "name": "C++",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
+            "program": "${fileDirname}\\$CPPDEBUG$.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -4313,7 +4320,7 @@
             "name": "C",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\EXE\\$CDEBUG$.exe",
+            "program": "${fileDirname}\\$CDEBUG$.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

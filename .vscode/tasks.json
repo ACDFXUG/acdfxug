@@ -10,7 +10,7 @@
                 "${file}",
                 "-std=gnu++26",
                 "-o",
-                "${fileDirname}\\EXE\\$CPPDEBUG$.exe",
+                "${fileDirname}\\$CPPDEBUG$.exe",
                 "-lstdc++exp"
             ],
             "options": {
@@ -34,7 +34,7 @@
                 "${file}",
                 "-std=gnu23",
                 "-o",
-                "${fileDirname}\\EXE\\$CDEBUG$.exe",
+                "${fileDirname}\\$CDEBUG$.exe",
             ],
             "options": {
                 "cwd": "${fileDirname}"

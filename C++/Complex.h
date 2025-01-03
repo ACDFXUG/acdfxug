@@ -5,10 +5,6 @@
 #include <regex>
 typedef std::string String;
 
-#define ONE Complex(1,0)
-#define ZERO Complex()
-#define I Complex(0,1)
-
 class Complex{
     private:
     long double _real,_imag;
@@ -300,11 +296,8 @@ class Complex{
     friend std::ostream &operator <<(std::ostream& os, const Complex& c) {
         return os << c.toString();
     }
-    static Complex polar(long double r,double theta){
+    static Complex polar(double theta,long double r=1){
         return Complex(cos(theta),sin(theta))*r;
-    }
-    static Complex polar(double theta){
-        return Complex(cos(theta),sin(theta));
     }
 };
 
@@ -389,3 +382,7 @@ Complex tanh(Complex z){
 Complex coth(Complex z){
     return cosh(z)/sinh(z);
 }
+
+const Complex ONE(1,0);
+const Complex ZERO(0,0);
+const Complex I(0,1);
