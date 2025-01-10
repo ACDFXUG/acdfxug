@@ -3,7 +3,7 @@
 int main(){
     int W,H,N;
     scanf("%d%d%d",&W,&H,&N);
-    bool **plane=new bool*[H];
+    bool **plane=new bool *[H];
     for(int i=0;i<H;plane[i++]=new bool[W](true));
     for(int i=0;i<N;i++){
         int x,y,a;

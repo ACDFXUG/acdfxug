@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <print>
 
 size_t pow(size_t x,int n){
     size_t ans=1;
@@ -16,9 +17,9 @@ int main(){
     int start=log(l)/log(k);
     for(int exp=start-1;pow(k,exp)<=0x7fffffffuz;exp++){
         if(pow(k,exp)==l){
-            printf("YES\n%d\n",exp-1);
+            std::println("YES\n{}",exp-1);
             return 0;
         }
     }
-    printf("NO\n");
+    std::println("NO\n");
 }

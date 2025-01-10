@@ -34,30 +34,31 @@ public class LRC文件修正 {
      * @throws InterruptedException 如果在等待任务完成时线程被中断
      * @throws ExecutionException 如果在执行任务时发生错误
      */
-    static List<File> modifyLRCs(List<Path> lrcs)
+    static List<Path> modifyLRCs(List<Path> lrcs)
     throws InterruptedException,ExecutionException{
         // 初始化一个与文件数量相同容量的列表，用于存储修改后的文件
-        var modifiedLRCs=new ArrayList<File>(lrcs.size());
+        var modifiedLRCs=new ArrayList<Path>(lrcs.size());
         // 创建一个固定大小的线程池，大小与文件列表长度相同
         var es=Executors.newFixedThreadPool(lrcs.size());
         // 初始化一个与文件数量相同容量的列表，用于存储异步任务的未来结果
-        var lrcFutures=new ArrayList<Future<File>>(lrcs.size());
+        var lrcFutures=new ArrayList<Future<Path>>(lrcs.size());
         // 遍历文件列表，为每个文件提交一个异步任务到线程池
         for(var lrc:lrcs){
             lrcFutures.add(es.submit(()->{
                 // 为每个文件创建一个临时文件，用于写入修改后的内容
                 var tmpLrc=Files.createTempFile(VTT_DIR,null,null);
-                BufferedWriter lrcWriter=Files.newBufferedWriter(tmpLrc,WRITE);
-                // 读取文件的每一行，如果行非空且以'['开头，则写入临时文件
-                for(var line:Files.readAllLines(lrc)){
-                    if(!line.isEmpty()&&line.charAt(0)=='['){
-                        lrcWriter.write(line);
-                        lrcWriter.write(System.lineSeparator());
+                try(var lrcWriter=Files.newBufferedWriter(tmpLrc,WRITE);
+                    var lrcReader=Files.newBufferedReader(lrc);){
+                    for(String line;(line=lrcReader.readLine())!=null;){
+                        // 读取文件的每一行，如果行非空且以'['开头，则写入临时文件
+                        if(!line.isEmpty()&&line.charAt(0)=='['){
+                            lrcWriter.write(line);
+                            lrcWriter.write(System.lineSeparator());
+                        }
                     }
                 }
-                lrcWriter.close();
                 // 将临时文件移动回原文件路径，替换原有文件
-                return Files.move(tmpLrc,lrc,REPLACE_EXISTING).toFile();
+                return Files.move(tmpLrc,lrc,REPLACE_EXISTING);
             }));
         }
         // 遍历未来结果列表，等待所有任务完成并收集结果
@@ -73,10 +74,10 @@ public class LRC文件修正 {
         try{
             var lrcs=getLRCPaths(VTT_DIR);
             var modifiedLRCs=modifyLRCs(lrcs);
-            modifiedLRCs.forEach(lrc->System.out.println(lrc.getName()));
+            modifiedLRCs.forEach(lrc->System.out.println(lrc.getFileName()));
         }catch(IOException|InterruptedException|ExecutionException e){
             System.out.println(switch(e){
-                case IOException ie->"IO错误";
+                case IOException ioe->"IO错误";
                 case InterruptedException ie->"线程中断";
                 case ExecutionException ee->"线程执行失败";
                 default->"未知错误";

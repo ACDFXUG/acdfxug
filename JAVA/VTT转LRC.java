@@ -50,34 +50,35 @@ public class VTT转LRC {
      * @throws InterruptedException 线程池异常
      * @throws ExecutionException 线程池异常
      */
-    static List<File> vttToLrc(List<Path> vtts)
+    static List<Path> vttToLrc(List<Path> vtts)
     throws InterruptedException,ExecutionException{
-        List<File> lrcs=new ArrayList<>(vtts.size());
+        List<Path> lrcs=new ArrayList<>(vtts.size());
         var es=Executors.newFixedThreadPool(vtts.size());
-        var lrcFutures=new ArrayList<Future<File>>(vtts.size());
+        var lrcFutures=new ArrayList<Future<Path>>(vtts.size());
         for(var vtt:vtts){
             lrcFutures.add(es.submit(()->{
                 Path lrc=Path.of(vtt.toString().replace(".vtt",".lrc"));
-                BufferedWriter lrcWriter=Files.newBufferedWriter(lrc,CREATE,TRUNCATE_EXISTING);
-                for(var line:Files.readAllLines(vtt)){
-                    if(!(line.startsWith("WEBVTT")||isNumber(line))){
-                        if(line.isEmpty()){
-                            lrcWriter.write(System.lineSeparator());
-                        }else if(line.contains("-->")){
-                            if(line.charAt(1)=='0'){
-                                lrcWriter.write("["+line.substring(3,11)+"]");
+                try(var lrcWriter=Files.newBufferedWriter(lrc,CREATE,TRUNCATE_EXISTING);
+                    var vttReader=Files.newBufferedReader(vtt);){
+                    for(String line;(line=vttReader.readLine())!=null;){
+                        if(!(line.startsWith("WEBVTT")||isNumber(line))){
+                            if(line.isEmpty()){
+                                lrcWriter.write(System.lineSeparator());
+                            }else if(line.contains("-->")){
+                                if(line.charAt(1)=='0'){
+                                    lrcWriter.write("["+line.substring(3,11)+"]");
+                                }else{
+                                    int hour=Integer.parseInt(line.substring(0,2));
+                                    int min=Integer.parseInt(line.substring(3,5));
+                                    lrcWriter.write("["+(hour*60+min)+":"+line.substring(6,11)+"]");
+                                }
                             }else{
-                                int hour=Integer.valueOf(line.substring(0,2));
-                                int min=Integer.valueOf(line.substring(3,5));
-                                lrcWriter.write("["+(hour*60+min)+":"+line.substring(6,11)+"]");
+                                lrcWriter.write(line);
                             }
-                        }else{
-                            lrcWriter.write(line);
                         }
                     }
                 }
-                lrcWriter.close();
-                return lrc.toFile();
+                return lrc;
             }));
         }
         for(var lrcFuture:lrcFutures){
@@ -94,10 +95,10 @@ public class VTT转LRC {
             for(var vtt:vtts){
                 Files.delete(vtt); //删除vtt文件
             }
-            lrcs.forEach(LRC->System.out.println(LRC.getName()));  //输出文件名
+            lrcs.forEach(LRC->System.out.println(LRC.getFileName()));  //输出文件名
         }catch(IOException|ExecutionException|InterruptedException e){
             System.out.println(switch(e){
-                case IOException fnfe->"文件IO错误";
+                case IOException ioe->"文件IO错误";
                 case InterruptedException ie->"线程中断"; 
                 case ExecutionException ee->"线程执行失败";
                 default->"未知错误";

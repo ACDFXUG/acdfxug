@@ -142,7 +142,6 @@ class Fraction{
         switch(x){
             case 0:return up;
             case 1:return low;
-            default:return NULL;
         }
     }
     Fraction &operator ()(const ll &x,const ll &y){
@@ -279,9 +278,9 @@ class Fraction{
         return parseFraction(std::to_string(x));
     }
     static Fraction parseFraction(String ratio){
-        String reg1="(\\d+)\\.(\\d+)\\((\\d+)\\)";
-        String reg2="(\\d+)\\.\\((\\d+)\\)";
-        String reg3="(\\d+)\\.(\\d+)";
+        String reg1=R"((\d+)\.(\d+)\((\d+)\))";
+        String reg2=R"((\d+)\.\((\d+)\))";
+        String reg3=R"((\d+)\.(\d+))";
         if(std::regex_match(ratio,std::regex(reg1))){
             ll a=std::stoll(ratio.substr(0,ratio.find(".")));
             ll b=std::stoll(ratio.substr(ratio.find(".")+1,ratio.find("(")-ratio.find(".")-1));
