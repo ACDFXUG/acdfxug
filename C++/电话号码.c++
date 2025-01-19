@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-typedef unsigned long long ull;
-int PHONENUMBER(ull pn){
+typedef unsigned long long uz;
+int PHONENUMBER(uz pn){
     string s=to_string(pn);
     int m=0,n=0,t=0;
     for(int i=0;i<11;i++){
@@ -16,10 +16,10 @@ int PHONENUMBER(ull pn){
     return !!t&&!(!!m&&!!n)?1:0;
 }
 int main(){
-    ull L,R;
+    uz L,R;
     cin>>L>>R;
     int sum=0;
-    for(ull i=L;i<=R;i++){
+    for(uz i=L;i<=R;i++){
         if(PHONENUMBER(i)){
             sum++;
         }

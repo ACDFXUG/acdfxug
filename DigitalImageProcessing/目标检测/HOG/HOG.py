@@ -45,9 +45,9 @@ def renderGradient(img,cellGdt):
                 agl+=aglGap
     return img
 
-def HOG(img):
-    h,w=img.shape
-    gdtMag,gdtAgl=globalGradient(img)
+def HOG(grayImg):
+    h,w=grayImg.shape
+    gdtMag,gdtAgl=globalGradient(grayImg)
     gdtMag=abs(gdtMag)
     cellGdtVector=np.zeros((h//cellSize,w//cellSize,binSize))
     for i in range(cellGdtVector.shape[0]):
@@ -71,11 +71,13 @@ def HOG(img):
     return np.asarray(hogVector),hogImage
 
 if __name__=="__main__":
-    IMG=cv2.imread("./Image/hfh.jpg")
-    WIDTH=64
-    HEIGHT=128
-    
+    PATH="./test/test1.jpg"
+    IMG=cv2.imread(PATH)
+    # WIDTH=64
+    # HEIGHT=128
+    h,w,_=IMG.shape
     IMG_RE=IMG[:,:][:,:,::-1]
+    # IMG_RE=cv2.resize(IMG_RE,(600,(600*h)//w))
     gray=cv2.cvtColor(IMG_RE,cv2.COLOR_BGR2GRAY)
 
     plt.figure(figsize=(6.4,2.0*3.2))
@@ -85,6 +87,7 @@ if __name__=="__main__":
     hogVector,hogImage=HOG(gray)
 
     plt.subplot(1,2,2)
-
-    plt.imshow(hogImage.transpose(),cmap=plt.cm.gray)
+    hogImage=hogImage.transpose()
+    plt.imshow(hogImage,cmap=plt.cm.gray)
+    cv2.imwrite(f"./HogImage/{PATH.rsplit('/', maxsplit=1)[-1][:-4]}_hog.jpg",hogImage)
     plt.show()
