@@ -3,7 +3,7 @@
 #include <print>
 
 template<class K,class V>
-using hashmap=std::unordered_map<K,V>;
+using hash_map=std::unordered_map<K,V>;
 
 template<class T>
 void println(T &t){
@@ -13,7 +13,7 @@ void println(T &t){
 int main(){
     int n,q;
     scanf("%d%d",&n,&q);
-    hashmap<int,hashmap<int,int>> locker(n);
+    hash_map<int,hash_map<int,int>> locker(n);
     for(int s=0,act,i,j,k;s<q;++s){
         scanf("%d%d%d",&act,&i,&j);
         switch(act){
