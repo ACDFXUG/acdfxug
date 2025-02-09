@@ -1,35 +1,33 @@
 package LeetCode;
 
-import java.util.*;
-
 public class RLE迭代器 {
     private static class RLEIterator{
-        Queue<Integer> rle;
+        final int[] rle;
         RLEIterator(int[] encoding){
-            this.rle=new ArrayDeque<>();
-            for(int i=0;i<encoding.length;i+=2){
-                for(int j=0;j<encoding[i];j++){
-                    rle.offer(encoding[i+1]);
-                }
-            }
+            this.rle=encoding.clone();
         }
         int next(int n){
-            for(int i=1;i<n;i++){
-                if(rle.isEmpty()){
-                    return -1;
+            for(int i=0;i<rle.length;i+=2){
+                if(rle[i]==0){
+                    continue;
                 }
-                rle.poll();
+                if(n<=rle[i]){
+                    rle[i]-=n;
+                    return rle[i+1];
+                }else{
+                    n-=rle[i];
+                    rle[i]=0;
+                }
             }
-            return rle.isEmpty()?-1:rle.poll();
+            return -1;
         }
     }
     public static void main(String[] args) {
         int[] encoding={3,8,0,9,2,5};
-        RLEIterator rleIterator=
-        new RLEIterator(encoding);
-        System.out.println(rleIterator.next(2));
-        System.out.println(rleIterator.next(1));
-        System.out.println(rleIterator.next(1));
-        System.out.println(rleIterator.next(2));
+        RLEIterator rleIter=new RLEIterator(encoding);
+        System.out.println(rleIter.next(2));
+        System.out.println(rleIter.next(1));
+        System.out.println(rleIter.next(1));
+        System.out.println(rleIter.next(2));
     }
 }

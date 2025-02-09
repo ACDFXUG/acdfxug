@@ -1,35 +1,55 @@
 package LeetCode;
 
 import java.util.*;
-import java.util.Map.*;
-import static java.util.AbstractMap.*;
 
 public class 序列顺序查询 {
+    private static record Scenery(String name,int score)
+    implements Comparable<Scenery>{
+        public int compareTo(Scenery sc){
+            return score==sc.score?
+                name.compareTo(sc.name):sc.score-score;
+        }
+        public int hashCode(){
+            return name.hashCode();
+        }
+        public boolean equals(Object sc){
+            if(sc==this) return true;
+            if(sc==null) return false;
+            return sc instanceof Scenery s
+                &&name.equals(s.name)&&score==s.score;
+        }
+    }
     private static class SORTracker{
-        int index;
-        Map<String,Integer> scenery;
-        PriorityQueue<Entry<String,Integer>> pq;
-        private Entry<String,Integer> getEntry(PriorityQueue<Entry<String,Integer>> pq,int index){
-            PriorityQueue<Entry<String,Integer>> temp=
-            new PriorityQueue<>(pq);
-            while(index--!=0){
-                temp.poll();
-            }
-            return temp.peek();
-        }
+        int browseTimes;
+        final TreeSet<Scenery> scenes;
         SORTracker(){
-            this.index=0;
-            this.scenery=new HashMap<String,Integer>();
-            this.pq=new PriorityQueue<Entry<String,Integer>>((e1,e2)->e1.getValue()==e2.getValue()?
-            e1.getKey().compareTo(e2.getKey()):e2.getValue()-e1.getValue());
+            this.browseTimes=0;
+            this.scenes=new TreeSet<>();
         }
-        void add(String name,int score){
-            scenery.put(name,score);
-            Entry<String,Integer> entry=new SimpleEntry<String,Integer>(name,score);
-            pq.offer(entry);
+        void add(String name, int score) {
+            scenes.add(new Scenery(name,score));
         }
-        String get(){
-            return getEntry(pq, index++).getKey();
+        String get() {
+            final int eleCnt=scenes.size();
+            if(browseTimes>=(eleCnt>>1)) {
+                var de=scenes.descendingIterator();
+                for(int i=eleCnt-1;i>browseTimes;i--){
+                    if(de.hasNext()){
+                        de.next();
+                    }
+                }
+                ++browseTimes;
+                return de.next().name();
+            }else{
+                var it=scenes.iterator();
+                for(int i=0;i<browseTimes;i++){
+                    if(it.hasNext()){
+                        it.next();
+                    }
+                }
+                ++browseTimes;
+                return it.next().name();
+            }
         }
     }
     public static void main(String[] args) {
