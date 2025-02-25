@@ -1,0 +1,46 @@
+# 这是Accesser的配置文件，保存到程序 ⚠工作目录⚠ 后重启程序生效。
+# This is the configuration file of Accesser, save it to the program ⚠ working directory ⚠ and restart the program to take effect.
+
+# 是否校验证书域名？false 不进行校验，true 进行宽松的校验（如a.example.com能匹配b.example.com），"strict" 进行标准的校验。
+# Whether to verify the certificate domains? Set to false for no verification, set to true for loose verification (e.g. a.example.com matches b.example.com), set to "strict" for standard verification.
+check_hostname = true
+
+# 是否自动设置系统的代理（目前只对Windows有效）。这可使用命令行参数 --notsetproxy 来覆盖。
+# Whether to set the system proxy automatically (currently only valid for Windows). This can be overridden with the command line argument --notsetproxy.
+setproxy = true
+
+# 是否自动导入并信任根证书（目前只对Windows有效）。这可使用命令行参数 --notimportca 来覆盖。
+# Whether to automatically import and trust the root certificate (currently only available for Windows). This can be overridden with the command line argument --notimportca.
+importca = true
+
+# 是否开启IPv6支持
+# Whether to enable IPv6 support
+ipv6 = true
+
+
+[log]
+
+# 日志级别: 可为"CRITICAL"、"ERROR"、"WARNING"、"INFO"、"DEBUG"、"NOTSET"，越后面的输出信息越多，参考Python的logging模块说明。
+# Logging level: can be "CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG", "NOTSET", the later the more output information, refer to Python's logging module manual.
+loglevel = "DEBUG"
+
+# 日志文件路径，"" 表示输出至控制台（如果存在）而不是文件。
+# Log file path, "" indicates output to the console (if present) instead of a file.
+logfile = ""
+
+
+[server]
+
+# 服务器绑定的地址。设为 "0.0.0.0" 可以允许同一局域网的设备连接该程序，比如用手机连接电脑的WiFi，设置PAC后既可允许手机使用。可能会有防火墙的提示，要允许访问。
+# The address to which the server is bound. Set to "0.0.0.0" to allow devices on the same LAN to connect to the program, such as using your phone to connect to your computer's WiFi, after setting the PAC to allow both your phone to use it. There may be a firewall prompt to allow access.
+address = "127.0.0.1"
+
+# 服务器的端口号，如果与其他程序发生端口冲突时可以更改，其值应为1-65535，建议>1024。
+# The port number of the server, which can be changed in case of port conflicts with other programs, should have a value of 1-65535, with >1024 recommended.
+port = 7654
+
+# PAC文件中的代理主机。如供局域网使用，应设为安装了Accesser的设备在局域网中的IP。
+# The proxy host in the PAC file. If for LAN usage, it should be set to the IP of the device on the LAN where Accesser is installed.
+pac_host = "127.0.0.1"
+
+
