@@ -35,6 +35,16 @@ class Matrix{
         this->rows=this->cols=order;
         this->data.resize(order,array(order,init));
     }
+    Matrix(const Matrix &mat){
+        this->data=mat.data;
+        this->rows=mat.rows;
+        this->cols=mat.cols;
+    }
+    Matrix(Matrix &&x){
+        this->data=std::move(x.data);
+        this->rows=x.rows;
+        this->cols=x.cols;
+    }
     void assign(matrix x){
         data=x;
     }
@@ -66,15 +76,18 @@ class Matrix{
         }
         return x;
     }
-    double getValue(int i,int j){
+    double getValue(int i,int j) const{
         return data[i][j];
     }
-    double operator()(const int &i,const int &j){
+    double &operator()(const int &i,const int &j){
         return data[i][j];
     }
-    array operator[](const int &i){
+    array &operator[](const int &i){
         return data[i];
     }
+    double &operator [](const int &i,const int &j){
+        return data[i][j];
+    } 
     bool operator ==(const Matrix &x) const{
         if(this==&x)return true;
         return data==x.data;
@@ -114,9 +127,11 @@ class Matrix{
     }
     Matrix &operator =(const Matrix &x){
         data=x.data;
+        rows=x.rows;
+        cols=x.cols;
         return *this;
     }
-    Matrix operator +(const Matrix &x){
+    Matrix operator +(const Matrix &x) const{
         Matrix temp(rows,cols);
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){

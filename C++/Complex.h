@@ -176,14 +176,14 @@ class Complex{
         return Complex(_real/c,_imag/c);
     }
     Complex operator /(const Complex &c){
-        if(c==ZERO){
+        if(c==Complex(0,0)){
             throw "Division by zero";
         }
         double denominator=c[0]*c[0]+c[1]*c[1];
         return Complex(_real*c[0]+_imag*c[1],_imag*c[0]-_real*c[1])/denominator;
     }
     friend Complex operator /(const long double &c,const Complex &z){
-        if(z==ZERO){
+        if(z==Complex(0,0)){
             throw "Division by zero";
         }
         return c*Complex(z[0],-z[1])/(z[0]*z[0]+z[1]*z[1]);
@@ -197,7 +197,7 @@ class Complex{
         return *this;
     }
     Complex &operator /=(const Complex &c){
-        if(c==ZERO){
+        if(c==Complex(0,0)){
             throw "Division by zero";
         }
         double denominator=c[0]*c[0]+c[1]*c[1];
@@ -207,19 +207,19 @@ class Complex{
         return *this/=denominator;
     }
     Complex operator ^(const int &n){
-        Complex ans=ONE;
+        Complex ans=Complex(1,0);
         for(int i=n;i-->0;ans*=*this){}
         return ans;
     }
-    Complex operator ^=(const int &n){
-        Complex ans=ONE;
+    Complex &operator ^=(const int &n){
+        Complex ans=Complex(1,0);
         for(int i=n;i-->0;ans*=*this);
         return *this=ans;
     }
     Complex operator ^(const long double &a){
         return Complex(cos(a*arg()),sin(a*arg()))*pow(magnitude(),a);
     }
-    Complex operator ^=(const long double &a){
+    Complex &operator ^=(const long double &a){
         return *this=Complex(cos(a*arg()),sin(a*arg()))*pow(magnitude(),a);
     }
     long double operator [](const int &i) const{
@@ -300,6 +300,10 @@ class Complex{
         return Complex(cos(theta),sin(theta))*r;
     }
 };
+
+const Complex ONE(1,0);
+const Complex ZERO(0,0);
+const Complex I(0,1);
 
 Complex operator ""_i(long double im){
     return Complex(0,im);
@@ -383,6 +387,12 @@ Complex coth(Complex z){
     return cosh(z)/sinh(z);
 }
 
-const Complex ONE(1,0);
-const Complex ZERO(0,0);
-const Complex I(0,1);
+template<>
+struct std::formatter<Complex>{
+    constexpr auto parse(format_parse_context& ctx){
+        return ctx.begin();
+    }
+    auto format(const Complex &c,format_context& ctx) const{
+        return format_to(ctx.out(),"{}",c.toString());
+    }
+};
