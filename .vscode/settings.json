@@ -162,4 +162,5 @@
     ],
     "java.project.explorer.showNonJavaResources": false,
     "java.dependency.packagePresentation": "flat",
+    "git.ignoreLimitWarning": true,
 }

@@ -10,12 +10,18 @@ struct ListNode {
 };
 
 ListNode* swapNodes(ListNode* head, int k) {
-    std::vector<int> vals;
-    for (auto p=head; p; p=p->next) {
-        vals.push_back(p->val);
+    auto p1=head,p2=head,p3=head;
+    for(int i=1;i<k;i++){
+        p1=p1->next;
     }
-    std::swap(vals[k-1], vals[vals.size()-k]);
-    
+    while(p1->next){
+        p1=p1->next;
+        p2=p2->next;
+    }
+    for(int i=1;i<k;i++){
+        p3=p3->next;
+    }
+    std::swap(p2->val,p3->val);
     return head;
 }
 
