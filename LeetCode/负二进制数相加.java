@@ -1,33 +1,29 @@
 package LeetCode;
 
+import java.math.BigInteger;
 import java.util.*;
 
 public class 负二进制数相加 {
+    static BigInteger toNegaBinary(int[] arr){
+        BigInteger init=BigInteger.ZERO;
+        final BigInteger negaTwo=BigInteger.valueOf(-2);
+        for(int x:arr){
+            init=init.multiply(negaTwo).add(BigInteger.valueOf(x));
+        }
+        return init;
+    }
     static int[] addNegabinary(int[] arr1, int[] arr2) {
-        List<Integer> add=new ArrayList<>();
-        int i=arr1.length-1,j=arr2.length-1,carry=0;
-        while(i>=0||j>=0||carry!=0){
-            int a=i>=0?arr1[i]:0;
-            int b=j>=0?arr2[j]:0;
-            int sum=a+b+carry;
-            if(sum>=2){
-                add.add(sum-2);
-                carry=-1;
-            }else{
-                add.add(sum);
-                carry=0;
-            }
-            i--;
-            j--;
+        BigInteger a=toNegaBinary(arr1);
+        BigInteger b=toNegaBinary(arr2);
+        BigInteger c=a.add(b);
+        final BigInteger negaTwo=BigInteger.valueOf(-2);
+        List<Integer> ans=new ArrayList<>();
+        while(c.compareTo(BigInteger.ZERO)!=0){
+            ans.add(c.mod(negaTwo).intValue());
+            c=c.divide(negaTwo);
         }
-        while(add.size()>1&&add.get(add.size()-1)==0){
-            add.remove(add.size()-1);
-        }
-        int[] res=new int[add.size()];
-        for(int k=0;k<add.size();k++){
-            res[k]=add.get(add.size()-1-k);
-        }
-        return res;
+        Collections.reverse(ans);
+        return ans.stream().mapToInt(Integer::intValue).toArray();
     }
     public static void main(String[] args) {
         int[] a1={1,1,1,1,1};
