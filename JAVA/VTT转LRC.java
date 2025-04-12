@@ -92,9 +92,7 @@ public class VTT转LRC {
             var vtts=getVTTFiles(VTT_DIR);  //获取所有vtt文件
             var lrcs=vttToLrc(vtts);  //转换为lrc文件
             System.out.println("转换成功!\n转换后的文件为:");
-            for(var vtt:vtts){
-                Files.delete(vtt); //删除vtt文件
-            }
+            for(var vtt:vtts) Files.delete(vtt); //删除vtt文件
             lrcs.forEach(LRC->System.out.println(LRC.getFileName()));  //输出文件名
         }catch(IOException|ExecutionException|InterruptedException e){
             System.out.println(switch(e){

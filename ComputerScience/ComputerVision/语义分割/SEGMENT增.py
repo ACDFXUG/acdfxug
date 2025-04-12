@@ -442,7 +442,7 @@ if __name__ == "__main__":
     optimizer = optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-4)
     
     # 训练模型（不传val_loader）
-    num_epochs = 100
+    num_epochs = 75
     print("Starting training without validation...")
     model, train_losses = train_model(
         model, train_loader, criterion, optimizer, 
