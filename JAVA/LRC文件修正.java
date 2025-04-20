@@ -16,14 +16,14 @@ public class LRC文件修正 {
      * @return 包含所有符合条件的.lrc文件路径的列表
      * @throws IOException 如果无法访问指定的目录时抛出此异常
      */
-    static List<Path> getLRCPaths(Path vttDir)
+    static Path[] getLRCPaths(Path vttDir)
     throws IOException{
         // 使用Files.list方法获取指定目录下的所有文件和子目录的路径流
         // 使用filter方法过滤出所有扩展名为.lrc的文件路径
         // toList方法将过滤后的路径流转换为列表
         return Files.list(vttDir).filter(
             lrc->lrc.toString().endsWith(".lrc")
-        ).toList();
+        ).toArray(Path[]::new);
     }
     /**
      * 修改给定的歌词文件列表，仅保留非空且以'['开头的行
@@ -34,14 +34,14 @@ public class LRC文件修正 {
      * @throws InterruptedException 如果在等待任务完成时线程被中断
      * @throws ExecutionException 如果在执行任务时发生错误
      */
-    static List<Path> modifyLRCs(List<Path> lrcs)
+    static List<Path> modifyLRCs(Path[] lrcs)
     throws InterruptedException,ExecutionException{
         // 初始化一个与文件数量相同容量的列表，用于存储修改后的文件
-        var modifiedLRCs=new ArrayList<Path>(lrcs.size());
+        var modifiedLRCs=new ArrayList<Path>(lrcs.length);
         // 创建一个固定大小的线程池，大小与文件列表长度相同
-        var es=Executors.newFixedThreadPool(lrcs.size());
+        var es=Executors.newFixedThreadPool(lrcs.length);
         // 初始化一个与文件数量相同容量的列表，用于存储异步任务的未来结果
-        var lrcFutures=new ArrayList<Future<Path>>(lrcs.size());
+        var lrcFutures=new ArrayList<Future<Path>>(lrcs.length);
         // 遍历文件列表，为每个文件提交一个异步任务到线程池
         for(var lrc:lrcs){
             lrcFutures.add(es.submit(()->{
@@ -62,9 +62,7 @@ public class LRC文件修正 {
             }));
         }
         // 遍历未来结果列表，等待所有任务完成并收集结果
-        for(var future:lrcFutures){
-            modifiedLRCs.add(future.get());
-        }
+        for(var future:lrcFutures) modifiedLRCs.add(future.get());
         // 关闭线程池，停止接收新任务，等待所有已提交的任务完成
         es.shutdown();
         // 返回修改后的文件列表

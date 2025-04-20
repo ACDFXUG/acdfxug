@@ -34,27 +34,27 @@ public class VTT转LRC {
     /**
      * 获取目录下所有vtt文件
      * @param vttDir 要获取的文件夹
-     * @return 所有vtt文件的List
+     * @return 所有vtt文件数组
      * @throws IOException 找不到vtt文件
      */
-    static List<Path> getVTTFiles(Path vttDir)
+    static Path[] getVTTFiles(Path vttDir)
     throws IOException{  // dir/*.vtt
         return Files.list(vttDir).filter(
             vtt->vtt.toString().endsWith(".vtt")
-        ).toList();
+        ).toArray(Path[]::new);
     }
     /**
      * 批量将vtt文件转换为lrc文件
-     * @param vtts vtt文件的List
+     * @param vtts vtt文件数组
      * @return lrc文件的List
      * @throws InterruptedException 线程池异常
      * @throws ExecutionException 线程池异常
      */
-    static List<Path> vttToLrc(List<Path> vtts)
+    static List<Path> vttToLrc(Path[] vtts)
     throws InterruptedException,ExecutionException{
-        List<Path> lrcs=new ArrayList<>(vtts.size());
-        var es=Executors.newFixedThreadPool(vtts.size());
-        var lrcFutures=new ArrayList<Future<Path>>(vtts.size());
+        List<Path> lrcs=new ArrayList<>(vtts.length);
+        var es=Executors.newFixedThreadPool(vtts.length);
+        var lrcFutures=new ArrayList<Future<Path>>(vtts.length);
         for(var vtt:vtts){
             lrcFutures.add(es.submit(()->{
                 Path lrc=Path.of(vtt.toString().replace(".vtt",".lrc"));
@@ -81,9 +81,7 @@ public class VTT转LRC {
                 return lrc;
             }));
         }
-        for(var lrcFuture:lrcFutures){
-            lrcs.add(lrcFuture.get());
-        }
+        for(var lrcFuture:lrcFutures) lrcs.add(lrcFuture.get());
         es.shutdown();
         return lrcs;
     }
@@ -93,7 +91,7 @@ public class VTT转LRC {
             var lrcs=vttToLrc(vtts);  //转换为lrc文件
             System.out.println("转换成功!\n转换后的文件为:");
             for(var vtt:vtts) Files.delete(vtt); //删除vtt文件
-            lrcs.forEach(LRC->System.out.println(LRC.getFileName()));  //输出文件名
+            lrcs.forEach(lrc->System.out.println(lrc.getFileName()));  //输出文件名
         }catch(IOException|ExecutionException|InterruptedException e){
             System.out.println(switch(e){
                 case IOException ioe->"文件IO错误";
