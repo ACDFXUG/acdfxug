@@ -3,6 +3,9 @@ package JAVA;
 import java.util.*;
 
 public class 全排列 {
+    static int factorial(int N){
+        return N==0?1:N*factorial(N-1);
+    }
     static int[] natural(int N){
         int[] nums=new int[N];
         for(int i=0;i<N;nums[i++]=i);
@@ -26,7 +29,7 @@ public class 全排列 {
     }
     static List<int[]> fullArr(int N){
         int[] nums=natural(N);
-        List<int[]> res=new Vector<>();
+        List<int[]> res=new ArrayList<>(factorial(N));
         backtrack(nums,res,0);
         return res;
     }

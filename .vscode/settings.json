@@ -115,7 +115,10 @@
         "cstdbool": "cpp",
         "ctgmath": "cpp",
         "locale": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "hash_map": "cpp",
+        "rope": "cpp",
+        "slist": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,
@@ -125,6 +128,14 @@
         "."
     ],
     "java.project.referencedLibraries": [
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.base.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.controls.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.fxml.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.graphics.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.media.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.swing.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx.web.jar",
+        "c:\\Program Files\\Java\\javafx-sdk-21.0.7\\lib\\javafx-swt.jar",
         "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-core-1.2.jar",
         "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-rootfinder-1.2.jar",
         "c:\\Program Files\\Java\\ACMath\\commons-math4-legacy-exception-4.0-beta1.jar",
