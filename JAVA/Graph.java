@@ -6,6 +6,7 @@ public class Graph<T> {
     private Map<T,Set<T>> adj;
     private int edge;
     private boolean isDirected;
+    private Set<T> vertex;
     /**
      * 默认为无向图
      */
@@ -18,6 +19,7 @@ public class Graph<T> {
      */
     public Graph(boolean isDirected){
         this.adj=new HashMap<>();
+        this.vertex=new HashSet<>();
         this.edge=0;
         this.isDirected=isDirected;
     }
@@ -27,12 +29,14 @@ public class Graph<T> {
             adj.computeIfAbsent(dst,$->new LinkedHashSet<>()).add(src);
         }
         ++edge;
+        vertex.add(src);
+        vertex.add(dst);
     }
     public Set<T> getAdjacencySet(T v){
         return adj.getOrDefault(v,new LinkedHashSet<>());
     }
-    public int getVertexs(){
-        return adj.size();
+    public int getVertices(){
+        return vertex.size();
     }
     public int getEdges(){
         return edge;
@@ -46,17 +50,24 @@ public class Graph<T> {
      * @return path
      */
     public String BFS(T src){
-        StringJoiner path=new StringJoiner("=>");
+        StringBuilder path=new StringBuilder();
         Queue<T> bfs=new ArrayDeque<>();
         Set<T> visited=new HashSet<>();
         bfs.add(src);
+        T last=null;
         while(!bfs.isEmpty()){
             T node=bfs.poll();
             if(!visited.contains(node)){
                 visited.add(node);
-                path.add(node.toString());
-                adj.getOrDefault(node,new LinkedHashSet<>()).forEach(bfs::add);
+                if(bfs.isEmpty()&&path.isEmpty()){
+                    path.append(node);
+                }else if(last!=null&&containsEdge(last,node)){
+                    path.append("|->|").append(node);
+                }
+                if(adj.containsKey(node))
+                    adj.get(node).forEach(bfs::add);
             }
+            last=node;
         }
         return path.toString();
     }
@@ -66,17 +77,24 @@ public class Graph<T> {
      * @return path
      */
     public String DFS(T src){
-        StringJoiner path=new StringJoiner("=>");
+        StringBuilder path=new StringBuilder();
         Deque<T> dfs=new ArrayDeque<>();
         Set<T> visited=new HashSet<>();
         dfs.push(src);
+        T last=null;
         while(!dfs.isEmpty()){
             T node=dfs.pop();
             if(!visited.contains(node)){
                 visited.add(node);
-                path.add(node.toString());
-                adj.getOrDefault(node,new LinkedHashSet<>()).forEach(dfs::push);
+                if(dfs.isEmpty()&&path.isEmpty()){
+                    path.append(node);
+                }else if(last!=null&&containsEdge(last,node)){
+                    path.append("|->|").append(node);
+                }
+                if(adj.containsKey(node))
+                    adj.get(node).forEach(dfs::push);
             }
+            last=node;
         }
         return path.toString();
     }
@@ -115,13 +133,16 @@ public class Graph<T> {
         return isDirected;
     }
     public boolean contains(T vertex){
-        return adj.containsKey(vertex);
+        return this.vertex.contains(vertex);
     }
     public boolean containsEdge(T src,T dst){
         return adj.getOrDefault(src,new LinkedHashSet<>()).contains(dst);
     }
     public void removeEdge(T src,T dst){
         adj.getOrDefault(src,new LinkedHashSet<>()).remove(dst);
+        if(!isDirected){
+            adj.getOrDefault(dst,new LinkedHashSet<>()).remove(src);
+        }
     }
     public void removeVertex(T vertex){
         adj.remove(vertex);

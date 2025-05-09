@@ -3,6 +3,7 @@ package JAVA;
 import java.util.*;
 
 public class Tree {
+    @SuppressWarnings("unused")
     private static class TreeNode<T>{
         T data;
         TreeNode<T> LEFT,RIGHT;
@@ -115,19 +116,38 @@ public class Tree {
             }
         }
         public int hashCode(){
-            List<T> pre=preOrdered();
-            List<T> in=inOrdered();
             int hash=17;
-            for(T ele:pre){
-                hash=31*hash+ele.hashCode();
-            }
-            for(T ele:in){
-                hash=31*hash+ele.hashCode();
-            }
+            hash=31*hash+data.hashCode();
+            hash=31*hash+(LEFT==null?0:LEFT.hashCode());
+            hash=31*hash+(RIGHT==null?0:RIGHT.hashCode());
             return hash;
         }
         public String toString(){
             return preOrdered().toString();
+        }
+        public List<T> DFS(){
+            List<T> ans=new ArrayList<>();
+            Deque<TreeNode<T>> dfs=new ArrayDeque<>();
+            dfs.push(this);
+            while(!dfs.isEmpty()){
+                var node=dfs.pop();
+                ans.add(node.data);
+                if(node.RIGHT!=null) dfs.push(node.RIGHT);
+                if(node.LEFT!=null) dfs.push(node.LEFT);
+            }
+            return ans;
+        }
+        public List<T> BFS(){
+            List<T> ans=new ArrayList<>();
+            Deque<TreeNode<T>> bfs=new ArrayDeque<>();
+            bfs.add(this);
+            while(!bfs.isEmpty()){
+                var node=bfs.poll();
+                ans.add(node.data);
+                if(node.LEFT!=null) bfs.add(node.LEFT);
+                if(node.RIGHT!=null) bfs.add(node.RIGHT);
+            }
+            return ans;
         }
     }
     public static void main(String[] args) {
