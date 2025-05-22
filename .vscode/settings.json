@@ -118,7 +118,9 @@
         "stack": "cpp",
         "hash_map": "cpp",
         "rope": "cpp",
-        "slist": "cpp"
+        "slist": "cpp",
+        "flat_map": "cpp",
+        "flat_set": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "python.analysis.autoImportCompletions": true,

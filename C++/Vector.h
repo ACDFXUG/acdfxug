@@ -7,9 +7,9 @@ class Vector{
     private:
     vctd v;
     public:
-    Vector():v(vctd()){}
-    Vector(int l):v(vctd(l)){}
-    Vector(int l,double init):v(vctd(l,init)){}
+    Vector():v(){}
+    Vector(int l):v(l){}
+    Vector(int l,double init):v(l,init){}
     Vector(vctd v):v(v){}
     Vector(std::initializer_list<double> ct){
         for(auto i:ct){

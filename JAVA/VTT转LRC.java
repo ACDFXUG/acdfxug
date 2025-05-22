@@ -11,13 +11,9 @@ import static java.nio.file.StandardOpenOption.*;
  */
 public class VTT转LRC {
     /**
-     * VTT文件夹路径
-     */
-    static final String VTTS="C:/Users/yaoyu/Desktop/VTTS";
-    /**
      * VTT文件夹对应的Path对象
      */
-    static final Path VTT_DIR=Path.of(VTTS);
+    static final Path VTT_DIR=Path.of("C:/Users/yaoyu/Desktop","VTTS");
     /**
      * 判断字符串是否为数字
      * @param s 要判断的字符串
@@ -59,7 +55,7 @@ public class VTT转LRC {
             lrcFutures.add(es.submit(()->{
                 Path lrc=Path.of(vtt.toString().replace(".vtt",".lrc"));
                 try(var lrcWriter=Files.newBufferedWriter(lrc,CREATE,TRUNCATE_EXISTING);
-                    var vttReader=Files.newBufferedReader(vtt);){
+                    var vttReader=Files.newBufferedReader(vtt)){
                     for(String line;(line=vttReader.readLine())!=null;){
                         if(!(line.startsWith("WEBVTT")||isNumber(line))){
                             if(line.isEmpty()){

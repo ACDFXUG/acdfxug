@@ -13,12 +13,9 @@
             ],
             "compilerPath": "C:/Program Files/mingw64/bin/g++.exe",
             "cStandard": "gnu23",
-            "cppStandard": "gnu++23",
+            "cppStandard": "gnu++26",
             "intelliSenseMode": "windows-gcc-x64",
-            "compilerArgs": [
-                "-std=gnu++26",
-                "-std=gnu23"
-            ]
+            "compilerArgs": []
         }
     ],
     "version": 4

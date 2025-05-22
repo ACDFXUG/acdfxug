@@ -7,7 +7,6 @@ HEADERS={
 
 def fetch_sub_comments(video_id, root_id):
     url=f'https://api.bilibili.com/x/v2/reply/reply?oid={video_id}&root={root_id}&type=1&sort=1&ps=30'
-    sub_comments=[]
     response=requests.get(url,headers=HEADERS,timeout=5)
     if response.status_code==200:
         reply=response.json()
