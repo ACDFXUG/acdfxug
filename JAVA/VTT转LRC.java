@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 import static java.nio.file.StandardOpenOption.*;
 
 /**
- * 将60分钟内的vtt文件转换为lrc文件
+ * 批量将vtt文件转换为lrc文件
  */
 public class VTT转LRC {
     /**
