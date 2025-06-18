@@ -3,6 +3,9 @@ package JAVA;
 import java.util.*;
 import java.io.*;
 
+/**
+ * 不再使用LLQQ
+ */
 public class LLQQ {
     /**
      * QQNT的路径
