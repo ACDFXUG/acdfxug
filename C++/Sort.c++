@@ -234,7 +234,7 @@ private:
      *
      * @return 返回排序后的数组
      */
-    template<bool max=true>
+    template<bool max= true >
     std::vector<T> heap_sort(){
         std::vector<T> new_arr(1); // 初始化一个大小为1的数组，索引0不用于存储数据
         new_arr.insert(new_arr.end(), arr.begin(), arr.end()); // 将原数组复制到new_arr中（从索引1开始）
@@ -283,7 +283,7 @@ public:
      * 
      * @return std::vector<T> 
      */
-    std::vector<T> heap_max_sort(){
+    std::vector<T> max_heap_sort(){
         return heap_sort<true>();
     }
     /**
@@ -291,8 +291,39 @@ public:
      * 
      * @return std::vector<T> 
      */
-    std::vector<T> heap_min_sort(){
+    std::vector<T> min_heap_sort(){
         return heap_sort<false>();
+    }
+};
+
+template<std::totally_ordered T>
+class MergeSort{
+private:
+    std::vector<T> arr;
+    static void merge(std::vector<T> &arr,int l,int mid,int r){
+        std::vector<T> tmp(arr.size()+1);
+        int i,j,k;
+        for(k=l;k<=r;++k) tmp[k]=arr[k];
+        for(i=l,j=mid+1,k=i;i<=mid&&j<=r;++k){
+            if(tmp[i]<=tmp[j]) arr[k]=tmp[i++];
+            else arr[k]=tmp[j++];
+        }
+        while(i<=mid) arr[k++]=tmp[i++];
+        while(j<=r) arr[k++]=tmp[j++];
+    }
+    static void merge_sort(std::vector<T> &arr,int l,int r){
+        if(l>=r) return;
+        int mid=(l+r)/2;
+        merge_sort(arr,l,mid);
+        merge_sort(arr,mid+1,r);
+        merge(arr,l,mid,r);
+    }
+public:
+    MergeSort(std::vector<T> arr):arr(arr){}
+    std::vector<T> merge_sort(){ 
+        std::vector<T> new_arr(arr);
+        merge_sort(new_arr,0,new_arr.size()-1 );
+        return new_arr;
     }
 };
 
@@ -311,5 +342,9 @@ int main(){
     SelectSort<int> ss({3,2,1,5,4,10,7,8,6,9});
     std::println("Select Sort:");
     std::println("{}",ss.simple_select());
-    std::println("{}",ss.heap_min_sort());
+    std::println("{}",ss.min_heap_sort());
+
+    MergeSort<int> ms({3,2,1,5,4,10,7,8,6,9});
+    std::println("Merge Sort:");
+    std::println("{}",ms.merge_sort());
 }

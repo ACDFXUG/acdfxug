@@ -26,13 +26,16 @@ public class 深搜广搜 {
             Set<T> visited=new HashSet<>();
             Deque<T> dfs=new ArrayDeque<>();
             dfs.push(src);
+            visited.add(src);
             while(!dfs.isEmpty()){
                 T node=dfs.pop();
-                if(!visited.contains(node)){
-                    visited.add(node);
-                    path.add(node.toString());
-                    adj.getOrDefault(node,new HashSet<>()).forEach(dfs::push);
-                }
+                path.add(node.toString());
+                adj.getOrDefault(node,new LinkedHashSet<>()).forEach(n->{
+                    if(!visited.contains(n)){
+                        visited.add(n);
+                        dfs.push(n);
+                    }
+                });
             }
             return path.toString();
         }
@@ -46,13 +49,16 @@ public class 深搜广搜 {
             Set<T> visited=new HashSet<>();
             Queue<T> bfs=new ArrayDeque<>();
             bfs.add(src);
+            visited.add(src);
             while(!bfs.isEmpty()){
                 T node=bfs.poll();
-                if(!visited.contains(node)){
-                    visited.add(node);
-                    path.add(node.toString());
-                    adj.getOrDefault(node,new LinkedHashSet<>()).forEach(bfs::add);
-                }
+                path.add(node.toString());
+                adj.getOrDefault(node,new LinkedHashSet<>()).forEach(n->{
+                    if(!visited.contains(n)){
+                        visited.add(n);
+                        bfs.add(n);
+                    }
+                });
             }
             return path.toString();
         }
