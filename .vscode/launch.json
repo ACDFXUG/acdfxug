@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "数字对",
+            "request": "launch",
+            "mainClass": "JAVA.Luogu.数字对",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "口算练习题",
             "request": "launch",
             "mainClass": "Luogu.口算练习题",

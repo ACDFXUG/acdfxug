@@ -384,13 +384,10 @@ public class Matrix {
      * @return this ^ n
      */
     public Matrix power(int n){
-        Matrix c=clone();
-        if(n==0){
-            c=identity(rows);
-        }else{
-            for(;n>=2;n--){
-                c.multiplyEqual(this);
-            }
+        Matrix c=identity(rows),t=this;
+        for(;n>0;n>>=1){
+            if((n&1)==1) c.multiplyEqual(t);
+            t.multiplyEqual(t);
         }
         return c;
     }

@@ -5,14 +5,12 @@ import java.util.Scanner;
 public class MatrixDebug {
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        int R=sc.nextInt(),C=sc.nextInt();
-        GenericMatrix<Integer> a=new GenericMatrix<>(R, C);
-        for(int i=0;i<R;i++){
-            for(int j=0;j<C;j++){
-                a.inputAt(i, j, sc.nextInt());
-            }
-        }
-        System.out.println(a.add(a));
+        Matrix P=new Matrix(new double[][]{
+            {-1,0,0},
+            {3,2,0},
+            {0,0,-1}
+        });
+        System.out.println(P.power(10));
         sc.close();
     }
 }

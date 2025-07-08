@@ -1,47 +1,60 @@
 #include <iostream>
-#include <unordered_set>
-using namespace std;
+#include <set>
+
+template<class T>
+auto floor(const std::set<T> &set,const T &val){
+    auto it=set.lower_bound(val);
+    if(it!=set.end()&&*it==val) return it;
+    return it==set.begin()?set.end():--it;
+}
+
+template<class T>
+auto ceiling(const std::set<T> &set,const T &val){
+    return set.upper_bound(val);
+}
 
 int main(){
-    int n;
-    scanf("%d", &n);
-    unordered_set<int> wood;
-    while(n-->0){
-        int act,length;
-        scanf("%d%d",&act,&length);
-        if(act==1){
-            if(wood.contains(length)){
-                printf("Already Exist\n");
-            }else{
-                wood.insert(length);
-            }
-        }else if(act==2){
-            if(wood.contains(length)){
-                printf("%d\n",length);
-                wood.erase(length);
-            }else{
-                if(wood.empty()){
-                    printf("Empty\n");
-                    continue;
+    int m;
+    std::cin>>m;
+    std::set<int> cache;
+    for(int act,len;m-->0;){
+        std::cin>>act>>len;
+        switch(act){
+            case 1:{
+                if(cache.contains(len)){
+                    std::cout<<"Already Exist\n";
+                }else{
+                    cache.insert(len);
                 }
-                for(int k=1;k<length;k++){
-                    int l1=length-k,l2=length+k;
-                    if(wood.contains(l1)&&wood.contains(l2)){
-                        printf("%d\n",l1);
-                        wood.erase(l1);
-                        break;
-                    }else if(wood.contains(l1)&&!wood.contains(l2)){
-                        printf("%d\n",l1);
-                        wood.erase(l1);
-                        break;
-                    }else if((!wood.contains(l1))&&wood.contains(l2)){
-                        printf("%d\n",l2);
-                        wood.erase(l2);
-                        break;
+                break;
+            }case 2:{
+                if(cache.contains(len)){
+                    std::cout<<len<<'\n';
+                    cache.erase(len);
+                }else{
+                    if(cache.empty()){
+                        std::cout<<"Empty\n";
                     }else{
-                        continue;
+                        auto shorter=floor(cache,len);
+                        auto longer=ceiling(cache,len);
+                        if(shorter==cache.end()&&longer!=cache.end()){
+                            std::cout<<*longer<<'\n';
+                            cache.erase(longer);
+                        }else if(shorter!=cache.end()&&longer==cache.end()){
+                            std::cout<<*shorter<<'\n';
+                            cache.erase(shorter);
+                        }else{
+                            if(*longer-len<len-*shorter){
+                                std::cout<<*longer<<'\n';
+                                cache.erase(longer);
+                            }else{
+                                std::cout<<*shorter<<'\n';
+                                cache.erase(shorter);
+                            }
+                        }
                     }
                 }
+                break;
             }
         }
     }
