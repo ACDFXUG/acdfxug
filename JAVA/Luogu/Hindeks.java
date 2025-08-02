@@ -9,5 +9,6 @@ public class Hindeks {
         int[] a=new int[N];
         for(int i=0;i<N;a[i++]=sc.nextInt());
         Arrays.sort(a);
+        sc.close();
     }
 }
