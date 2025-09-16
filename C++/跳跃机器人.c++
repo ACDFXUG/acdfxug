@@ -10,7 +10,7 @@ int main(){
     path.emplace(1,0);
     visited.insert(1);
     while(!path.empty()){
-        const auto &[cur,step]=path.front();
+        const auto [cur,step]=path.front();
         path.pop();
         if(cur==n){
             std::cout<<step<<std::endl;
