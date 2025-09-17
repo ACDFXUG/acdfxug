@@ -7,7 +7,7 @@ public class 进行操作使字符串为空 {
         Map<Character,Queue<Integer>> chLoc=new HashMap<>(30);
         Map<Character,Integer> removed=new HashMap<>(30);
         for(int i=0;i<s.length();++i){
-            chLoc.computeIfAbsent(s.charAt(i),$->new ArrayDeque<>()).add(i);
+            chLoc.computeIfAbsent(s.charAt(i),_->new ArrayDeque<>()).add(i);
         }
         for(;;){
             removed.clear();

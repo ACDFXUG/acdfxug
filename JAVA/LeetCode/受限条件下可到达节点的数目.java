@@ -7,8 +7,8 @@ public class 受限条件下可到达节点的数目 {
         Map<Integer,Set<Integer>> adj=new HashMap<>();
         Set<Integer> ban=new HashSet<>();
         for(var edge:edges){
-            adj.computeIfAbsent(edge[0],val->new HashSet<>()).add(edge[1]);
-            adj.computeIfAbsent(edge[1],val->new HashSet<>()).add(edge[0]);
+            adj.computeIfAbsent(edge[0],_->new HashSet<>()).add(edge[1]);
+            adj.computeIfAbsent(edge[1],_->new HashSet<>()).add(edge[0]);
         }
         for(var node:restricted){
             ban.add(node);

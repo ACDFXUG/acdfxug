@@ -14,8 +14,8 @@ public class 在系统中查找重复文件 {
                 if(m.matches()){
                     var name=m.group(1);
                     var content=m.group(2);
-                    files.computeIfAbsent(content,k->new HashMap<>())
-                        .computeIfAbsent(p[0],k->new ArrayList<>())
+                    files.computeIfAbsent(content,_->new HashMap<>())
+                        .computeIfAbsent(p[0],_->new ArrayList<>())
                         .add(name);
                 }
             }

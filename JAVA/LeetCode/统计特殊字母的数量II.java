@@ -32,7 +32,7 @@ public class 统计特殊字母的数量II {
         })
         .map(C->toLower(C))
         .distinct()
-        .mapToInt(C->1)
+        .mapToInt(_->1)
         .sum();
     }
     public static void main(String[] args) {

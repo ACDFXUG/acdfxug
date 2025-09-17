@@ -20,7 +20,7 @@ public class 从双倍数组中还原原数组 {
         .collect(Collectors.toList());
         int zeros=values.stream()
         .filter(I->I==0)
-        .mapToInt(I->1)
+        .mapToInt(_->1)
         .sum();
         if((zeros&1)==1){
             return new int[0];

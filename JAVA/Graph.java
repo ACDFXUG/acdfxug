@@ -24,9 +24,9 @@ public class Graph<T> {
         this.isDirected=isDirected;
     }
     public void addEdge(T src,T dst){
-        adj.computeIfAbsent(src,$->new LinkedHashSet<>()).add(dst);
+        adj.computeIfAbsent(src,_->new LinkedHashSet<>()).add(dst);
         if(!isDirected){
-            adj.computeIfAbsent(dst,$->new LinkedHashSet<>()).add(src);
+            adj.computeIfAbsent(dst,_->new LinkedHashSet<>()).add(src);
         }
         ++edge;
         vertex.add(src);
@@ -146,7 +146,7 @@ public class Graph<T> {
     }
     public void removeVertex(T vertex){
         adj.remove(vertex);
-        adj.forEach((K,V)->V.remove(vertex));
+        adj.forEach((_,V)->V.remove(vertex));
     }
     public static void main(String[] args) {
         Graph<Integer> graph=new Graph<>(true);

@@ -9,7 +9,7 @@ public class 字母异位词分组 {
             char[] chars=word.toCharArray();
             Arrays.sort(chars);
             String key=new String(chars);
-            diff.computeIfAbsent(key,k->new ArrayList<>()).add(word);
+            diff.computeIfAbsent(key,_->new ArrayList<>()).add(word);
         }
         List<List<String>> res=new ArrayList<>();
         diff.values().forEach(res::add);

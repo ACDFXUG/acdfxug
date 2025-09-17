@@ -14,14 +14,14 @@ public class 频率跟踪器 {
             nums.merge(number,1,Integer::sum);
             int freqNum=nums.get(number);
             if(freqNum==1){
-                freqSet.computeIfAbsent(freqNum,$->new HashSet<>()).add(number);
+                freqSet.computeIfAbsent(freqNum,_->new HashSet<>()).add(number);
             }else{
                 var preSet=freqSet.get(freqNum-1);
                 preSet.remove(number);
                 if(preSet.isEmpty()){
                     freqSet.remove(freqNum-1);
                 }
-                freqSet.computeIfAbsent(freqNum,$->new HashSet<>()).add(number);
+                freqSet.computeIfAbsent(freqNum,_->new HashSet<>()).add(number);
             }
         }
         void deleteOne(int number) {
@@ -43,7 +43,7 @@ public class 频率跟踪器 {
                 if(preSet.isEmpty()){
                     freqSet.remove(freqNum);
                 }
-                freqSet.computeIfAbsent(freqNum-1,$->new HashSet<>()).add(number);
+                freqSet.computeIfAbsent(freqNum-1,_->new HashSet<>()).add(number);
             }
         }
         boolean hasFrequency(int frequency) {

@@ -11,7 +11,7 @@ public class 随机数索引 {
                 for(int i=0;i<nums.length;i++){
                     computeIfAbsent(
                         nums[i],
-                        $->new ArrayList<>()
+                        _->new ArrayList<>()
                     ).add(i);
                 }
             }};

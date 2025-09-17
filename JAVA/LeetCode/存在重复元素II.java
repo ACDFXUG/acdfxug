@@ -7,7 +7,7 @@ public class 存在重复元素II {
         var dupIndex=new HashMap<Integer,List<Integer>>();
         for(int i=0;i<nums.length;i++){
             dupIndex.computeIfAbsent(
-                nums[i],$->new ArrayList<>()
+                nums[i],_->new ArrayList<>()
             ).add(i);
         }
         for(var entry:dupIndex.entrySet()){

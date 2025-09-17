@@ -9,10 +9,10 @@ public class 家谱树 {
             this.fmlMap=new HashMap<>(N);
         }
         void addEdge(int prt,int son){
-            fmlMap.computeIfAbsent(prt,$->new HashSet<>()).add(son);
+            fmlMap.computeIfAbsent(prt,_->new HashSet<>()).add(son);
         }
         void deleteVertex(int mem){
-            fmlMap.forEach(($,sons)->sons.remove(mem));
+            fmlMap.forEach((_,sons)->sons.remove(mem));
             fmlMap.remove(mem);
         }
     }

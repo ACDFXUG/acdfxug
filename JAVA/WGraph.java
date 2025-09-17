@@ -17,9 +17,9 @@ public class WGraph<T> {
         this.edge=0;
     }
     public void addEdge(T src,T dst,int w){
-        adjWeight.computeIfAbsent(src,$->new LinkedHashMap<>()).put(dst,w);
+        adjWeight.computeIfAbsent(src,_->new LinkedHashMap<>()).put(dst,w);
         if(!isDirected){
-            adjWeight.computeIfAbsent(dst,$->new LinkedHashMap<>()).put(src,w);
+            adjWeight.computeIfAbsent(dst,_->new LinkedHashMap<>()).put(src,w);
         }
         ++edge;
         vertex.add(src);
@@ -51,7 +51,7 @@ public class WGraph<T> {
     }
     public void removeVertex(T vertex){
         adjWeight.remove(vertex);
-        adjWeight.forEach((K,V)->V.remove(vertex));
+        adjWeight.forEach((_,V)->V.remove(vertex));
     }
     public boolean isDirected(){
         return isDirected;

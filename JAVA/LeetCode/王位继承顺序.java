@@ -33,7 +33,7 @@ public class 王位继承顺序 {
             };
         }
         void birth(String parentName, String childName) {
-            children.computeIfAbsent(parentName,$->new ArrayList<>()).add(childName);
+            children.computeIfAbsent(parentName,_->new ArrayList<>()).add(childName);
             father.put(childName,parentName);
         }
         void death(String name) {

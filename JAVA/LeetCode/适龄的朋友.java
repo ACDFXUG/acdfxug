@@ -13,7 +13,7 @@ public class 适龄的朋友 {
         for(int x=0;x<ages.length;++x){
             for(int y=0;y<ages.length;++y){
                 if(x!=y&&!checkNot(x,y,ages)){
-                    var xf=friend.computeIfAbsent(x,$->new HashSet<>());
+                    var xf=friend.computeIfAbsent(x,_->new HashSet<>());
                     // var yf=friend.computeIfAbsent(y,$->new HashSet<>());
                     // if(!yf.contains(x)) 
                     xf.add(y);
@@ -22,7 +22,7 @@ public class 适龄的朋友 {
         }
         System.out.println(friend);
         int[] ans={0};
-        friend.forEach((x,xf)->{
+        friend.forEach((_,xf)->{
             ans[0]+=xf.size();
         });
         return ans[0];

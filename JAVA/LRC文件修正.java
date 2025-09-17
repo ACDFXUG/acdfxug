@@ -75,9 +75,9 @@ public class LRC文件修正 {
             modifiedLRCs.forEach(lrc->System.out.println(lrc.getFileName()));
         }catch(IOException|InterruptedException|ExecutionException e){
             System.out.println(switch(e){
-                case IOException ioe->"IO错误";
-                case InterruptedException ie->"线程中断";
-                case ExecutionException ee->"线程执行失败";
+                case IOException _->"IO错误";
+                case InterruptedException _->"线程中断";
+                case ExecutionException _->"线程执行失败";
                 default->"未知错误";
             });
         }

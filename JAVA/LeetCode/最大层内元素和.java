@@ -29,7 +29,7 @@ public class 最大层内元素和 {
                 if(node.left!=null) level.add(node.left);
                 if(node.right!=null) level.add(node.right);
             }
-            levelSum.computeIfAbsent(sum,$->new ArrayList<>()).add(lvl);
+            levelSum.computeIfAbsent(sum,_->new ArrayList<>()).add(lvl);
         }
         return levelSum.firstEntry().getValue().get(0);
     }

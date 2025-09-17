@@ -39,7 +39,7 @@ public class 信息传递 {
         }
         OUT:for(int round=1;;++round){
             toSent.clear();
-            broadcast.forEach((from,to)->{ 
+            broadcast.forEach((from,_)->{ 
                 toSent.put(from,new HashSet<>(from.birthKnew));
             });
             for(var entry:broadcast.entrySet()){

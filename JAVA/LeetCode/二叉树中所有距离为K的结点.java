@@ -24,13 +24,13 @@ public class 二叉树中所有距离为K的结点 {
             var nd=bfs.poll();
             if(nd.left!=null){
                 bfs.offer(nd.left);
-                treeG.computeIfAbsent(nd,$->new HashSet<>()).add(nd.left);
-                treeG.computeIfAbsent(nd.left,$->new HashSet<>()).add(nd);
+                treeG.computeIfAbsent(nd,_->new HashSet<>()).add(nd.left);
+                treeG.computeIfAbsent(nd.left,_->new HashSet<>()).add(nd);
             }
             if(nd.right!=null){ 
                 bfs.offer(nd.right);
-                treeG.computeIfAbsent(nd,$->new HashSet<>()).add(nd.right);
-                treeG.computeIfAbsent(nd.right,$->new HashSet<>()).add(nd);
+                treeG.computeIfAbsent(nd,_->new HashSet<>()).add(nd.right);
+                treeG.computeIfAbsent(nd.right,_->new HashSet<>()).add(nd);
             }
         }
         return treeG;

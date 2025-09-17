@@ -29,7 +29,7 @@ public class 设计内存分配器 {
                 if(size<=maxMemSize){
                     Memory alloc=new Memory(0,size);
                     alcted.add(alloc);
-                    memory.computeIfAbsent(mID,$->new ArrayList<>()).add(alloc);
+                    memory.computeIfAbsent(mID,_->new ArrayList<>()).add(alloc);
                     return 0;
                 }else return -1;
             }else{
@@ -37,7 +37,7 @@ public class 设计内存分配器 {
                 if(left.ptr>=size){
                     Memory alloc=new Memory(0,size);
                     alcted.add(alloc);
-                    memory.computeIfAbsent(mID,$->new ArrayList<>()).add(alloc);
+                    memory.computeIfAbsent(mID,_->new ArrayList<>()).add(alloc);
                     return 0;
                 }
                 var it=alcted.iterator();
@@ -47,7 +47,7 @@ public class 设计内存分配器 {
                     if(cur.ptr+cur.size+size<=next.ptr){
                         Memory alloc=new Memory(cur.ptr+cur.size,size);
                         alcted.add(alloc);
-                        memory.computeIfAbsent(mID,$->new ArrayList<>()).add(alloc);
+                        memory.computeIfAbsent(mID,_->new ArrayList<>()).add(alloc);
                         return alloc.ptr;
                     }
                     cur=next;
@@ -55,7 +55,7 @@ public class 设计内存分配器 {
                 if(cur.ptr+cur.size+size<=maxMemSize){
                     Memory alloc=new Memory(cur.ptr+cur.size,size);
                     alcted.add(alloc);
-                    memory.computeIfAbsent(mID,$->new ArrayList<>()).add(alloc);
+                    memory.computeIfAbsent(mID,_->new ArrayList<>()).add(alloc);
                     return alloc.ptr;
                 }
                 return -1;

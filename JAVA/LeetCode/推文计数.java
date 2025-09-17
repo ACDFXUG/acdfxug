@@ -10,7 +10,7 @@ public class 推文计数 {
         }
         
         public void recordTweet(String tweetName, int time) {
-            var map=tweets.computeIfAbsent(time,$->new HashMap<>());
+            var map=tweets.computeIfAbsent(time,_->new HashMap<>());
             map.merge(tweetName,1,Integer::sum);
         }
         

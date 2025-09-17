@@ -21,7 +21,7 @@ public class 设计一个验证系统 {
         int countUnexpiredTokens(int currentTime) {
             return token.values().stream()
             .filter(i->i>currentTime)
-            .mapToInt(i->1)
+            .mapToInt(_->1)
             .sum();
         }
     }

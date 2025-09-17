@@ -5,7 +5,7 @@ public class 统计星号 {
         while(s.contains("|"))
         s=s.replaceFirst("\\|[a-z*]*\\|","");
         return s.chars().filter(ch->ch=='*')
-                        .map(ch->1)
+                        .map(_->1)
                         .sum();
     }
     public static void main(String[] args) {

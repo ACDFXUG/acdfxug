@@ -29,7 +29,7 @@ public class 二叉树的垂序遍历 {
             while(size-->0){
                 var cur=bfs.poll();
                 int col=vt.get(cur);
-                cols.computeIfAbsent(col,$->new PriorityQueue<>()).add(cur.val);
+                cols.computeIfAbsent(col,_->new PriorityQueue<>()).add(cur.val);
                 if(cur.left!=null){
                     bfs.add(cur.left);
                     vt.put(cur.left,col-1);
@@ -43,7 +43,7 @@ public class 二叉树的垂序遍历 {
                 List<Integer> v=new ArrayList<>();
                 while(!val.isEmpty())
                     v.add(val.poll());
-                vtc.computeIfAbsent(col,$->new ArrayList<>()).addAll(v);
+                vtc.computeIfAbsent(col,_->new ArrayList<>()).addAll(v);
             });
         }
         return vtc.entrySet().stream()

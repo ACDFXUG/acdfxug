@@ -6,7 +6,7 @@ public class 相同元素的间隔之和 {
     static long[] getDistances(int[] arr) {
         var location=new HashMap<Integer,List<Integer>>();
         for(int i=0;i<arr.length;i++){
-            location.computeIfAbsent(arr[i],$->new ArrayList<>()).add(i);
+            location.computeIfAbsent(arr[i],_->new ArrayList<>()).add(i);
         }
         long[] ans=new long[arr.length];
         for(int i=0;i<arr.length;i++){

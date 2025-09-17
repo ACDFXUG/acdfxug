@@ -8,6 +8,6 @@ public class 统计匹配检索规则的物品数量 {
             ruleKey.equals("type")&&L.get(0).equals(ruleValue)
             ||ruleKey.equals("color")&&L.get(1).equals(ruleValue)
             ||ruleKey.equals("name")&&L.get(2).equals(ruleValue)
-        ).mapToInt(L->1).sum();
+        ).mapToInt(_->1).sum();
     }
 }

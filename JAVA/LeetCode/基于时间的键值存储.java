@@ -11,7 +11,7 @@ public class 基于时间的键值存储 {
             >();
         }
         void set(String key, String value, int timestamp) {
-            time.computeIfAbsent(key,$->
+            time.computeIfAbsent(key,_->
                 new TreeMap<>((a,b)->b-a)
             ).put(timestamp,value);
         }

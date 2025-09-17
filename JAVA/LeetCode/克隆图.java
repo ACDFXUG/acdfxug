@@ -48,8 +48,8 @@ public class 克隆图 {
         while(!bfs.isEmpty()){
             var cur=bfs.poll();
             cur.neighbors.forEach(nei->{
-                adj.computeIfAbsent(cur.val,$->new ArrayList<>()).add(nei.val);
-                adj.computeIfAbsent(nei.val,$->new ArrayList<>()).add(cur.val);
+                adj.computeIfAbsent(cur.val,_->new ArrayList<>()).add(nei.val);
+                adj.computeIfAbsent(nei.val,_->new ArrayList<>()).add(cur.val);
             });
             cur.neighbors.forEach(nei->{
                 if(!visited.contains(nei.val)){

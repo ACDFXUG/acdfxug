@@ -64,7 +64,7 @@ public class POI {
                         return E1.getKey().index-E2.getKey().index;
                     }
                 }
-            }).collect(Collectors.toMap(Map.Entry::getKey,$->index[0]++));
+            }).collect(Collectors.toMap(Map.Entry::getKey,_->index[0]++));
         System.out.println(indexMap.get(cons[P])+" "+indexed.get(cons[P]));
         sc.close();
     }

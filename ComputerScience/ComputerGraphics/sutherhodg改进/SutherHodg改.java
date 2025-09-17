@@ -58,7 +58,7 @@ public class SutherHodg改 extends JComponent {
             public void mouseExited(MouseEvent e){}
         });
 
-        clearButton.addActionListener(e->{
+        clearButton.addActionListener(_->{
             polygon.clear();
             comp.clearFigures();
             comp.figures.add(window);

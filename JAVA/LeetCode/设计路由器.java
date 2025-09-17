@@ -50,7 +50,7 @@ public class 设计路由器 {
                     var p=eldestPkg.getKey();
                     dstPkgs.get(p.dst).remove(p);
                 }
-                dstPkgs.computeIfAbsent(destination,$->new TreeSet<>()).add(pkg);
+                dstPkgs.computeIfAbsent(destination,_->new TreeSet<>()).add(pkg);
                 return true;
             }
         }

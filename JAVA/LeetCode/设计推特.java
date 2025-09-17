@@ -15,7 +15,7 @@ public class 设计推特 {
         }
         void postTweet(int userId, int tweetId) {
             tweets.computeIfAbsent(
-                userId,$->new HashMap<>()
+                userId,_->new HashMap<>()
             ).put(time++,tweetId);
         }
         List<Integer> getNewsFeed(int userId) {
@@ -31,7 +31,7 @@ public class 设计推特 {
         }
         void follow(int followerId, int followeeId) {
             follows.computeIfAbsent(
-                followerId,$->new HashSet<Integer>()
+                followerId,_->new HashSet<Integer>()
             ).add(followeeId);
         }
         void unfollow(int followerId, int followeeId) {

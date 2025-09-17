@@ -8,8 +8,8 @@ public class 移除可疑的方法 {
         Map<Integer,Set<Integer>> subMethods=new HashMap<>();
         Map<Integer,Set<Integer>> parentMthd=new HashMap<>();
         for(int[] inv:invocations){
-            subMethods.computeIfAbsent(inv[0],$->new HashSet<>()).add(inv[1]);
-            parentMthd.computeIfAbsent(inv[1],$->new HashSet<>()).add(inv[0]);
+            subMethods.computeIfAbsent(inv[0],_->new HashSet<>()).add(inv[1]);
+            parentMthd.computeIfAbsent(inv[1],_->new HashSet<>()).add(inv[0]);
         }
         Set<Integer> bugMethod=new HashSet<>();
         Queue<Integer> bfs=new ArrayDeque<>();

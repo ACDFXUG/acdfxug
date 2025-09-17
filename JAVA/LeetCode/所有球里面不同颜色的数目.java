@@ -19,10 +19,10 @@ public class 所有球里面不同颜色的数目 {
                     colors.remove(oldColor);
                 }
                 ballColor.put(idx,color);
-                colors.computeIfAbsent(color,$->new HashSet<>()).add(idx);
+                colors.computeIfAbsent(color,_->new HashSet<>()).add(idx);
             }else{
                 ballColor.put(idx,color);
-                colors.computeIfAbsent(color,$->new HashSet<>()).add(idx);
+                colors.computeIfAbsent(color,_->new HashSet<>()).add(idx);
             }
             ans[i]=colors.size();
         }

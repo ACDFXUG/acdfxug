@@ -11,7 +11,7 @@ public class 点菜展示表 {
             Integer table=Integer.valueOf(L.get(1));
             String food=L.get(2);
             foods.add(food);
-            odrs.computeIfAbsent(table,$->new HashMap<>())
+            odrs.computeIfAbsent(table,_->new HashMap<>())
                 .merge(food,1,(a,b)->a+b);
         });
         List<List<String>> ans=new ArrayList<List<String>>(odrs.size()+1);

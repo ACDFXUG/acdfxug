@@ -70,7 +70,7 @@ public class 朋友 {
             .filter(m->UF.isConnected(m,1))
             .collect(()->new int[2],
                 (acc,val)->++acc[val>0?0:1]
-            ,(acc1,acc2)->{});
+            ,(_,_)->{});
         System.out.println(Math.min(posNeg[0],posNeg[1]));
         sc.close();
     }

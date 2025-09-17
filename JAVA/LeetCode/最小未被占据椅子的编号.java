@@ -11,7 +11,7 @@ public class 最小未被占据椅子的编号 {
         for(int i=0;i<times.length;++i){
             unoccupied.add(i);
             arrive.put(times[i][0],i);
-            leave.computeIfAbsent(times[i][1],$->new ArrayList<>()).add(i);
+            leave.computeIfAbsent(times[i][1],_->new ArrayList<>()).add(i);
         }
         for(int time=0;;++time){
             if(leave.containsKey(time)){
