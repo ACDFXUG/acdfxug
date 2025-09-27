@@ -10,7 +10,8 @@ public class Complex{
         this.imag=imaginary;
     }
     public Complex(String z){
-        this(valueOf(z).real,valueOf(z).imag);
+        var tmp=valueOf(z);
+        this(tmp.real,tmp.imag);
     }
     public Complex(){
         this(0,0);
