@@ -535,7 +535,7 @@ implements Comparable<Fraction>,Cloneable{
     }
     /**
      * 获取一个数的素因子分解
-     * 该方法用于将给定的正整数N分解成其素因子的乘积，并返回一个映射，
+     * 该方法用于将给定的正整数N分解成其素因子的乘积，并返回一个Map，
      * 其中键是素因子，值是该素因子在分解中的次数
      * 
      * @param N 要进行素因子分解的数，必须大于1
@@ -552,17 +552,17 @@ implements Comparable<Fraction>,Cloneable{
         
         // 移除所有的因子2，直到N变为奇数
         for(;(N&1)==0;N>>=1){
-            primes.merge(2L,1,(I,J)->I+J);
+            primes.merge(2L,1,Integer::sum);
         }
         // 尝试移除所有的奇数因子，从3开始，直到N的平方根
         for(long i=3;i*i<=N;i+=2L){
             for(;N%i==0;N/=i){
-                primes.merge(i,1,(I,J)->I+J);
+                primes.merge(i,1,Integer::sum);
             }
         }
         // 如果N仍然是一个大于2的数，则N本身是一个素因子
         if(N>2){
-            primes.merge(N,1,(I,J)->I+J);
+            primes.merge(N,1,Integer::sum);
         }
         // 返回素因子及其对应的次数
         return primes;
@@ -574,10 +574,9 @@ implements Comparable<Fraction>,Cloneable{
      * 高精度得到循环部分的长度
      */
     private static int loopLength(long r){
-        BigInteger a=BigInteger.TEN;
+        BigInteger a=BigInteger.TEN,R=BigInteger.valueOf(r);
         for(int i=1;;i++){
-            if(a.pow(i).mod(BigInteger.valueOf(r))
-                .equals(BigInteger.ONE)){
+            if(a.pow(i).mod(R).equals(BigInteger.ONE)){
                 return i;
             }
         }
@@ -597,7 +596,8 @@ implements Comparable<Fraction>,Cloneable{
             return Long.toString(up/low);
         }
         // 将当前数值转换为最简形式的分子和分母
-        long U=toLowest().up,L=toLowest().low;
+        final var lowest=toLowest();
+        long U=lowest.up,L=lowest.low;
         int flag=U*L>=0?1:-1;
         U=Math.abs(U);
         L=Math.abs(L);

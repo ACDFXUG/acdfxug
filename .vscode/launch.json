@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "H指数",
+            "request": "launch",
+            "mainClass": "JAVA.LeetCode.H指数",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "二叉树最大宽度",
+            "request": "launch",
+            "mainClass": "JAVA.LeetCode.二叉树最大宽度",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "数字对",
             "request": "launch",
             "mainClass": "JAVA.Luogu.数字对",

@@ -13,8 +13,8 @@ public class 深搜广搜 {
             this.adj=adj;
         }
         void addEdge(T src,T dst){
-            adj.computeIfAbsent(src,$->new HashSet<>()).add(dst);
-            adj.computeIfAbsent(dst,$->new HashSet<>()).add(src);
+            adj.computeIfAbsent(src,_->new HashSet<>()).add(dst);
+            adj.computeIfAbsent(dst,_->new HashSet<>()).add(src);
         }
         /**
          * 深度优先搜索
