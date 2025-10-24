@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cmath>
 
-const int cohen_sutherland[]{
+constexpr int cohen_sutherland[]{
     0b1001,0b1000,0b1010,
     0b0001,0b0000,0b0010,
     0b0101,0b0100,0b0110

@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SutherHodg改",
+            "request": "launch",
+            "mainClass": "ComputerScience.ComputerGraphics.sutherhodg改进.SutherHodg改",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "H指数",
             "request": "launch",
             "mainClass": "JAVA.LeetCode.H指数",
