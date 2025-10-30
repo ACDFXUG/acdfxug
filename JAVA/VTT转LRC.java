@@ -22,7 +22,7 @@ public class VTT转LRC {
     static boolean isNumber(String s){
         try{
             Integer.valueOf(s);
-        }catch(NumberFormatException nfe){
+        }catch(NumberFormatException _){
             return false;
         }
         return true;
