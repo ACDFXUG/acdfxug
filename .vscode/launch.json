@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cache",
+            "request": "launch",
+            "mainClass": "ComputerScience.TJU.Cache",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "SutherHodg改",
             "request": "launch",
             "mainClass": "ComputerScience.ComputerGraphics.sutherhodg改进.SutherHodg改",
