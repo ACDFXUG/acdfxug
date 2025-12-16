@@ -171,7 +171,8 @@
         "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-complex-1.2-javadoc.jar",
         "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-core-1.2-javadoc.jar",
         "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-angle-1.2-javadoc.jar",
-        "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-angle-1.2.jar"
+        "c:\\Program Files\\Java\\ACNumbers\\commons-numbers-angle-1.2.jar",
+        "ComputerScience/Compilers/lib/antlr-4.13.1-complete.jar"
     ],
     "java.project.explorer.showNonJavaResources": false,
     "java.dependency.packagePresentation": "flat",
