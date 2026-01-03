@@ -9,6 +9,7 @@ import java.util.*;
 /**
  * 代码生成器 - 生成三地址指令代码
  */
+@SuppressWarnings("unused")
 public class CodeGenerator extends GoLangBaseListener {
     private TACGenerator tac;                           // 三地址指令生成器
     private ParseTreeProperty<String> addresses;         // 表达式的地址

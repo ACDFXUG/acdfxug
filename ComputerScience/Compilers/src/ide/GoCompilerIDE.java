@@ -2,7 +2,6 @@ package ComputerScience.Compilers.src.ide;
 
 import javax.swing.*;
 import javax.swing.border.*;
-import javax.swing.text.*;
 import javax.swing.undo.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -70,7 +69,7 @@ public class GoCompilerIDE extends JFrame {
         
         // Code editor
         codeEditor = new JTextArea(20, 50);
-        Font monoFont = new Font("Monospaced", Font.PLAIN, 14);
+        Font monoFont = new Font("Monaspace Neon NF", Font.BOLD, 20);
         codeEditor.setFont(monoFont);
         codeEditor.setTabSize(4);
         codeEditor.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -80,7 +79,7 @@ public class GoCompilerIDE extends JFrame {
         });
         
         // Output areas
-        Font outputFont = new Font("Monospaced", Font.PLAIN, 12);
+        Font outputFont = new Font("Monaspace Neon NF", Font.BOLD, 20);
         
         outputArea = new JTextArea(10, 50);
         outputArea.setEditable(false);
@@ -147,7 +146,7 @@ public class GoCompilerIDE extends JFrame {
         compileButton = new JButton(">> Compile");
         compileButton.setToolTipText("Compile and Run (F5)");
         compileButton.setBackground(new Color(76, 175, 80));
-        compileButton.setForeground(Color.WHITE);
+        compileButton.setForeground(Color.BLUE);
         compileButton.setFocusPainted(false);
         compileButton.setFont(new Font("SansSerif", Font.BOLD, 12));
         compileButton.addActionListener(e -> compile());
@@ -301,10 +300,12 @@ public class GoCompilerIDE extends JFrame {
         // Toolbar
         JPanel toolbar = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         toolbar.setBorder(BorderFactory.createEtchedBorder());
-        
+        Font neon=new Font("Monaspace Neon NF",Font.BOLD,15);
         // File group
         JPanel fileGroup = new JPanel(new FlowLayout(FlowLayout.LEFT, 2, 0));
-        fileGroup.setBorder(BorderFactory.createTitledBorder("File"));
+        TitledBorder fileBorder=BorderFactory.createTitledBorder("File");
+        fileBorder.setTitleFont(neon);
+        fileGroup.setBorder(fileBorder);
         fileGroup.add(newButton);
         fileGroup.add(openButton);
         fileGroup.add(saveButton);
@@ -312,18 +313,24 @@ public class GoCompilerIDE extends JFrame {
         
         // Example group
         JPanel exampleGroup = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
-        exampleGroup.setBorder(BorderFactory.createTitledBorder("Examples"));
+        TitledBorder exampleBorder=BorderFactory.createTitledBorder("Examples");
+        exampleBorder.setTitleFont(neon);
+        exampleGroup.setBorder(exampleBorder);
         exampleGroup.add(exampleSelector);
         
         // Action group
         JPanel actionGroup = new JPanel(new FlowLayout(FlowLayout.LEFT, 2, 0));
-        actionGroup.setBorder(BorderFactory.createTitledBorder("Action"));
+        TitledBorder actionBorder=BorderFactory.createTitledBorder("Action");
+        actionBorder.setTitleFont(neon);
+        actionGroup.setBorder(actionBorder);
         actionGroup.add(compileButton);
         actionGroup.add(clearButton);
         
         // Options group
         JPanel optionsGroup = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
-        optionsGroup.setBorder(BorderFactory.createTitledBorder("Options"));
+        TitledBorder optionsBorder=BorderFactory.createTitledBorder("Options");
+        optionsBorder.setTitleFont(neon);
+        optionsGroup.setBorder(optionsBorder);
         optionsGroup.add(optimizeCheckBox);
         optionsGroup.add(verboseCheckBox);
         
@@ -577,7 +584,7 @@ public class GoCompilerIDE extends JFrame {
     
     private void loadExampleCode(String exampleName) {
         try {
-            String fileName = "examples/" + exampleName + ".go";
+            String fileName = "C:\\Users\\yaoyu\\Desktop\\VSCode\\ComputerScience\\Compilers\\examples\\" + exampleName + ".go";
             File file = new File(fileName);
             if (file.exists()) {
                 String content = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);

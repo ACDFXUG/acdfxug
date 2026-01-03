@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GoCompilerIDE",
+            "request": "launch",
+            "mainClass": "ComputerScience.Compilers.src.ide.GoCompilerIDE",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "Cache",
             "request": "launch",
             "mainClass": "ComputerScience.TJU.Cache",
