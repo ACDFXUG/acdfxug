@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 判断国际象棋棋盘中一个格子的颜色 {
     static boolean squareIsWhite(String coordinates) {

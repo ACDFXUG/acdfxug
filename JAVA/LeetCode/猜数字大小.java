@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 猜数字大小 {
     private static class GuessGame{

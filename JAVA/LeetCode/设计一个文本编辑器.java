@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 设计一个文本编辑器 {
     private static class TextEditor{

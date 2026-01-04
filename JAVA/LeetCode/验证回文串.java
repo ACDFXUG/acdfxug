@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 验证回文串 {
     static boolean isPALI(String s){

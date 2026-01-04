@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 基于排列构建数组 {
     static int[] buildArray(int[] nums) {

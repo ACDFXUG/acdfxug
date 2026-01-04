@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 山羊拉丁文 {
     static String vowels="aeiouAEIOU";

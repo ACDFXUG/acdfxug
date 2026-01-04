@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 大样本统计 {
     static double[] sampleStats(int[] count) {

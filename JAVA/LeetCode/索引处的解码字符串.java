@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 索引处的解码字符串 {
     static String decodeAtIndex(String s, int k) {

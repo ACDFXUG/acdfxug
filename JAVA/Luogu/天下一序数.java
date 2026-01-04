@@ -1,4 +1,4 @@
-package JAVA.Luogu;
+package Java.Luogu;
 
 import static java.util.Arrays.sort;
 import static java.lang.String.valueOf;

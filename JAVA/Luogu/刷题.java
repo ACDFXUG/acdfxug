@@ -26,7 +26,7 @@
 //         System.out.println(ans);
 //     }
 // }
-package JAVA.Luogu;
+package Java.Luogu;
 
 import java.time.*;
 import java.time.format.*;

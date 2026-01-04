@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 全局倒置与局部倒置 {
     static int lowBit(int x){

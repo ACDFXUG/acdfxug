@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 判断一个数字是否可以表示成三的幂的和 {
     static boolean checkPowersOfThree(int n) {

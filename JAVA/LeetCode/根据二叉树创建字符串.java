@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 根据二叉树创建字符串 {
     @SuppressWarnings("unused")

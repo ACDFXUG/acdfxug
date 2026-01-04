@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class RLE迭代器 {
     private static class RLEIterator{

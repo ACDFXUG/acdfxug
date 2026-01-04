@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 解码方法 {
     static int numDecodings(String s) {

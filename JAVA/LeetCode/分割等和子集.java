@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 分割等和子集 {
     static boolean canPartition(int[] nums) {

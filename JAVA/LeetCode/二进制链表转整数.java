@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 二进制链表转整数 {
     private static class ListNode{

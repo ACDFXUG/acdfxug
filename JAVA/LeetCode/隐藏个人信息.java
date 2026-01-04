@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 隐藏个人信息 {
     static String maskPII(String s) {

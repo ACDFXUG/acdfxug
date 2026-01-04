@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 航班预订统计 {
     static int[] corpFlightBookings(int[][] bookings, int n) {

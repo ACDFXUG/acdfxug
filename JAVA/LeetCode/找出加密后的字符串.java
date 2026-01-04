@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 找出加密后的字符串 {
     static String getEncryptedString(String s, int k) {

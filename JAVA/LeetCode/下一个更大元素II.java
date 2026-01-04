@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 下一个更大元素II {
     static int findNextGreater(int[] nums, int i){

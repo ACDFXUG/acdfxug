@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 价值和小于等于K的最大数字 {
     static int numberValue(long num,int x){

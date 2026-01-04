@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class HTML实体解析器 {
     static String entityParser(String text) {

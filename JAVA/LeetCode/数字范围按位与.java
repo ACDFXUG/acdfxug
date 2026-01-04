@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 数字范围按位与 {
     static int rangeBitwiseAnd(int left, int right) {

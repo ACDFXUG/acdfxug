@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 寻找两个正序数组的中位数 {
     // 寻找两个正序数组的中位数 使用O(log(m+n))

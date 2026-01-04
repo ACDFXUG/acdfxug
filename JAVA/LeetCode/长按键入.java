@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 长按键入 {
     static boolean isLongPressedName(String name, String typed) {

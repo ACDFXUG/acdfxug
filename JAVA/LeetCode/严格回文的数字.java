@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 严格回文的数字 {
     static String 进制转换(int n,int radix){

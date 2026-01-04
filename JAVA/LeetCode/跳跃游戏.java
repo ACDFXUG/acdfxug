@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 跳跃游戏 {
     static boolean canJump(int[] nums) {

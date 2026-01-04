@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 根据规则将箱子分类 {
     static String categorizeBox(int length, int width, int height, int mass) {

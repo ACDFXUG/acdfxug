@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 删除字符串中的所有相邻重复项II {
     static String removeDuplicates(String s, int k) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 行和列中一和零的差值 {
     static int[][] onesMinusZeros(int[][] grid) {

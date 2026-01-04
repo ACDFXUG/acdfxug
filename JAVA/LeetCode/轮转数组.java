@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 轮转数组 {
     static void reverse(int[] nums,int s,int e){

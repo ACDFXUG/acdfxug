@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class Z字形变换 {
     static String convert(String s, int numRows) {

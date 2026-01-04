@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 序列化和反序列化二叉搜索树 {
     @SuppressWarnings("unused")

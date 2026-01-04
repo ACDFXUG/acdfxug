@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 二维区域和检索 {
     @SuppressWarnings("unused")

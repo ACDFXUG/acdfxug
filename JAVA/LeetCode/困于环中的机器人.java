@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 困于环中的机器人 {
     static boolean isRobotBounded(String instructions) {

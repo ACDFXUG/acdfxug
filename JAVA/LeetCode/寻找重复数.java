@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 寻找重复数 {
     static int findDuplicate(int[] nums) {

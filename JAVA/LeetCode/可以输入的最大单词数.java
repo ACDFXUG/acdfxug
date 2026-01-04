@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 可以输入的最大单词数 {
     static int canBeTypedWords(String text, String brokenLetters) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 不含AAA或BBB的字符串 {
     static String strWithout3a3b(int a, int b) {

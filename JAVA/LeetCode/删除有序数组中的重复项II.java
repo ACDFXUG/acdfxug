@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 删除有序数组中的重复项II {
     static int removeDuplicates(int[] nums) {

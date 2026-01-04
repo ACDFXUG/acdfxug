@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 交替打印FooBar {
     @SuppressWarnings("unused")

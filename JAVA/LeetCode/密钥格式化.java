@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 密钥格式化 {
     static String licenseKeyFormatting(String s, int k) {

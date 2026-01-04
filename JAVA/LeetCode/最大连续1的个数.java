@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 最大连续1的个数 {
     static int findMaxConsecutiveOnes(int[] nums) {

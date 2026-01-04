@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 检测大写字母 {
     static boolean isFullUpper(String s){

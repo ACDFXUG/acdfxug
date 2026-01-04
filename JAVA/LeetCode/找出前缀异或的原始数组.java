@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 找出前缀异或的原始数组 {
     static int[] findArray(int[] pref) {

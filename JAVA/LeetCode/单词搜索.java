@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 单词搜索 {
     static boolean dfs(char[][] board, String word, int x, int y, int index, boolean[][] visited) {

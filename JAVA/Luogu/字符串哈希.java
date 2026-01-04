@@ -1,4 +1,4 @@
-package JAVA.Luogu;
+package Java.Luogu;
 
 public class 字符串哈希 {
     static int stringHash(String s){

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 执行所有后缀指令 {
     static int[] executeInstructions(int n, int[] startPos, String s) {

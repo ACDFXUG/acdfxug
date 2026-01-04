@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 统计星号 {
     static int countAsterisks(String s) {

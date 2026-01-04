@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 只出现一次的数字II {
     static int singleNumber(int[] nums) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 比较字符串最小字母出现频次 {
     static int f(String s){

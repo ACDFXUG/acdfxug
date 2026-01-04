@@ -1,4 +1,4 @@
-package JAVA.Luogu;
+package Java.Luogu;
 
 import java.util.Scanner;
 import java.util.TreeSet;

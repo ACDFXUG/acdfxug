@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 将数字变成0的操作次数 {
     static int numberOfSteps(int num) {

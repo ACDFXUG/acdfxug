@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 按字典序排在最后的子串 {
     static String lastSubstring(String s) {

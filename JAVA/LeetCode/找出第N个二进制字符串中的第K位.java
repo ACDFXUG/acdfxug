@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 找出第N个二进制字符串中的第K位 {
     static void flipBin(StringBuilder s){

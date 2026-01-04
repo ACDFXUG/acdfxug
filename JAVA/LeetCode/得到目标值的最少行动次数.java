@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 得到目标值的最少行动次数 {
     static int minMoves(int target, int maxDoubles) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 银行中的激光束数量 {
     static int count1(String str){

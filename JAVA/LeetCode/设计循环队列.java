@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 设计循环队列 {
     @SuppressWarnings("unused")

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 缺失的第一个正数 {
     static int firstMissingPositive(int[] nums) {

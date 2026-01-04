@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 搜索二维矩阵II{
     static boolean searchMatrix(int[][] matrix, int target) {

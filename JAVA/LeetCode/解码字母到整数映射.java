@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 import java.util.regex.*;
 import static java.lang.Integer.*;

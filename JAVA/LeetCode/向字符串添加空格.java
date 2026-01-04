@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 向字符串添加空格 {
     static String addSpaces(String s, int[] spaces) {

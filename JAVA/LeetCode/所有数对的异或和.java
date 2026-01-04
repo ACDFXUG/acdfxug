@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 所有数对的异或和 {
     static int xorAllNums(int[] nums1, int[] nums2) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 盛最多水的容器 {
     static int maxArea(int[] height){

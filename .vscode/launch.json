@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "VttToLrc",
+            "request": "launch",
+            "mainClass": "JAVA.Self.VttToLrc",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "GoCompilerIDE",
             "request": "launch",
             "mainClass": "ComputerScience.Compilers.src.ide.GoCompilerIDE",

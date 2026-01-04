@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 旋转函数 {
     static int maxRotateFunction(int[] nums) {

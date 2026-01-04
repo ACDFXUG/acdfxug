@@ -1,4 +1,4 @@
-package JAVA.Luogu;
+package Java.Luogu;
 
 public class 四的幂 {
     static boolean isPowerOfFour(int n){

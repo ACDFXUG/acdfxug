@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 最大子数组和 {
     static int maxSubArray(int[] nums) {

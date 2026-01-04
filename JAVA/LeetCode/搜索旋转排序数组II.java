@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 搜索旋转排序数组II {
     static boolean search(int[] nums,int target){

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 字符串中的单词数 {
     static int countSegments(String s) {

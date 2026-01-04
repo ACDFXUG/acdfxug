@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 除自身以外数组的乘积 {
     static int[] productExceptSelf(int[] nums){

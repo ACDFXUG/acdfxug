@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 找到需要补充粉笔的学生编号 {
     static int chalkReplacer(int[] chalk, int k) {

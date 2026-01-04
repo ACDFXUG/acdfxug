@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 构造乘积矩阵 {
     static int[][] constructProductMatrix(int[][] grid) {

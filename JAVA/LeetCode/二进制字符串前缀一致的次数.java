@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 二进制字符串前缀一致的次数 {
     static int numTimesAllBlue(int[] flips) {

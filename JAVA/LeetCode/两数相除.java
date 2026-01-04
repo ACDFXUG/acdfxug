@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 两数相除 {
     static int divide(int dividend, int divisor) {

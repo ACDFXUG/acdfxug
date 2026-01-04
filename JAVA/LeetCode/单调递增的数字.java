@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 单调递增的数字 {
     // static boolean isIncreasing(int k){

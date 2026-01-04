@@ -1,4 +1,4 @@
-package JAVA.Luogu;
+package Java.Luogu;
 
 import java.util.*;
 import static java.lang.Character.isDigit;

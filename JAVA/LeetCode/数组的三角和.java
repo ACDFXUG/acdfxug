@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 数组的三角和 {
     static long combination(int n,int k){

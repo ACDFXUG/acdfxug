@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 最长公共前缀 {
     static String longestCommonPrefix(String[] strs) {

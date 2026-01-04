@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 数组中的第K个最大元素 {
     static int findKthLargest(int[] nums, int k) {

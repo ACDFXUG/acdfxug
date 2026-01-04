@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 三的幂 {
     static boolean isPowerOfThree(int n) {

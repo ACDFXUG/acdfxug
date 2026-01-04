@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 汉明距离总和 {
     static int totalHammingDistance(int[] nums) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 游戏中弱角色的数量 {
     private static record Character(int atk,int def)

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 丑数 {
     static boolean isUgly(int n) {

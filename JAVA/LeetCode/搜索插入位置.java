@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 搜索插入位置 {
     static int searchInsert(int[] nums, int target) {

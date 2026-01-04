@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class Excel序号 {
     static int titleToNumber(String columnTitle) {

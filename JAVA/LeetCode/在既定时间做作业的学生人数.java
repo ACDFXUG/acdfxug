@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 在既定时间做作业的学生人数 {
     static int busyStudent(int[] startTime, int[] endTime, int queryTime) {

@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 字符串相乘 {
     static String multiply(String num1, String num2) {

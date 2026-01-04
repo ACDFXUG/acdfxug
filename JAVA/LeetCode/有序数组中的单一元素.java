@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 有序数组中的单一元素 {
     static int singleNonDuplicate(int[] nums) {

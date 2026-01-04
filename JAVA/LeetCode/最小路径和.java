@@ -1,4 +1,4 @@
-package JAVA.LeetCode;
+package Java.LeetCode;
 
 public class 最小路径和 {
     static int minPathSum(int[][] grid) {
