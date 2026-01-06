@@ -135,7 +135,7 @@ public class Matrix {
         if(this==b){
             return true;
         }
-        if(this==null||b==null){
+        if(b==null){
             return false;
         }
         if(((Matrix)b).rows!=rows||((Matrix)b).cols!=cols){

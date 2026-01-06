@@ -194,6 +194,7 @@ public class GoCompiler {
     /**
      * 汇编和链接
      */
+    @SuppressWarnings("deprecation")
     private boolean assembleAndLink(String asmFile, String outputFile) {
         try {
             // 使用nasm汇编

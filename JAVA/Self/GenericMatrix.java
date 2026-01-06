@@ -62,7 +62,7 @@ public class GenericMatrix<T extends Number> implements Cloneable {
     }
     public boolean equals(Object mat){
         if(this==mat) return true;
-        if(mat==null||this==null||!(mat instanceof GenericMatrix<?>)) return false;
+        if(mat==null||!(mat instanceof GenericMatrix<?>)) return false;
         if(this.rows!=((GenericMatrix<?>)mat).rows||this.cols!=((GenericMatrix<?>)mat).cols) return false;
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){

@@ -15,7 +15,7 @@ public class 单词分类 {
             if(this==word){
                 return true;
             }
-            if(this==null||word==null){
+            if(word==null){
                 return false;
             }
             return word instanceof Word&&

@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ThreadPool",
+            "request": "launch",
+            "mainClass": "Java.Learn.MultiThread.ThreadPool",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "VttToLrc",
             "request": "launch",
             "mainClass": "JAVA.Self.VttToLrc",

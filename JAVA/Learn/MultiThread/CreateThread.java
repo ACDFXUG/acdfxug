@@ -14,7 +14,7 @@ public class CreateThread {
         tsr.start();
         tsr.join();
 
-        SubCallable sc=new SubCallable(100);
+        SubIntCallable sc=new SubIntCallable(100);
         var ft=new FutureTask<>(sc);
         var tsc=new Thread(ft);
         tsc.start();
@@ -36,9 +36,9 @@ class SubRunnable implements Runnable{
     }
 }
 
-class SubCallable implements Callable<Integer>{
+class SubIntCallable implements Callable<Integer>{
     private int n;
-    SubCallable(int n){
+    SubIntCallable(int n){
         this.n=n;
     }
     public Integer call(){
