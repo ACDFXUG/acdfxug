@@ -3,6 +3,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ChatUI",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.ChatSystem.UI.ChatUI",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "LoginUI",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.ChatSystem.LoginUI",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TCPServer",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.BrowserTCP.TCPServer",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TCPClient",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.MultiTCP.TCPClient",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TCPServer",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.MultiTCP.TCPServer",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TCPClient",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.SingleTCP.TCPClient",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "TCPServer",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.SingleTCP.TCPServer",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UDPClient",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.MultiUDP.UDPClient",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UDPServer",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.MultiUDP.UDPServer",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UDPServer",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.UDP.UDPServer",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "UDPClient",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.UDP.UDPClient",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "ThreadPool",
             "request": "launch",
             "mainClass": "Java.Learn.MultiThread.ThreadPool",
