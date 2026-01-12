@@ -53,14 +53,14 @@ public class ServerReaderThread extends Thread{
     private void updateMessageToAllUsers(String message){
         StringBuilder sb=new StringBuilder();
         String name=ServerMain.onlineClients.get(client);
-        LocalDateTime now=LocalDateTime.now();
-        DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss EEE");
+        var now=LocalDateTime.now();
+        var dtf=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss EEE");
         String msg=sb.append(name).append(" ").append(dtf.format(now))
             .append("\r\n").append(message).append("\r\n").toString();
         ServerMain.onlineClients.forEach((socket,_)->{
             try{
                 DataOutputStream dos=new DataOutputStream(socket.getOutputStream());
-                dos.writeInt(Constant.UPDATE_MESSAGE);
+                dos.writeInt(Constant.UPDATE_GROUP_MESSAGE);
                 dos.writeUTF(msg);
                 dos.flush();
             }catch(IOException e){

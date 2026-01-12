@@ -11,6 +11,7 @@ public class ServerMain {
         try(ServerSocket ss=new ServerSocket(Constant.PORT)){
             for(;;){
                 var client=ss.accept();
+                System.out.println(client+" connected");
                 var reader=new ServerReaderThread(client);
                 reader.start();
             }

@@ -1,9 +1,9 @@
-package Java.Learn.Network.ChatSystem.UI;
+package Java.Learn.Network.ChatSystem.Client;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.net.Socket;
 
 public class ChatUI extends JFrame {
     private JTextArea chatArea;           // 聊天显示区域
@@ -12,16 +12,21 @@ public class ChatUI extends JFrame {
     private JButton sendButton;           // 发送按钮
     private JScrollPane chatScrollPane;   // 聊天区域滚动条
     private JScrollPane usersScrollPane;  // 用户列表滚动条
+    private Socket client;
     
-    public ChatUI() {
+    private ChatUI(Socket client) {
         initializeComponents();
         setupLayout();
         addEventListeners();
+        this.client=client;
+        setVisible(true);
     }
     
-    public ChatUI(String nickname) {
-        this();
+    public ChatUI(String nickname,Socket client) {
+        this(client);
         setTitle("局域网聊天室 - " + nickname);
+        Thread reader=new ClientReaderThread(this,client);
+        reader.start();
     }
     
     private void initializeComponents() {
@@ -86,20 +91,10 @@ public class ChatUI extends JFrame {
     
     private void addEventListeners() {
         // 发送按钮事件
-        sendButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                sendMessage();
-            }
-        });
+        sendButton.addActionListener(e->sendMessage());
         
         // 输入框回车事件
-        inputField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                sendMessage();
-            }
-        });
+        inputField.addActionListener(e->sendMessage());
         
         // 窗口关闭事件
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -121,11 +116,19 @@ public class ChatUI extends JFrame {
     
     // 发送消息的方法
     private void sendMessage() {
-        String message = inputField.getText().trim();
+        String message = inputField.getText();
         if (!message.isEmpty()) {
-            // 这里可以添加实际的消息发送逻辑
-            appendMessage("我: " + message);
+            try {
+                DataOutputStream dos=new DataOutputStream(client.getOutputStream());
+                dos.writeInt(Constant.GROUP);
+                dos.writeUTF(message);
+                dos.flush();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             inputField.setText(""); // 清空输入框
+        }else{
+            System.out.println("请输入内容");
         }
     }
     
@@ -154,27 +157,5 @@ public class ChatUI extends JFrame {
         } else {
             SwingUtilities.invokeLater(() -> onlineUsersArea.setText(userListText.toString()));
         }
-    }
-    
-    // 测试用的main方法
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        SwingUtilities.invokeLater(() -> {
-            ChatUI chatUI = new ChatUI("测试用户");
-            chatUI.setVisible(true);
-            
-            // 添加一些测试消息
-            chatUI.appendMessage("系统: 欢迎加入聊天室！");
-            chatUI.appendMessage("张三: 大家好！");
-            chatUI.appendMessage("李四: 今天天气不错。");
-            
-            // 更新在线用户
-            chatUI.updateOnlineUsers(new String[]{"张三", "李四", "王五", "赵六"});
-        });
     }
 }

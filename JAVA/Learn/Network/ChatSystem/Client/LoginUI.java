@@ -1,15 +1,16 @@
-package Java.Learn.Network.ChatSystem.UI;
+package Java.Learn.Network.ChatSystem.Client;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.net.*;
 
 public class LoginUI extends JFrame {
     private JTextField nicknameField;
     private JButton confirmButton;
     private JButton cancelButton;
     private JLabel label;  // 将label声明为成员变量
+    private Socket client;
     
     public LoginUI() {
         initializeComponents();
@@ -70,20 +71,25 @@ public class LoginUI extends JFrame {
     
     private void addEventListeners() {
         // 确认按钮事件
-        confirmButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String nickname = nicknameField.getText().trim();
-                if (nickname.isEmpty()) {
-                    JOptionPane.showMessageDialog(LoginUI.this, 
-                        "请输入有效的昵称！", 
-                        "提示", 
-                        JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-                
-                // 这里可以添加登录逻辑
+        confirmButton.addActionListener(e->{
+            String nickname = nicknameField.getText().trim();
+            if (nickname.isEmpty()) {
+                JOptionPane.showMessageDialog(LoginUI.this, 
+                    "请输入有效的昵称！", 
+                    "提示", 
+                    JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            // 这里可以添加登录逻辑
+            try{
                 onConfirm(nickname);
+                System.out.println("登录成功");
+                // 创建聊天界面
+                new ChatUI(nickname,client);
+                dispose();
+            }catch(Exception ex){
+                ex.printStackTrace();
             }
         });
         
@@ -95,11 +101,16 @@ public class LoginUI extends JFrame {
     }
     
     // 确认按钮点击后的处理方法
-    protected void onConfirm(String nickname) {
+    protected void onConfirm(String nickname) throws Exception {
         // 子类可重写此方法实现具体登录逻辑
-        System.out.println("用户输入的昵称: " + nickname);
-        JOptionPane.showMessageDialog(this, "欢迎, " + nickname + "!");
-        dispose(); // 关闭登录窗口
+        // System.out.println("用户输入的昵称: " + nickname);
+        // JOptionPane.showMessageDialog(this, "欢迎, " + nickname + "!");
+        // dispose(); // 关闭登录窗口
+        client=new Socket(Constant.SERVER_IP,Constant.SERVER_PORT);
+        DataOutputStream dos=new DataOutputStream(client.getOutputStream());
+        dos.writeInt(Constant.LOGIN);
+        dos.writeUTF(nickname);
+        dos.flush();
     }
     
     // 取消按钮点击后的处理方法

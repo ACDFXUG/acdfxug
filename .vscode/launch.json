@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.ChatSystem.App",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "LoginUI",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.ChatSystem.Client.LoginUI",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "LoginUI",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.ChatSystem.UI.LoginUI",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "ServerMain",
+            "request": "launch",
+            "mainClass": "Java.Learn.Network.ChatSystem.Server.ServerMain",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
             "name": "ChatUI",
             "request": "launch",
             "mainClass": "Java.Learn.Network.ChatSystem.UI.ChatUI",

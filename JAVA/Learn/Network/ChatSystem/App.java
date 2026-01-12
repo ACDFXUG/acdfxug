@@ -1,7 +1,8 @@
 package Java.Learn.Network.ChatSystem;
 
 import javax.swing.*;
-import Java.Learn.Network.ChatSystem.UI.LoginUI;
+
+import Java.Learn.Network.ChatSystem.Client.LoginUI;
 
 public class App {
     public static void main(String[] args) {
