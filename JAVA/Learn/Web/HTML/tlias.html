@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>tlias 智能系统</title>
+    <style>
+        #upper {
+            height: 50px;
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+            background-color: gray;
+            display: flex;
+        }
+
+        button {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+            color: white;
+            background-color: gray;
+            height: 30px;
+            width: 80px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: white;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="upper">tlias 智能学习辅助系统</span>
+    <button>退出</button>
+    <!-- 表单 -->
+    <form action="/form" method="get">
+        姓名: <input type="text" name="name">
+        年龄: <input type="text" name="age">
+        <input type="submit" value="提交">
+        <br>
+        <select name="city">
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option value="guangzhou">广州</option>
+        </select>
+        <br>
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="female">女<br>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>城市</th>
+                <th>性别</th>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>18</td>
+                <td>上海</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>19</td>
+                <td>广州</td>
+                <td>女</td>
+            </tr>
+        </table>
+    </form>
+    <!--版权-->
+    <div class="copyright">Copyright &copy; 2026 tlias.com</div>
+</body>
+
+</html>
