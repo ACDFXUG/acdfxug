@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue语句</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- <val>{{search.name}} {{search.gender}} {{search.job}}</val> -->
+            <form>
+                姓名:<input type="text" name="name" v-model="search.name">
+                性别:<input type="radio" name="gender" value="1" v-model="search.gender">男
+                <input type="radio" name="gender" value="0" v-model="search.gender">女
+                职位:<select name="job" v-model="search.job">
+                    <option value="1">销售</option>
+                    <option value="2">经理</option>
+                    <option value="3">老板</option>
+                </select>
+                <button type="button" @click="searchM">查询</button>
+                <button type="reset" v-on:click="clear">重置</button>
+            </form>
+            <form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>职位</th>
+                            <th>入职时间</th>
+                            <th>更新时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- v-for 指令 -->
+                        <tr v-for="emp in empList":key="emp.id">
+                            <td>{{emp.id}}</td>
+                            <td>{{emp.name}}</td>
+                            <!-- v-if 指令 -->
+                            <td>
+                                <span v-if="emp.gender==1">男</span>
+                                <span v-else-if="emp.gender==0">女</span>
+                                <span v-else>未知</span>
+                            </td>
+                            <!-- <td>{{emp.gender==1?"男":"女"}}</td> -->
+                            <!-- 插值表达式不能写在标签内 -->
+                            <td>{{jobs[emp.job-1]}}</td>
+                            <td>{{emp.entryDate}}</td>
+                            <td>{{emp.updateTime}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <script type="module">
+            import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+            createApp({
+                data() {
+                    return {
+                        empList:[
+                            {"id":1,"name":"张三","gender":1,"job":1,"entryDate":"2023-06-09","updateTime":"2024-07-03"},
+                            {"id":2,"name":"李四","gender":0,"job":2,"entryDate":"2023-07-03","updateTime":"2025-05-08"},
+                            {"id":3,"name":"王五","gender":1,"job":3,"entryDate":"2023-08-12","updateTime":"2024-11-12"},
+                        ],
+                        jobs:["销售","经理","老板"],
+                        search:{
+                            name:"",
+                            gender:"",
+                            job:""
+                        }
+                    }
+                },
+                // 方法
+                methods: {
+                    clear(){
+                        this.search={
+                            name:"",
+                            gender:"",
+                            job:""
+                        }
+                    },
+                    searchM(){
+                        console.log(this.search);
+                    }
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

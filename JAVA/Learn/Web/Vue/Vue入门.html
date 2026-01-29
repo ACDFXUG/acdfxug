@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue入门</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{msg}}{{val}}!</h1>
+        </div>
+        <script type="module">
+            import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+            createApp({
+                data() {
+                    return {
+                        msg: 'Hello Vue',
+                        val:3
+                    }
+                }
+            }).mount('#app');
+        </script>
+    </body>
+</html>

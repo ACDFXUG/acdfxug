@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Axios入门</title>
+    </head>
+    <body>
+        <div id="app">
+            <button type="button" value="GET" id="get">GET</button>
+            <button type="button" value="POST" id="post">POST</button>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            document.querySelector("#get").addEventListener("click",()=>{
+                axios.get('https://httpbin.org/get')
+                .then((res)=>{
+                    console.log(res.data);
+                }).catch((err)=>{
+                    console.log(err);
+                });
+            });
+            document.querySelector("#post").addEventListener("click",()=>{
+                axios.post('https://httpbin.org/post',{
+                    name:"张三",
+                    age:18
+                }).then((res)=>{
+                    console.log(res.data);
+                }).catch((err)=>{
+                    console.log(err);
+                });
+            });
+        </script>
+    </body>
+    </head>
+</html>
