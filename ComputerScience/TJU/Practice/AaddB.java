@@ -1,4 +1,4 @@
-package ComputerScience.TJU;
+package ComputerScience.TJU.Practice;
 
 import java.util.TreeSet;
 import java.util.Scanner;

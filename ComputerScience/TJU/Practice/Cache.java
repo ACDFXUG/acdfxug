@@ -1,4 +1,4 @@
-package ComputerScience.TJU;
+package ComputerScience.TJU.Practice;
 
 import module java.base;
 
