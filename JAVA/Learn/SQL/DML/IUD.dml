@@ -1,0 +1,54 @@
+/* 
+INSERT
+UPDATE
+DELETE
+CREATE table emp(
+    id int UNSIGNED PRIMARY KEY AUTO_INCREMENT COMMENT '员工id',
+    username VARCHAR(20) NOT NULL UNIQUE COMMENT '用户名',
+    password VARCHAR(32) DEFAULT '123456' COMMENT '密码',
+    name VARCHAR(10) not null COMMENT '姓名',
+    gender TINYINT UNSIGNED not null COMMENT '性别,1:男,2:女', 
+    phone char(11) not null UNIQUE COMMENT '手机号',
+    job TINYINT UNSIGNED COMMENT '职位,1:班主任,2:讲师,3:学工主管,4:教研主管,5:咨询师',
+    salary int UNSIGNED COMMENT '薪资',
+    entry_date DATE COMMENT '入职时间',
+    image VARCHAR(255) COMMENT '头像',
+    create_time DATETIME COMMENT '创建时间',
+    update_time DATETIME COMMENT '修改时间'
+) COMMENT '员工表';
+ */
+
+-- DML : 数据操作语言
+-- DML : 插入数据 - insert
+-- 1. 为 emp 表的 username, password, name, gender, phone 字段插入值
+INSERT INTO emp(username, password, name, gender, phone) VALUES('songjiang','123456789','宋江',1,'13300001111');
+
+-- 2. 为 emp 表的 所有字段插入值
+INSERT INTO emp(id, username, password, name, gender, phone, job, salary, entry_date, image, create_time, update_time)
+VALUES(null,'zhangsan','123456789','张三',1,'13300002222',1,5000,'2010-01-01','/static/img/1.jpg',NOW(),NOW());
+
+INSERT INTO emp VALUES(null,'lisi','123456789','李四',1,'13300003333',1,5000,'2010-01-01','/static/img/2.jpg',NOW(),NOW());
+
+-- 3. 批量为 emp 表的 username, password, name, gender, phone  字段插入数据
+INSERT INTO emp(username, password, name, gender, phone) VALUES
+('wangwu','123456789','王五',1,'13300004444'),
+('zhaoliu','123456789','赵六',1,'13300005555'),
+('tianqi','123456789','田七',1,'13300006666');
+
+
+-- DML : 更新数据 - update
+-- 1. 将 emp 表的ID为1员工 用户名更新为 'linchong', 姓名name字段更新为 '林冲' 
+update emp set username='linchong', name='林冲' where id=1;
+
+
+-- 2. 将 emp 表的所有员工的入职日期更新为 '2010-01-01'
+
+update emp set entry_date='2010-01-01';
+
+
+-- DML : 删除数据 - delete
+-- 1. 删除 emp 表中 ID为1的员工
+DELETE FROM emp WHERE id=1;
+
+-- 2. 删除 emp 表中的所有员工
+DELETE FROM emp;

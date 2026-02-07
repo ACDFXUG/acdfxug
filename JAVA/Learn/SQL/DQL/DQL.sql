@@ -1,0 +1,7 @@
+-- SELECT 选择
+-- FROM 表名
+-- WHERE  条件
+-- GROUP BY 字段名
+-- HAVING 条件
+-- ORDER BY 字段名 [ASC|DESC] ASC 默认升序 DESC 降序
+-- LIMIT 索引,数量
