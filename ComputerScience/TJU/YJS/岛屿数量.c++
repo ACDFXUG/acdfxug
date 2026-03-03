@@ -1,4 +1,6 @@
 #include <iostream>
+#include <unordered_set>
+#include <vector>
 #include <unordered_map>
 
 template<class K,class V>
@@ -14,10 +16,9 @@ concept Hashed=requires(const K &a,const K &b){
 
 template<Hashed T>
 class UnionFind{
-private:
+public:
 	hashmap<T,T> parent;//parent[x]表示x的父节点
     hashmap<T,size_t> sizz;//size[x]表示x所在集合的元素个数
-public:
     UnionFind()=default;
     T &Find(const T &x){
         if(!parent.contains(x)){
@@ -60,16 +61,71 @@ public:
     }
 };
 
+using namespace std;
+
+struct Island{
+    int x,y;
+    Island(int x=0,int y=0):x(x),y(y){}
+
+    Island(const Island &island)=default;
+    Island(Island &&island)=default;
+
+    Island &operator =(const Island &island){
+        x=island.x;
+        y=island.y;
+        return *this;
+    }
+
+    Island &operator =(Island &&island){
+        x=std::move(island.x);
+        y=std::move(island.y);
+        return *this;
+    }
+
+    bool operator ==(const Island &island) const{
+        return x==island.x&&y==island.y;
+    }
+
+};
+
+template<>
+struct std::hash<Island>{
+    size_t operator ()(const Island &island) const{
+        return std::hash<int>{}(island.x)*31+std::hash<int>{}(island.y);
+    }
+};
+
+int numIslands(vector<vector<char>>& grid) {
+    UnionFind<Island> uf;
+    for(int i=0;i<grid.size();i++){
+        for(int j=0;j<grid[i].size();j++){
+            if(grid[i][j]=='1'){
+                Island island(i,j);
+                uf[island];
+                if(i>0&&grid[i-1][j]=='1'){
+                    uf[island,Island(i-1,j)];
+                }
+                if(j>0&&grid[i][j-1]=='1'){
+                    uf[island,Island(i,j-1)];
+                }
+            }
+        }
+    }
+    int ans=0;
+    for(const auto &[x,p]:uf.parent){
+        if(uf[x]==x) ++ans;
+    }
+    return ans;
+}
+
 int main(){
-    UnionFind<int> uf;
-    int n,m,p;
-    std::cin>>n>>m>>p;
-    for(int i=0,x,y;i<m;i++){
-        std::cin>>x>>y;
-        uf[x,y];
-    }
-    for(int i=0,x,y;i<p;i++){
-        std::cin>>x>>y;
-        std::cout<<(uf(x,y)?"Yes\n":"No\n");
-    }
+    vector<vector<char>> grid={
+        {'1','1','0','0','0'},
+        {'1','1','0','0','0'},
+        {'0','0','1','0','0'},
+        {'0','0','0','1','1'}
+    };
+    cout<<numIslands(grid)<<endl;
+    return 0;
+
 }

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <unordered_set>
+#include <vector>
 #include <unordered_map>
 
 template<class K,class V>
@@ -14,10 +16,9 @@ concept Hashed=requires(const K &a,const K &b){
 
 template<Hashed T>
 class UnionFind{
-private:
+public:
 	hashmap<T,T> parent;//parent[x]表示x的父节点
     hashmap<T,size_t> sizz;//size[x]表示x所在集合的元素个数
-public:
     UnionFind()=default;
     T &Find(const T &x){
         if(!parent.contains(x)){
@@ -59,17 +60,25 @@ public:
         return self[x]==self[y];
     }
 };
+using namespace std;
+
+int longestConsecutive(vector<int>& nums) {
+    unordered_set<int> number;
+    for(const int &i:nums) number.insert(i);
+    UnionFind<int> uf;
+    for(const int &i:nums) uf[i];
+    for(const int &i:nums){
+        if(number.contains(i-1)) uf[i-1,i];
+        if(number.contains(i+1)) uf[i,i+1];
+    }
+    int max=0;
+    for(auto it=uf.sizz.begin();it!=uf.sizz.end();++it){
+        max=max>it->second?max:it->second;
+    }
+    return max;
+}
 
 int main(){
-    UnionFind<int> uf;
-    int n,m,p;
-    std::cin>>n>>m>>p;
-    for(int i=0,x,y;i<m;i++){
-        std::cin>>x>>y;
-        uf[x,y];
-    }
-    for(int i=0,x,y;i<p;i++){
-        std::cin>>x>>y;
-        std::cout<<(uf(x,y)?"Yes\n":"No\n");
-    }
+    vector<int> nums={0,3,7,2,5,8,4,6,0,1};
+    cout<<longestConsecutive(nums);
 }
