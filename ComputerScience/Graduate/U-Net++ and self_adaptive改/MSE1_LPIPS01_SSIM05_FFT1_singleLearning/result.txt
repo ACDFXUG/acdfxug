@@ -1,0 +1,26 @@
+heavy
+🔹 PSNR (越高越好):  27.7020 dB
+🔹 SSIM (越高越好):  0.8569
+🔹 LPIPS (越低越好): 0.0679
+
+medium
+🔹 PSNR (越高越好):  9.6509 dB
+🔹 SSIM (越高越好):  0.1954
+🔹 LPIPS (越低越好): 0.9686
+
+会发现final模型针对heavy退化的图片有专门优化但是对medium和light的图片效果没有那么好。
+说明课程学习策略中后期的模型对之前的修复有遗忘
+模型出现了灾难性遗忘(Catastrophic Forgetting)问题
+模型在训练后期过度适应 heavy 退化，忘记了之前学到的 medium/light 退化修复能力。
+
+训练过程：
+Epoch 0-14: light 退化 → 学习基础特征
+Epoch 15-34: medium 退化 → 适应中等难度 ✅ 此时medium效果最好
+Epoch 35-49: heavy 退化 → 过度优化heavy，遗忘medium ❌
+
+结果:
+✅ Heavy退化：效果好（最后阶段专门训练）
+✅ Medium退化（epoch 30）：效果好（当时正在训练）
+❌ Medium退化（final模型）：效果差（被遗忘）
+
+因此采用混合学习策略:train改.py
