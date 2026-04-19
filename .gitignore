@@ -1,4 +1,4 @@
 *.pth
 __pycache__/
 checkpoints/
-.pyc
+*.pyc

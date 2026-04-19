@@ -32,8 +32,9 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 SAVE_DIR = "./checkpoints"
 os.makedirs(SAVE_DIR, exist_ok=True)
 NUM_WORKERS = 4
-MODEL_TYPE='MPRNet'
-DEG_TYPE=['noise','blur','low_light','mixed']
+MODEL_TYPE='Ours'
+DEG_TYPES=['noise','blur','low_light','mixed']
+DEG_TYPE=DEG_TYPES[1]
 
 # ⚖️ 损失权重
 LAMBDA_MSE = 1.0
@@ -127,6 +128,7 @@ def main():
     print(f"🏗️ 模型架构：{MODEL_TYPE}")
     print(f"⚖️ 损失策略：MSE + LPIPS + SSIM + FFT")
     print(f"📊 训练策略：混合退化程度 (防止灾难性遗忘)")
+    print(f"退化策略：{DEG_TYPE}")
     
     dataset = MedicalRestorationDataset(DATA_ROOT, transform=transform)
     train_loader = DataLoader(
@@ -176,7 +178,7 @@ def main():
             for i in range(batch_size):
                 severity = sample_severity(severity_dist)
                 degraded = apply_realistic_degradation(
-                    clean_imgs[i:i+1], deg_type=DEG_TYPE[0], severity=severity
+                    clean_imgs[i:i+1], deg_type=DEG_TYPE, severity=severity
                 )
                 degraded_imgs_list.append(degraded)
             degraded_imgs = torch.cat(degraded_imgs_list, dim=0)

@@ -17,7 +17,7 @@ TEST_DATA_ROOT = '../MRI-Images-of-Brain-Tumor/timri/test'
 MODEL_PATH = './checkpoints/unet_final.pth'  # 确保这里指向你训练好的模型
 BATCH_SIZE = 4
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-MODEL_TYPE='MPRNet'
+MODEL_TYPE='Ours'
 
 def main():
     print(f"🚀 正在加载模型与数据... (设备: {DEVICE})")
@@ -59,7 +59,7 @@ def main():
             clean_imgs = clean_imgs.to(DEVICE)  # [B, 1, 224, 224], range [-1, 1]
             
             # A. 生成退化图像 (必须和训练时的策略一致)
-            degraded_imgs = apply_realistic_degradation(clean_imgs, deg_type='mixed',severity='medium')
+            degraded_imgs = apply_realistic_degradation(clean_imgs, deg_type='blur',severity='heavy')
             
             # B. 模型推理
             restored_imgs = model(degraded_imgs)

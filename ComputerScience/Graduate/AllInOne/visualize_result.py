@@ -6,7 +6,7 @@ from dataset import MedicalRestorationDataset, transform
 from unet_plusplus_adaptive import UNetPlusPlusAdaptive
 from degradation_simulator import apply_realistic_degradation
 from MPRNet import MPRNet
-MODEL_TYPE='MPRNet'
+MODEL_TYPE='Ours'
 
 
 # 加载测试集
@@ -24,7 +24,7 @@ model.eval()
 
 # 取一张图测试
 clean_img, _ = next(iter(test_loader))
-degraded_img = apply_realistic_degradation(clean_img, deg_type='mixed',severity='heavy')
+degraded_img = apply_realistic_degradation(clean_img, deg_type='blur',severity='medium')
 
 with torch.no_grad():
     restored_img = model(degraded_img)
