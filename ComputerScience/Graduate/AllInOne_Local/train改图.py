@@ -33,8 +33,9 @@ SAVE_DIR = "./checkpoints"
 os.makedirs(SAVE_DIR, exist_ok=True)
 NUM_WORKERS = 4
 MODEL_TYPE='Ours'
+USE_SPATIAL=True 
 DEG_TYPES=['noise','blur','low_light','mixed']
-DEG_TYPE=DEG_TYPES[2]
+DEG_TYPE=DEG_TYPES[3]
 
 # ⚖️ 损失权重
 LAMBDA_MSE = 1.0
@@ -178,7 +179,7 @@ def main():
             for i in range(batch_size):
                 severity = sample_severity(severity_dist)
                 degraded = apply_realistic_degradation(
-                    clean_imgs[i:i+1], deg_type=DEG_TYPE, severity=severity
+                    clean_imgs[i:i+1], deg_type=DEG_TYPE, severity=severity,spatial_degradation=USE_SPATIAL
                 )
                 degraded_imgs_list.append(degraded)
             degraded_imgs = torch.cat(degraded_imgs_list, dim=0)

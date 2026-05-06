@@ -1,12 +1,13 @@
 import os
+# 解决 Windows OMP 报错
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import lpips
-import random
 import json
 import matplotlib.pyplot as plt  # 📊 新增：用于画图
 
@@ -18,25 +19,25 @@ except ImportError:
     HAS_PIQ = False
     print("⚠️ piq 未安装，使用替代 SSIM 实现")
 
-from dataset import MedicalRestorationDataset, transform
+# 导入你之前写的模块
+from dataset import MedicalRestorationDataset, get_data_loaders
 from unet_plusplus_adaptive import UNetPlusPlusAdaptive
-from degradation_simulator import apply_realistic_degradation
 from MPRNet import MPRNet
 
 # ==================== 配置区 ====================
-DATA_ROOT = '../MRI-Images-of-Brain-Tumor/timri/train'
-BATCH_SIZE = 8
-NUM_EPOCHS = 50
+BASE_DATA_ROOT = '../LoDoPaB-CT'  # LoDoPaB-CT数据集根目录
+TRAIN_SIZE = 30  # 使用前30个hdf5文件进行训练
+VAL_SIZE = 10    # 使用前10个hdf5文件进行验证
+BATCH_SIZE = 4   # 根据内存情况调整批次大小
+NUM_EPOCHS = 20
 LEARNING_RATE = 1e-4
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 SAVE_DIR = "./checkpoints"
 os.makedirs(SAVE_DIR, exist_ok=True)
-NUM_WORKERS = 4
-MODEL_TYPE='Ours'
-DEG_TYPES=['noise','blur','low_light','mixed']
-DEG_TYPE=DEG_TYPES[2]
+NUM_WORKERS = 4 
+MODEL_TYPE='Ours'  # 可选 'Ours' 或 'MPRNet'
 
-# ⚖️ 损失权重
+# ⚖️ 损失权重 (参考 train改图.py 的配置)
 LAMBDA_MSE = 1.0
 LAMBDA_LPIPS = 0.1
 LAMBDA_SSIM = 0.5
@@ -78,22 +79,12 @@ class SSIMLossAlternative(nn.Module):
         SSIM_d = (mu_x**2 + mu_y**2 + self.C1) * (sigma_x + sigma_y + self.C2)
         return torch.clamp((1 - SSIM_n/SSIM_d).mean(), 0, 1)
 
-def get_severity_distribution(epoch):
-    if epoch < 15: return {'light': 0.70, 'medium': 0.25, 'heavy': 0.05}
-    elif epoch < 35: return {'light': 0.20, 'medium': 0.60, 'heavy': 0.20}
-    else: return {'light': 0.15, 'medium': 0.35, 'heavy': 0.50}
-
-def sample_severity(distribution):
-    rand = random.random()
-    cumulative = 0.0
-    for severity, prob in distribution.items():
-        cumulative += prob
-        if rand < cumulative: return severity
-    return 'heavy'
-
 # 📊 新增：绘制训练曲线函数
 def plot_training_history(history, save_dir):
     epochs = history["epoch"]
+    if not epochs:
+        return
+        
     fig, axes = plt.subplots(3, 1, figsize=(10, 12))
     fig.suptitle("Training History", fontsize=16, fontweight='bold')
     
@@ -124,39 +115,59 @@ def plot_training_history(history, save_dir):
 
 def main():
     print(f"🚀 使用设备：{DEVICE}")
-    print(f"📂 数据路径：{DATA_ROOT}")
+    print(f"📊 数据集：LoDoPaB-CT (训练集: {TRAIN_SIZE}个文件, 验证集: {VAL_SIZE}个文件)")
     print(f"🏗️ 模型架构：{MODEL_TYPE}")
     print(f"⚖️ 损失策略：MSE + LPIPS + SSIM + FFT")
-    print(f"📊 训练策略：混合退化程度 (防止灾难性遗忘)")
-    print(f"退化策略：{DEG_TYPE}")
     
-    dataset = MedicalRestorationDataset(DATA_ROOT, transform=transform)
-    train_loader = DataLoader(
-        dataset, batch_size=BATCH_SIZE, shuffle=True, 
-        num_workers=NUM_WORKERS, pin_memory=(DEVICE.type == 'cuda')
+    # 获取数据加载器
+    train_loader, val_loader, _ = get_data_loaders(
+        BASE_DATA_ROOT, 
+        train_size=TRAIN_SIZE, 
+        val_size=VAL_SIZE, 
+        test_size=10,  # 预留测试集大小
+        batch_size=BATCH_SIZE
     )
 
+    for inputs, targets in train_loader:
+        print(f"训练数据 - Input shape: {inputs.shape}, Target shape: {targets.shape}")
+        break
+
+    for inputs, targets in val_loader:
+        print(f"验证数据 - Input shape: {inputs.shape}, Target shape: {targets.shape}")
+        break
+
+    # 模型
     # model = UNetPlusPlusAdaptive().to(DEVICE)
     if MODEL_TYPE=='Ours':
         model=UNetPlusPlusAdaptive().to(DEVICE)
+        print(f"✅ 已选择模型: UNet++ 自适应模型")
     elif MODEL_TYPE=='MPRNet':
         model=MPRNet(in_c=1,out_c=1,n_feat=20,scale_unetfeats=12,scale_orsnetfeats=8,num_cab=4).to(DEVICE)
+        print(f"✅ 已选择模型: MPRNet")
+    else:
+        raise ValueError(f"❌ 未知的模型类型: {MODEL_TYPE}")
+    
     criterion_mse = nn.MSELoss()
+    
+    # LPIPS (输入范围 [-1, 1])
     loss_fn_lpips = lpips.LPIPS(net='alex', version='0.1').to(DEVICE)
     loss_fn_lpips.eval() 
 
+    # SSIM Loss
     criterion_ssim = SSIMLoss(data_range=1.0, reduction='mean') if HAS_PIQ else SSIMLossAlternative()
-
+    
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5)
 
-    print(f"📦 数据集大小：{len(dataset)} 张图像")
+    print(f"📦 训练数据集大小：约 {len(train_loader.dataset)} 张切片")
+    print(f"📦 验证数据集大小：约 {len(val_loader.dataset)} 张切片")
     
     # 📊 新增：初始化历史记录容器
     history = {"epoch": [], "loss": [], "lpips": [], "ssim": []}
     best_loss = float('inf')
 
     for epoch in range(NUM_EPOCHS):
+        # 训练阶段
         model.train()
         total_loss = 0.0
         total_mse = 0.0
@@ -164,54 +175,56 @@ def main():
         total_ssim = 0.0
         total_fft = 0.0
         
-        severity_dist = get_severity_distribution(epoch)
-        print(f"\n📊 Epoch {epoch+1} 退化分布: {severity_dist}")
-
-        pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{NUM_EPOCHS}")
+        pbar = tqdm(train_loader, desc=f"Train Epoch {epoch+1}/{NUM_EPOCHS}")
         n_batches = 0  # 📊 新增：用于安全计算平均值
 
-        for clean_imgs, _ in pbar:
-            clean_imgs = clean_imgs.to(DEVICE)
-            batch_size = clean_imgs.size(0)
-            
-            degraded_imgs_list = []
-            for i in range(batch_size):
-                severity = sample_severity(severity_dist)
-                degraded = apply_realistic_degradation(
-                    clean_imgs[i:i+1], deg_type=DEG_TYPE, severity=severity
-                )
-                degraded_imgs_list.append(degraded)
-            degraded_imgs = torch.cat(degraded_imgs_list, dim=0)
+        for inputs, targets in pbar:  # 直接获取真实观察值和真值
+            inputs = inputs.to(DEVICE)  # [B, 1, 362, 362], range [-1, 1]
+            targets = targets.to(DEVICE)  # [B, 1, 362, 362], range [-1, 1]
 
-            restored_imgs = model(degraded_imgs)
+            restored_imgs = model(inputs)
 
+            # 检测 NaN/Inf
             if torch.isnan(restored_imgs).any() or torch.isinf(restored_imgs).any():
                 print(f"⚠️ Epoch {epoch+1}: 检测到nan/inf，跳过")
                 optimizer.zero_grad()
                 continue
             
-            mse_loss = criterion_mse(restored_imgs, clean_imgs) 
-            with torch.no_grad():
-                lpips_loss = loss_fn_lpips(restored_imgs, clean_imgs).mean()
+            # 计算各项损失
+            mse_loss = criterion_mse(restored_imgs, targets) 
             
+            # LPIPS 需要输入范围是 [-1, 1]，正好符合
+            # 使用 no_grad 加速，因为 LPIPS 不需要反向传播到其内部参数
+            with torch.no_grad():
+                lpips_loss = loss_fn_lpips(restored_imgs, targets).mean()
+            
+            # SSIM Loss 需要输入范围是 [0, 1]
             restored_norm = torch.clamp((restored_imgs + 1) / 2.0, 0, 1)
-            clean_norm = torch.clamp((clean_imgs + 1) / 2.0, 0, 1)
-            ssim_loss_val = criterion_ssim(restored_norm, clean_norm)
-            fft_loss_val = fft_loss(restored_imgs, clean_imgs)
+            targets_norm = torch.clamp((targets + 1) / 2.0, 0, 1)
+            ssim_loss_val = criterion_ssim(restored_norm, targets_norm)
+            
+            # FFT 损失计算
+            fft_loss_val = fft_loss(restored_imgs, targets)
 
+            # 总损失
             loss = (LAMBDA_MSE * mse_loss) + \
                    (LAMBDA_LPIPS * lpips_loss) + \
                    (LAMBDA_SSIM * ssim_loss_val) + \
                    (LAMBDA_FFT * fft_loss_val)
 
+            # 反向传播
             optimizer.zero_grad()
             loss.backward()
+            # 梯度裁剪，防止梯度爆炸
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
 
+            # 累积损失
             total_loss += loss.item()
+            total_mse += mse_loss.item()
             total_lpips += lpips_loss.item()
             total_ssim += ssim_loss_val.item()
+            total_fft += fft_loss_val.item()
             n_batches += 1
             
             pbar.set_postfix({
@@ -222,25 +235,72 @@ def main():
                 "FFT": f"{fft_loss_val.item():.4f}"
             })
 
-        # 📊 新增：计算当前 Epoch 的平均值并记录
-        if n_batches > 0:
-            avg_loss = total_loss / n_batches
-            avg_lpips = total_lpips / n_batches
-            avg_ssim = total_ssim / n_batches
+        # 验证阶段
+        model.eval()
+        val_total_loss = 0.0
+        val_total_lpips = 0.0
+        val_total_ssim = 0.0
+        val_n_batches = 0
+        
+        with torch.no_grad():
+            val_pbar = tqdm(val_loader, desc=f"Val Epoch {epoch+1}/{NUM_EPOCHS}")
+            for val_inputs, val_targets in val_pbar:
+                val_inputs = val_inputs.to(DEVICE)
+                val_targets = val_targets.to(DEVICE)
+                
+                val_restored = model(val_inputs)
+                
+                val_mse_loss = criterion_mse(val_restored, val_targets)
+                val_lpips_loss = loss_fn_lpips(val_restored, val_targets).mean()
+                
+                val_restored_norm = torch.clamp((val_restored + 1) / 2.0, 0, 1)
+                val_targets_norm = torch.clamp((val_targets + 1) / 2.0, 0, 1)
+                val_ssim_loss = criterion_ssim(val_restored_norm, val_targets_norm)
+                
+                val_fft_loss = fft_loss(val_restored, val_targets)
+                
+                val_loss = (LAMBDA_MSE * val_mse_loss) + \
+                          (LAMBDA_LPIPS * val_lpips_loss) + \
+                          (LAMBDA_SSIM * val_ssim_loss) + \
+                          (LAMBDA_FFT * val_fft_loss)
+                
+                val_total_loss += val_loss.item()
+                val_total_lpips += val_lpips_loss.item()
+                val_total_ssim += val_ssim_loss.item()
+                val_n_batches += 1
+                
+                val_pbar.set_postfix({
+                    "val_loss": f"{val_loss.item():.4f}"
+                })
+
+        # 📊 计算当前 Epoch 的平均值并记录
+        if n_batches > 0 and val_n_batches > 0:
+            avg_train_loss = total_loss / n_batches
+            avg_train_lpips = total_lpips / n_batches
+            avg_train_ssim = total_ssim / n_batches
+            
+            avg_val_loss = val_total_loss / val_n_batches
+            avg_val_lpips = val_total_lpips / val_n_batches
+            avg_val_ssim = val_total_ssim / val_n_batches
             
             history["epoch"].append(epoch + 1)
-            history["loss"].append(avg_loss)
-            history["lpips"].append(avg_lpips)
-            history["ssim"].append(avg_ssim)
+            history["loss"].append(avg_val_loss)  # 使用验证集的loss作为历史记录的loss
+            history["lpips"].append(avg_val_lpips)
+            history["ssim"].append(avg_val_ssim)
             
-            print(f"\n✅ Epoch {epoch+1} | Avg Loss: {avg_loss:.4f} | Avg LPIPS: {avg_lpips:.4f} | Avg SSIM Loss: {avg_ssim:.4f}")
-            scheduler.step(avg_loss)
+            print(f"\n✅ Train Epoch {epoch+1}: Avg Train Loss: {avg_train_loss:.4f} | Avg Train LPIPS: {avg_train_lpips:.4f} | Avg Train SSIM Loss: {avg_train_ssim:.4f}")
+            print(f"✅ Val Epoch {epoch+1}: Avg Val Loss: {avg_val_loss:.4f} | Avg Val LPIPS: {avg_val_lpips:.4f} | Avg Val SSIM Loss: {avg_val_ssim:.4f}")
+            
+            # 更新学习率调度器
+            scheduler.step(avg_val_loss)
 
-            if avg_loss < best_loss:
-                best_loss = avg_loss
+            # 保存最佳模型
+            if avg_val_loss < best_loss:
+                best_loss = avg_val_loss
                 torch.save(model.state_dict(), os.path.join(SAVE_DIR, "unet_best.pth"))
                 print(f"   💾 保存最佳模型 (loss: {best_loss:.4f})")
 
+            # 每5个epoch保存一次检查点
             if (epoch + 1) % 5 == 0:
                 torch.save(model.state_dict(), os.path.join(SAVE_DIR, f"unet_epoch_{epoch+1}.pth"))
                 print(f"   💾 保存 epoch {epoch+1} checkpoint")
@@ -254,6 +314,7 @@ def main():
     # 📊 自动绘制折线图
     plot_training_history(history, SAVE_DIR)
 
+    # 保存最终模型
     torch.save(model.state_dict(), os.path.join(SAVE_DIR, "unet_final.pth"))
     print(f"\n🎉 训练完成！")
     print(f"📁 模型保存路径：{SAVE_DIR}")

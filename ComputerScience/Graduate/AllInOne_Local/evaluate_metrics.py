@@ -9,7 +9,7 @@ import lpips
 # 导入之前的模块
 from dataset import MedicalRestorationDataset, transform
 from unet_plusplus_adaptive import UNetPlusPlusAdaptive
-from degradation_simulator_plus import apply_realistic_degradation
+from degradation_simulator import apply_realistic_degradation
 from MPRNet import MPRNet
 
 # ==================== 配置区 ====================
@@ -17,8 +17,8 @@ TEST_DATA_ROOT = '../MRI-Images-of-Brain-Tumor/timri/test'
 MODEL_PATH = './checkpoints/unet_final.pth'  # 确保这里指向你训练好的模型
 BATCH_SIZE = 4
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-MODEL_TYPE='MPRNet'
-
+MODEL_TYPE='Ours'
+USE_SPATIAL=True if MODEL_TYPE=='Ours' else False
 def main():
     print(f"🚀 正在加载模型与数据... (设备: {DEVICE})")
 
@@ -59,7 +59,7 @@ def main():
             clean_imgs = clean_imgs.to(DEVICE)  # [B, 1, 224, 224], range [-1, 1]
             
             # A. 生成退化图像 (必须和训练时的策略一致)
-            degraded_imgs = apply_realistic_degradation(clean_imgs, deg_type='mixed',severity='heavy',spatial_degradation=True)
+            degraded_imgs = apply_realistic_degradation(clean_imgs, deg_type='mixed',severity='medium',spatial_degradation=USE_SPATIAL)
             
             # B. 模型推理
             restored_imgs = model(degraded_imgs)
@@ -100,9 +100,9 @@ def main():
     print("\n" + "="*40)
     print(f"📈 测试集评估结果 (共 {count} 张图)")
     print("="*40)
-    print(f"🔹 PSNR (越高越好):  {avg_psnr:.4f} dB")
-    print(f"🔹 SSIM (越高越好):  {avg_ssim:.4f}")
-    print(f"🔹 LPIPS (越低越好): {avg_lpips:.4f}")
+    print(f"PSNR (越高越好):  {avg_psnr:.4f} dB")
+    print(f"SSIM (越高越好):  {avg_ssim:.4f}")
+    print(f"LPIPS (越低越好): {avg_lpips:.4f}")
     print("="*40)
     
     # 💡 建议：将这些数据记录到你的 experiment_log.md 中

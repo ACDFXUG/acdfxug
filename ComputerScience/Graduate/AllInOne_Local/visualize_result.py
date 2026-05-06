@@ -7,6 +7,7 @@ from unet_plusplus_adaptive import UNetPlusPlusAdaptive
 from degradation_simulator import apply_realistic_degradation
 from MPRNet import MPRNet
 MODEL_TYPE='Ours'
+USE_SPATIAL=True
 
 
 # 加载测试集
@@ -24,7 +25,7 @@ model.eval()
 
 # 取一张图测试
 clean_img, _ = next(iter(test_loader))
-degraded_img = apply_realistic_degradation(clean_img, deg_type='low_light',severity='heavy')
+degraded_img = apply_realistic_degradation(clean_img, deg_type='mixed',severity='heavy',spatial_degradation=USE_SPATIAL)
 
 with torch.no_grad():
     restored_img = model(degraded_img)
