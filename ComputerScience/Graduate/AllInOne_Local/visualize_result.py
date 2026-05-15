@@ -25,7 +25,7 @@ model.eval()
 
 # 取一张图测试
 clean_img, _ = next(iter(test_loader))
-degraded_img = apply_realistic_degradation(clean_img, deg_type='mixed',severity='heavy',spatial_degradation=USE_SPATIAL)
+degraded_img = apply_realistic_degradation(clean_img, deg_type='mixed',severity='medium',spatial_degradation=USE_SPATIAL)
 
 with torch.no_grad():
     restored_img = model(degraded_img)
