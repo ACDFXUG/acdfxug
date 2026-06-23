@@ -6,7 +6,7 @@ import static java.nio.file.StandardCopyOption.*;
 
 import java.io.IOException;
 
-public class EnableUTF8ToTerminal {
+public class EnableUTF8ToVSCodeTerminal {
     static final String VSCODE_DIR="C:/Users/yaoyu/AppData/Local/Programs/Microsoft VS Code";
     static final String PS_FILE="shellIntegration.ps1";
 

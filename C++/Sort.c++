@@ -212,7 +212,7 @@ private:
      * @param len 数组的长度。
      * @tparam T 数组中元素的类型。
      */
-    template<bool max=true>
+    template<bool max=true >
     static void build_heap(std::vector<T> &tmp, int len) {
         // 从最后一个非叶子节点开始，逆序构建堆。
         for(int i = len / 2; i >= 1; i--) {
