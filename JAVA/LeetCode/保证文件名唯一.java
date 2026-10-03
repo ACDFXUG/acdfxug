@@ -4,19 +4,24 @@ import java.util.*;
 
 public class 保证文件名唯一 {
     static String[] getFolderNames(String[] names) {
-        List<String> folder=new ArrayList<>();
-        for(int i=0;i<names.length;i++){
-            if(folder.contains(names[i])){
-                int j=1;
-                while(folder.contains(names[i]+"("+j+")")){
-                    j++;
-                }
-                folder.add(names[i]+"("+j+")");
+        Map<String,Integer> nameCnt=new HashMap<>();
+        List<String> ans=new ArrayList<>();
+        for(String name:names){
+            if(!nameCnt.containsKey(name)){
+                nameCnt.put(name,1);
+                ans.add(name);
             }else{
-                folder.add(names[i]);
-           }
+                int j=nameCnt.get(name);
+                String candi;
+                while(nameCnt.containsKey(candi=name+"("+j+")")){
+                    ++j;
+                }
+                nameCnt.put(name,1+j);
+                nameCnt.put(candi,1);
+                ans.add(candi);
+            }
         }
-        return folder.toArray(new String[folder.size()]);
+        return ans.toArray(String[]::new);
     }
     public static void main(String[] args) {
         String[] name={"kaido","kaido(1)","kaido","kaido(1)"};

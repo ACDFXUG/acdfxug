@@ -2,6 +2,34 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "两个键的键盘",
+            "request": "launch",
+            "mainClass": "Java.LeetCode.两个键的键盘",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "逆波兰表达式求值",
+            "request": "launch",
+            "mainClass": "Java.LeetCode.逆波兰表达式求值",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
+            "type": "java",
+            "name": "SutherHodg改",
+            "request": "launch",
+            "mainClass": "ComputerScience.ComputerGraphics.sutherhodg改进.SutherHodg改",
+            "projectName": "VSCode_f8960e08"
+        },
+        {
             "name": "C++",
             "type": "cppdbg",
             "request": "launch",

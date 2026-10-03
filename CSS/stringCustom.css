@@ -1,0 +1,99 @@
+/* ========================================
+   字符串文字 —— 密集彩虹渐变 + 发光
+   ======================================== */
+/* .mtk4 {
+  position: relative;
+  display: inline-block; */
+
+  /* 更多色标 = 更丰富的颜色过渡 */
+  /* background: linear-gradient(
+    #ff0000, #ff8000, #ffff00, #80ff00,
+    #00ff00, #00ff80, #00ffff, #0080ff,
+    #0000ff, #8000ff, #ff00ff, #ff0080,
+    #ff0000
+  ) !important; */
+  /* 关键：size 改成水平方向也拉开，让单行能看到多色 */
+  /* background-size: 300% 300% !important;
+  animation: string-rainbow 8s linear infinite !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+} */
+
+/* ========================================
+   发光层：同文字副本，模糊后垫底
+   ⚠️ 需要 HTML 里有 data-text 属性才能工作
+   如果 VSCode 没给 span 加 data-text，见下方 JS 方案
+   ======================================== */
+/* .mtk4::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: inherit;
+  background-size: inherit;
+  animation: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  filter: blur(6px) brightness(180%);
+  z-index: -1;
+  pointer-events: none;
+} */
+
+/* ========================================
+   关键帧：对角线方向移动，颜色流动更明显
+   ======================================== */
+/* @keyframes string-rainbow {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+} */
+
+/* .mtk4 {
+  background: linear-gradient(
+    90deg,
+    #ff8c00,   
+    #ffa500,  
+    #ffd700,   
+    #ffff00,   
+    #adff2f,   
+    #00ff00,   
+    #00fa9a,   
+    #00ffff    
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  
+  filter:
+    drop-shadow(0 0 3px rgba(255, 200, 0, 0.6))
+    drop-shadow(0 0 6px rgba(0, 255, 128, 0.4)) !important;
+} */
+
+.mtk4 {
+  color: #f97e72 !important;   /* 近白芯，空心感来源 */
+  text-shadow:
+    0 0 2px #100c0f,          /* 深色收边 */
+    0 0 3px #f39f0575,        /* 橙色光晕 ×3 */
+    0 0 5px #f39f0575,
+    0 0 8px #f39f0575;
+}
+
+.mtk11 {
+  color: #90f5c8 !important;   /* 带一点绿味的白芯 */
+  text-shadow:
+    0 0 2px #100c0f,
+    0 0 3px #00e08c75,   /* 光晕用更饱和的绿， halo 才明显 */
+    0 0 5px #00e08c75,
+    0 0 8px #00e08c75 !important;
+}

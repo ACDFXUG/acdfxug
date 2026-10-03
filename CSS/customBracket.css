@@ -1,36 +1,85 @@
-/* 括号的样式 */
-div.bracket {
-  animation: 25s linear infinite alternate bp-animation;
-  background: linear-gradient(rgb(226, 84, 84), yellow, lime, cyan, rgb(182, 110, 255));
-  background-size: 100% 1000%;
-  border-radius: 2px;
+/* ========================================
+   1. 括号文字本身 —— 彩色渐变
+   VSCode bracket pair colorizer 会给括号加这些 class，
+   根据你的主题/插件版本可能略有不同，用浏览器 DevTools
+   (Help > Toggle Developer Tools) 确认实际 class 名
+   ======================================== */
+
+/* 匹配括号的文字颜色 */
+.bracket-highlighting-0,
+.bracket-highlighting-1,
+.bracket-highlighting-2,
+.bracket-highlighting-3,
+.bracket-highlighting-4,
+.bracket-highlighting-5 {
+  background: linear-gradient(
+    rgb(226, 84, 84), yellow, lime, cyan, rgb(182, 110, 255)
+  ) !important;
+  background-size: 100% 1000% !important;
+  animation: bp-rainbow 25s linear infinite alternate !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* 不匹配括号（红色警告渐变） */
+.bracket-highlighting-unmatched {
+  background: linear-gradient(#ff00ff, #ff80ff, #00ffff) !important;
+  background-size: 100% 1000% !important;
+  animation: bp-rainbow 25s linear infinite alternate !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ========================================
+   2. 装饰器光晕层 —— 保留你原来的效果但修好渐变
+   ======================================== */
+
+.bracket-match {
+  background: linear-gradient(
+    to right,
+    rgba(153, 255, 0, 0.35),
+    rgba(0, 255, 255, 0.35),
+    rgba(153, 255, 0, 0.35)
+  ) !important;
+  background-size: 200% 100% !important;       /* 水平流动 */
+  animation: glow-slide 3s linear infinite !important;
+  border-radius: 4px;
+  filter: blur(6px) brightness(75%);
   overflow: visible !important;
   position: relative;
-  display: inline-block;
-  padding: 5px;
 }
 
-div.bracket::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  background-size: 100% 1000%;
-  border-radius: 3px;
-  transform: scale(140%, 120%);
-  filter: blur(4px) brightness(200%);
-  z-index: -1;
+.bracket-mismatch {
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 255, 0.4),
+    rgba(0, 255, 255, 0.4),
+    rgba(255, 0, 255, 0.4)
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: glow-slide 3s linear infinite !important;
+  border-radius: 4px;
+  filter: blur(4px) brightness(75%);
+  overflow: visible !important;
+  position: relative;
 }
 
-/* 动画关键帧 */
-@keyframes bp-animation {
-  0% { background-position: 0 0; }
-  20% { background-position: 0 200%; }
-  40% { background-position: 0 400%; }
-  60% { background-position: 0 600%; }
-  80% { background-position: 0 800%; }
+/* ========================================
+   3. 关键帧
+   ======================================== */
+
+/* 文字彩虹循环 */
+@keyframes bp-rainbow {
+  0%   { background-position: 0 0; }
   100% { background-position: 0 1000%; }
+}
+
+/* 光晕水平流动 */
+@keyframes glow-slide {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
